@@ -19,49 +19,49 @@
   },
   "umbrales_optimizados_ag": {
     "traffic_density": [
-      86.34061759712748,
-      251.7735876954835
+      107.62284948843146,
+      251.8
     ],
     "queue_length": [
-      1.1676698951550095,
-      310.4469568841663
+      94.43439126153746,
+      374.73980219085007
     ],
     "vehicle_count": [
-      106.03261630322979,
-      512.7522792180863
+      106.0,
+      658.8333176511461
     ],
     "average_speed": [
-      88.0,
-      88.0
+      61.18420870390169,
+      62.73591122365102
     ]
   },
   "parametros_ag": {
-    "tamano_poblacion": 60,
-    "num_generaciones": 80,
-    "prob_cruce": 0.6,
-    "prob_mutacion": 0.3,
-    "peso_fisico_ralenti": 0.5
+    "tamano_poblacion": 30,
+    "num_generaciones": 40,
+    "prob_cruce": 0.7,
+    "prob_mutacion": 0.4,
+    "peso_fisico_ralenti": 0.85
   },
-  "aptitud_base_entrenamiento": 386.36744623667306,
-  "aptitud_optimizada_entrenamiento": 252.0838699127846,
+  "aptitud_base_entrenamiento": 404.939041871477,
+  "aptitud_optimizada_entrenamiento": 287.63205083768077,
   "comparacion_validacion": [
     {
       "Esquema": "Estático tradicional",
-      "Costo ambiental promedio": 329.6050122143977,
-      "Desviación estándar": 304.93409382575055,
+      "Costo ambiental promedio": 338.63194076995325,
+      "Desviación estándar": 314.4506561901663,
       "Mejora vs. estático (%)": 0.0
     },
     {
       "Esquema": "Difuso base (PRISM)",
-      "Costo ambiental promedio": 373.3569669273437,
-      "Desviación estándar": 434.68784305095755,
-      "Mejora vs. estático (%)": -13.274056246598203
+      "Costo ambiental promedio": 391.0432886590975,
+      "Desviación estándar": 460.2832917363212,
+      "Mejora vs. estático (%)": -15.477378705025787
     },
     {
       "Esquema": "Difuso + AG (optimizado)",
-      "Costo ambiental promedio": 236.92042710800322,
-      "Desviación estándar": 419.745692007504,
-      "Mejora vs. estático (%)": 28.11989553305277
+      "Costo ambiental promedio": 277.57409369966274,
+      "Desviación estándar": 434.12491471583934,
+      "Mejora vs. estático (%)": 18.03074067126162
     }
   ]
 }

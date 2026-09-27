@@ -1,0 +1,27 @@
+{
+  "umbrales_optimizados_ag": {
+    "traffic_density": [
+      140.71610247842239,
+      251.8
+    ],
+    "queue_length": [
+      119.28947041653183,
+      335.95742457680797
+    ],
+    "vehicle_count": [
+      106.0,
+      989.7879524328432
+    ],
+    "average_speed": [
+      60.33014215209878,
+      60.55626193934094
+    ]
+  },
+  "parametros_ag": {
+    "tamano_poblacion": 40,
+    "num_generaciones": 20,
+    "peso_fisico_ralenti": 0.8
+  },
+  "aptitud_base_entrenamiento": 402.28595678079074,
+  "aptitud_optimizada_entrenamiento": 287.2275986879648
+}
