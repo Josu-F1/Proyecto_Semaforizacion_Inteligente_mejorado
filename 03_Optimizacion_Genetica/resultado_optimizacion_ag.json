@@ -19,20 +19,20 @@
   },
   "umbrales_optimizados_ag": {
     "traffic_density": [
-      70.28839454924173,
-      251.79794740884319
+      86.34061759712748,
+      251.7735876954835
     ],
     "queue_length": [
-      1.1937320407490308,
-      506.5069965957049
+      1.1676698951550095,
+      310.4469568841663
     ],
     "vehicle_count": [
-      106.00498267918906,
-      502.34273821305237
+      106.03261630322979,
+      512.7522792180863
     ],
     "average_speed": [
-      87.99052327808917,
-      87.9997748175837
+      88.0,
+      88.0
     ]
   },
   "parametros_ag": {
@@ -42,26 +42,26 @@
     "prob_mutacion": 0.3,
     "peso_fisico_ralenti": 0.5
   },
-  "aptitud_base_entrenamiento": 412.05760640642376,
-  "aptitud_optimizada_entrenamiento": 279.97180026046556,
+  "aptitud_base_entrenamiento": 386.36744623667306,
+  "aptitud_optimizada_entrenamiento": 252.0838699127846,
   "comparacion_validacion": [
     {
       "Esquema": "Estático tradicional",
-      "Costo ambiental promedio": 360.4969932367228,
-      "Desviación estándar": 380.62994584481555,
+      "Costo ambiental promedio": 329.6050122143977,
+      "Desviación estándar": 304.93409382575055,
       "Mejora vs. estático (%)": 0.0
     },
     {
       "Esquema": "Difuso base (PRISM)",
-      "Costo ambiental promedio": 404.24894794966883,
-      "Desviación estándar": 502.0313125026519,
-      "Mejora vs. estático (%)": -12.136565778293749
+      "Costo ambiental promedio": 373.3569669273437,
+      "Desviación estándar": 434.68784305095755,
+      "Mejora vs. estático (%)": -13.274056246598203
     },
     {
       "Esquema": "Difuso + AG (optimizado)",
-      "Costo ambiental promedio": 272.0039412806617,
-      "Desviación estándar": 498.3723574574808,
-      "Mejora vs. estático (%)": 24.547514574678168
+      "Costo ambiental promedio": 236.92042710800322,
+      "Desviación estándar": 419.745692007504,
+      "Mejora vs. estático (%)": 28.11989553305277
     }
   ]
 }

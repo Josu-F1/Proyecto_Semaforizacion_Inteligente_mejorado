@@ -34,7 +34,7 @@
     ],
     "queue_length": [
       0.0,
-      10111.6
+      300.0
     ],
     "vehicle_count": [
       54.0,
@@ -77,5 +77,5 @@
   "umbral_confianza_regla": 0.6,
   "n_reglas_gld": 28,
   "n_reglas_sca": 39,
-  "mae_gld_base_muestra": 10.439839463715359
+  "mae_gld_base_muestra": 11.533444010227516
 }
