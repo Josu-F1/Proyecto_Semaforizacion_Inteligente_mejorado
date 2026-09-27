@@ -1,0 +1,2030 @@
+[
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Alta"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 1.0,
+    "cobertura": 39078,
+    "soporte": 0.191559,
+    "lift": 2.4333,
+    "t": 39078
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Alta"
+      ],
+      [
+        "traffic_density_lbl",
+        "Baja"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 1.0,
+    "cobertura": 24165,
+    "soporte": 0.118456,
+    "lift": 2.4333,
+    "t": 24165
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.9844,
+    "cobertura": 757,
+    "soporte": 0.003711,
+    "lift": 2.3953,
+    "t": 769
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.9823,
+    "cobertura": 775,
+    "soporte": 0.003799,
+    "lift": 2.3901,
+    "t": 789
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.905,
+    "cobertura": 219,
+    "soporte": 0.001074,
+    "lift": 2.202,
+    "t": 242
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 1.0,
+    "cobertura": 13,
+    "soporte": 6.4e-05,
+    "lift": 2.4333,
+    "t": 13
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 1.0,
+    "cobertura": 10,
+    "soporte": 4.9e-05,
+    "lift": 2.4333,
+    "t": 10
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.7222,
+    "cobertura": 91,
+    "soporte": 0.000446,
+    "lift": 1.7574,
+    "t": 126
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ],
+      [
+        "average_speed_lbl",
+        "Alta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.5371,
+    "cobertura": 761,
+    "soporte": 0.00373,
+    "lift": 1.3068,
+    "t": 1417
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "average_speed_lbl",
+        "Alta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.5221,
+    "cobertura": 732,
+    "soporte": 0.003588,
+    "lift": 1.2704,
+    "t": 1402
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ],
+      [
+        "average_speed_lbl",
+        "Alta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.4279,
+    "cobertura": 86,
+    "soporte": 0.000422,
+    "lift": 1.0411,
+    "t": 201
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.5314,
+    "cobertura": 4111,
+    "soporte": 0.020152,
+    "lift": 1.2931,
+    "t": 7736
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.5262,
+    "cobertura": 452,
+    "soporte": 0.002216,
+    "lift": 1.2804,
+    "t": 859
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.5172,
+    "cobertura": 4096,
+    "soporte": 0.020078,
+    "lift": 1.2584,
+    "t": 7920
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.3035,
+    "cobertura": 292,
+    "soporte": 0.001431,
+    "lift": 0.7386,
+    "t": 962
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.2353,
+    "cobertura": 124,
+    "soporte": 0.000608,
+    "lift": 0.5725,
+    "t": 527
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.2212,
+    "cobertura": 997,
+    "soporte": 0.004887,
+    "lift": 0.5383,
+    "t": 4507
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.2159,
+    "cobertura": 990,
+    "soporte": 0.004853,
+    "lift": 0.5254,
+    "t": 4585
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.2321,
+    "cobertura": 104,
+    "soporte": 0.00051,
+    "lift": 0.5649,
+    "t": 448
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Baja"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 1.0,
+    "cobertura": 160,
+    "soporte": 0.000784,
+    "lift": 2.4333,
+    "t": 160
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.2045,
+    "cobertura": 101,
+    "soporte": 0.000495,
+    "lift": 0.4975,
+    "t": 494
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.1579,
+    "cobertura": 6,
+    "soporte": 2.9e-05,
+    "lift": 0.3842,
+    "t": 38
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.1324,
+    "cobertura": 212,
+    "soporte": 0.001039,
+    "lift": 0.3222,
+    "t": 1601
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Baja"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.113,
+    "cobertura": 1624,
+    "soporte": 0.007961,
+    "lift": 0.275,
+    "t": 14370
+  },
+  {
+    "antecedente": [
+      [
+        "queue_length_lbl",
+        "Corta"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.288,
+    "cobertura": 301,
+    "soporte": 0.001475,
+    "lift": 0.7009,
+    "t": 1045
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Baja"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.1081,
+    "cobertura": 1620,
+    "soporte": 0.007941,
+    "lift": 0.263,
+    "t": 14990
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.0974,
+    "cobertura": 297,
+    "soporte": 0.001456,
+    "lift": 0.237,
+    "t": 3049
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.096,
+    "cobertura": 294,
+    "soporte": 0.001441,
+    "lift": 0.2336,
+    "t": 3063
+  },
+  {
+    "antecedente": [
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.1501,
+    "cobertura": 275,
+    "soporte": 0.001348,
+    "lift": 0.3653,
+    "t": 1832
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.0769,
+    "cobertura": 11,
+    "soporte": 5.4e-05,
+    "lift": 0.1872,
+    "t": 143
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.0542,
+    "cobertura": 61,
+    "soporte": 0.000299,
+    "lift": 0.1319,
+    "t": 1125
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.0508,
+    "cobertura": 67,
+    "soporte": 0.000328,
+    "lift": 0.1235,
+    "t": 1320
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.0526,
+    "cobertura": 2,
+    "soporte": 1e-05,
+    "lift": 0.1281,
+    "t": 38
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.0491,
+    "cobertura": 112,
+    "soporte": 0.000549,
+    "lift": 0.1195,
+    "t": 2281
+  },
+  {
+    "antecedente": [
+      [
+        "traffic_density_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.0429,
+    "cobertura": 52,
+    "soporte": 0.000255,
+    "lift": 0.1045,
+    "t": 1211
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.0367,
+    "cobertura": 48,
+    "soporte": 0.000235,
+    "lift": 0.0892,
+    "t": 1309
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.0222,
+    "cobertura": 1,
+    "soporte": 5e-06,
+    "lift": 0.0541,
+    "t": 45
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.0986,
+    "cobertura": 7,
+    "soporte": 3.4e-05,
+    "lift": 0.2399,
+    "t": 71
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Reducir",
+    "confianza": 0.013,
+    "cobertura": 681,
+    "soporte": 0.003338,
+    "lift": 0.0316,
+    "t": 52375
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "traffic_density_lbl",
+        "Baja"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.8919,
+    "cobertura": 13370,
+    "soporte": 0.065539,
+    "lift": 2.6535,
+    "t": 14990
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "traffic_density_lbl",
+        "Baja"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.887,
+    "cobertura": 12746,
+    "soporte": 0.06248,
+    "lift": 2.6388,
+    "t": 14370
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "traffic_density_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.8676,
+    "cobertura": 1389,
+    "soporte": 0.006809,
+    "lift": 2.5811,
+    "t": 1601
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.7841,
+    "cobertura": 3595,
+    "soporte": 0.017623,
+    "lift": 2.3327,
+    "t": 4585
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "traffic_density_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.9571,
+    "cobertura": 1159,
+    "soporte": 0.005681,
+    "lift": 2.8473,
+    "t": 1211
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "traffic_density_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.9458,
+    "cobertura": 1064,
+    "soporte": 0.005216,
+    "lift": 2.8137,
+    "t": 1125
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.7788,
+    "cobertura": 3510,
+    "soporte": 0.017206,
+    "lift": 2.3169,
+    "t": 4507
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.9633,
+    "cobertura": 1261,
+    "soporte": 0.006181,
+    "lift": 2.866,
+    "t": 1309
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "traffic_density_lbl",
+        "Baja"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.9231,
+    "cobertura": 132,
+    "soporte": 0.000647,
+    "lift": 2.7462,
+    "t": 143
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.9509,
+    "cobertura": 2169,
+    "soporte": 0.010632,
+    "lift": 2.829,
+    "t": 2281
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.9492,
+    "cobertura": 1253,
+    "soporte": 0.006142,
+    "lift": 2.8241,
+    "t": 1320
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.904,
+    "cobertura": 2769,
+    "soporte": 0.013574,
+    "lift": 2.6895,
+    "t": 3063
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.7647,
+    "cobertura": 403,
+    "soporte": 0.001975,
+    "lift": 2.275,
+    "t": 527
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 1.0,
+    "cobertura": 6,
+    "soporte": 2.9e-05,
+    "lift": 2.9751,
+    "t": 6
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.9778,
+    "cobertura": 44,
+    "soporte": 0.000216,
+    "lift": 2.9089,
+    "t": 45
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.9474,
+    "cobertura": 36,
+    "soporte": 0.000176,
+    "lift": 2.8185,
+    "t": 38
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.4828,
+    "cobertura": 3824,
+    "soporte": 0.018745,
+    "lift": 1.4364,
+    "t": 7920
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.9026,
+    "cobertura": 2752,
+    "soporte": 0.01349,
+    "lift": 2.6853,
+    "t": 3049
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.8421,
+    "cobertura": 32,
+    "soporte": 0.000157,
+    "lift": 2.5053,
+    "t": 38
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.7955,
+    "cobertura": 393,
+    "soporte": 0.001926,
+    "lift": 2.3668,
+    "t": 494
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Bajo"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.7679,
+    "cobertura": 344,
+    "soporte": 0.001686,
+    "lift": 2.2844,
+    "t": 448
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.6965,
+    "cobertura": 670,
+    "soporte": 0.003284,
+    "lift": 2.072,
+    "t": 962
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.2218,
+    "cobertura": 11617,
+    "soporte": 0.056946,
+    "lift": 0.6599,
+    "t": 52375
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.4738,
+    "cobertura": 407,
+    "soporte": 0.001995,
+    "lift": 1.4096,
+    "t": 859
+  },
+  {
+    "antecedente": [
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "vehicle_count_lbl",
+        "Medio"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Mantener",
+    "confianza": 0.4686,
+    "cobertura": 3625,
+    "soporte": 0.01777,
+    "lift": 1.3941,
+    "t": 7736
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "average_speed_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Extender",
+    "confianza": 1.0,
+    "cobertura": 526,
+    "soporte": 0.002578,
+    "lift": 3.9541,
+    "t": 526
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "average_speed_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Extender",
+    "confianza": 1.0,
+    "cobertura": 243,
+    "soporte": 0.001191,
+    "lift": 3.9541,
+    "t": 243
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "average_speed_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Extender",
+    "confianza": 0.9989,
+    "cobertura": 909,
+    "soporte": 0.004456,
+    "lift": 3.9498,
+    "t": 910
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Extender",
+    "confianza": 0.9913,
+    "cobertura": 5935,
+    "soporte": 0.029093,
+    "lift": 3.9198,
+    "t": 5987
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Extender",
+    "confianza": 0.9014,
+    "cobertura": 64,
+    "soporte": 0.000314,
+    "lift": 3.5643,
+    "t": 71
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Extender",
+    "confianza": 0.8499,
+    "cobertura": 1557,
+    "soporte": 0.007632,
+    "lift": 3.3606,
+    "t": 1832
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Extender",
+    "confianza": 1.0,
+    "cobertura": 12,
+    "soporte": 5.9e-05,
+    "lift": 3.9541,
+    "t": 12
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ],
+      [
+        "average_speed_lbl",
+        "Baja"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Extender",
+    "confianza": 0.7652,
+    "cobertura": 40077,
+    "soporte": 0.196456,
+    "lift": 3.0257,
+    "t": 52375
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "traffic_density_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ],
+      [
+        "average_speed_lbl",
+        "Media"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Extender",
+    "confianza": 0.712,
+    "cobertura": 744,
+    "soporte": 0.003647,
+    "lift": 2.8152,
+    "t": 1045
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "average_speed_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Extensa"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Extender",
+    "confianza": 0.5721,
+    "cobertura": 115,
+    "soporte": 0.000564,
+    "lift": 2.2623,
+    "t": 201
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "average_speed_lbl",
+        "Alta"
+      ],
+      [
+        "queue_length_lbl",
+        "Moderada"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Extender",
+    "confianza": 0.4779,
+    "cobertura": 670,
+    "soporte": 0.003284,
+    "lift": 1.8896,
+    "t": 1402
+  },
+  {
+    "antecedente": [
+      [
+        "vehicle_count_lbl",
+        "Alto"
+      ],
+      [
+        "average_speed_lbl",
+        "Alta"
+      ],
+      [
+        "traffic_density_lbl",
+        "Moderada"
+      ],
+      [
+        "queue_length_lbl",
+        "Corta"
+      ]
+    ],
+    "variable_objetivo": "signal_cycle_adjustment",
+    "clase_objetivo": "Extender",
+    "confianza": 0.4629,
+    "cobertura": 656,
+    "soporte": 0.003216,
+    "lift": 1.8306,
+    "t": 1417
+  }
+]

@@ -1,0 +1,81 @@
+{
+  "variables_entrada": [
+    "traffic_density",
+    "queue_length",
+    "vehicle_count",
+    "average_speed"
+  ],
+  "etiquetas": {
+    "traffic_density": [
+      "Baja",
+      "Moderada",
+      "Alta"
+    ],
+    "queue_length": [
+      "Corta",
+      "Moderada",
+      "Extensa"
+    ],
+    "vehicle_count": [
+      "Bajo",
+      "Medio",
+      "Alto"
+    ],
+    "average_speed": [
+      "Baja",
+      "Media",
+      "Alta"
+    ]
+  },
+  "rangos_entrada": {
+    "traffic_density": [
+      9.0,
+      378.5
+    ],
+    "queue_length": [
+      0.0,
+      10111.6
+    ],
+    "vehicle_count": [
+      54.0,
+      3162.0
+    ],
+    "average_speed": [
+      5.0,
+      90.0
+    ]
+  },
+  "umbrales_entrada": {
+    "traffic_density": [
+      23.8,
+      122.23333333333139
+    ],
+    "queue_length": [
+      9.9,
+      44.4
+    ],
+    "vehicle_count": [
+      204.0,
+      983.0
+    ],
+    "average_speed": [
+      34.2,
+      53.6
+    ]
+  },
+  "green_light_duration": {
+    "corte_1": 18.0,
+    "corte_2": 40.0,
+    "rango_min": 18.0,
+    "rango_max": 84.0
+  },
+  "signal_cycle_adjustment": {
+    "umbral_delta": 15.0,
+    "rango_delta_min": -25.470588235294116,
+    "rango_delta_max": 56.61764705882353
+  },
+  "umbral_confianza_regla": 0.6,
+  "n_reglas_gld": 28,
+  "n_reglas_sca": 39,
+  "mae_gld_base_muestra": 10.439839463715359
+}

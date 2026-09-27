@@ -1,0 +1,67 @@
+{
+  "umbrales_base_prism": {
+    "traffic_density": [
+      23.8,
+      122.23333333333139
+    ],
+    "queue_length": [
+      9.9,
+      44.4
+    ],
+    "vehicle_count": [
+      204.0,
+      983.0
+    ],
+    "average_speed": [
+      34.2,
+      53.6
+    ]
+  },
+  "umbrales_optimizados_ag": {
+    "traffic_density": [
+      88.89213660280225,
+      251.7996350516646
+    ],
+    "queue_length": [
+      1.1,
+      503.32266801854826
+    ],
+    "vehicle_count": [
+      106.0,
+      541.0999661683617
+    ],
+    "average_speed": [
+      87.98140762272018,
+      87.99676797811976
+    ]
+  },
+  "parametros_ag": {
+    "tamano_poblacion": 60,
+    "num_generaciones": 80,
+    "prob_cruce": 0.6,
+    "prob_mutacion": 0.3,
+    "peso_fisico_ralenti": 0.5
+  },
+  "aptitud_base_entrenamiento": 412.0576064064238,
+  "aptitud_optimizada_entrenamiento": 281.68811327117623,
+  "comparacion_validacion": [
+    {
+      "Esquema": "Estático tradicional",
+      "Costo ambiental promedio": 360.49699323672286,
+      "Desviación estándar": 380.6299458448146,
+      "Mejora vs. estático (%)": 0.0
+    },
+    {
+      "Esquema": "Difuso base (PRISM)",
+      "Costo ambiental promedio": 404.24894794966895,
+      "Desviación estándar": 502.03131250265136,
+      "Mejora vs. estático (%)": -12.136565778293763
+    },
+    {
+      "Esquema": "Difuso + AG (optimizado)",
+      "Costo ambiental promedio": 273.78518603645756,
+      "Desviación estándar": 497.81734758042523,
+      "Mejora vs. estático (%)": 24.05340649910092
+    }
+  ]
+}

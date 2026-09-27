@@ -1,0 +1,123 @@
+﻿variable_objetivo,clase_objetivo,confianza,cobertura,soporte,lift,t,antecedente_txt,usar_en_difuso
+green_light_duration,Corta,1.0,68204,0.334333,2.7109,68204,vehicle_count=Bajo,True
+green_light_duration,Corta,1.0,157,0.00077,2.7109,157,traffic_density=Baja Y average_speed=Media,True
+green_light_duration,Corta,0.3333,1,5e-06,0.9036,3,traffic_density=Baja Y average_speed=Baja Y queue_length=Extensa Y vehicle_count=Medio,False
+green_light_duration,Corta,0.2689,146,0.000716,0.7289,543,traffic_density=Baja Y queue_length=Extensa Y vehicle_count=Medio Y average_speed=Alta,False
+green_light_duration,Corta,0.2682,1299,0.006368,0.7271,4843,traffic_density=Baja Y queue_length=Moderada Y vehicle_count=Medio Y average_speed=Alta,False
+green_light_duration,Corta,0.2467,1251,0.006132,0.6688,5071,traffic_density=Baja Y queue_length=Corta Y vehicle_count=Medio Y average_speed=Alta,False
+green_light_duration,Corta,0.1314,1041,0.005103,0.3563,7920,average_speed=Media Y vehicle_count=Medio Y queue_length=Corta Y traffic_density=Moderada,False
+green_light_duration,Corta,0.1263,977,0.004789,0.3424,7736,traffic_density=Moderada Y average_speed=Media Y vehicle_count=Medio Y queue_length=Moderada,False
+green_light_duration,Corta,0.1199,103,0.000505,0.3251,859,traffic_density=Moderada Y queue_length=Extensa Y average_speed=Media Y vehicle_count=Medio,False
+green_light_duration,Corta,0.0693,105,0.000515,0.1879,1515,average_speed=Alta Y vehicle_count=Medio Y queue_length=Extensa Y traffic_density=Moderada,False
+green_light_duration,Corta,0.0635,836,0.004098,0.172,13175,average_speed=Alta Y vehicle_count=Medio Y queue_length=Moderada Y traffic_density=Moderada,False
+green_light_duration,Corta,0.0622,867,0.00425,0.1687,13931,average_speed=Alta Y vehicle_count=Medio Y traffic_density=Moderada Y queue_length=Corta,False
+green_light_duration,Corta,0.0418,128,0.000627,0.1133,3063,traffic_density=Moderada Y vehicle_count=Medio Y queue_length=Corta Y average_speed=Baja,False
+green_light_duration,Larga,1.0,1679,0.00823,3.1567,1679,vehicle_count=Alto Y average_speed=Alta Y traffic_density=Alta,True
+green_light_duration,Larga,1.0,8864,0.043451,3.1567,8864,vehicle_count=Alto Y traffic_density=Alta Y average_speed=Media,True
+green_light_duration,Larga,1.0,71,0.000348,3.1567,71,vehicle_count=Alto Y traffic_density=Alta Y queue_length=Moderada,True
+green_light_duration,Larga,1.0,12,5.9e-05,3.1567,12,vehicle_count=Alto Y traffic_density=Alta Y queue_length=Corta,True
+green_light_duration,Larga,0.99,1388,0.006804,3.1252,1402,vehicle_count=Alto Y average_speed=Alta Y queue_length=Moderada Y traffic_density=Moderada,True
+green_light_duration,Larga,0.9866,1398,0.006853,3.1143,1417,vehicle_count=Alto Y average_speed=Alta Y queue_length=Corta Y traffic_density=Moderada,True
+green_light_duration,Larga,0.9851,198,0.000971,3.1096,201,vehicle_count=Alto Y average_speed=Alta Y traffic_density=Moderada Y queue_length=Extensa,True
+green_light_duration,Larga,0.9607,50317,0.246652,3.0326,52375,vehicle_count=Alto Y traffic_density=Alta Y queue_length=Extensa Y average_speed=Baja,True
+green_light_duration,Larga,0.6154,8,3.9e-05,1.9426,13,vehicle_count=Alto Y average_speed=Baja Y queue_length=Moderada Y traffic_density=Moderada,True
+green_light_duration,Larga,0.5661,137,0.000672,1.787,242,vehicle_count=Alto Y queue_length=Extensa Y average_speed=Media Y traffic_density=Moderada,False
+green_light_duration,Larga,0.5476,69,0.000338,1.7287,126,vehicle_count=Alto Y queue_length=Extensa Y traffic_density=Moderada Y average_speed=Baja,False
+green_light_duration,Larga,0.3295,260,0.001275,1.0402,789,vehicle_count=Alto Y queue_length=Corta Y average_speed=Media Y traffic_density=Moderada,False
+green_light_duration,Larga,0.2887,222,0.001088,0.9113,769,vehicle_count=Alto Y queue_length=Moderada Y traffic_density=Moderada Y average_speed=Media,False
+green_light_duration,Media,1.0,4999,0.024505,3.1813,4999,vehicle_count=Medio Y traffic_density=Alta,True
+green_light_duration,Media,0.9886,951,0.004662,3.145,962,vehicle_count=Medio Y average_speed=Baja Y queue_length=Extensa Y traffic_density=Moderada,True
+green_light_duration,Media,0.959,2924,0.014333,3.0509,3049,vehicle_count=Medio Y average_speed=Baja Y queue_length=Moderada Y traffic_density=Moderada,True
+green_light_duration,Media,0.9582,2935,0.014387,3.0484,3063,vehicle_count=Medio Y average_speed=Baja Y traffic_density=Moderada Y queue_length=Corta,True
+green_light_duration,Media,0.9378,13064,0.064039,2.9833,13931,vehicle_count=Medio Y traffic_density=Moderada Y average_speed=Alta Y queue_length=Corta,True
+green_light_duration,Media,0.9365,12339,0.060485,2.9795,13175,vehicle_count=Medio Y traffic_density=Moderada Y average_speed=Alta Y queue_length=Moderada,True
+green_light_duration,Media,0.9307,1410,0.006912,2.9608,1515,vehicle_count=Medio Y queue_length=Extensa Y traffic_density=Moderada Y average_speed=Alta,True
+green_light_duration,Media,0.8801,756,0.003706,2.7999,859,vehicle_count=Medio Y traffic_density=Moderada Y queue_length=Extensa Y average_speed=Media,True
+green_light_duration,Media,0.8737,6759,0.033132,2.7796,7736,vehicle_count=Medio Y traffic_density=Moderada Y queue_length=Moderada Y average_speed=Media,True
+green_light_duration,Media,0.8686,6879,0.033721,2.7632,7920,vehicle_count=Medio Y traffic_density=Moderada Y queue_length=Corta Y average_speed=Media,True
+green_light_duration,Media,0.8,8,3.9e-05,2.5451,10,average_speed=Baja Y traffic_density=Moderada Y vehicle_count=Alto Y queue_length=Corta,True
+green_light_duration,Media,0.7533,3820,0.018725,2.3965,5071,vehicle_count=Medio Y average_speed=Alta Y queue_length=Corta Y traffic_density=Baja,True
+green_light_duration,Media,0.7318,3544,0.017373,2.328,4843,vehicle_count=Medio Y average_speed=Alta Y queue_length=Moderada Y traffic_density=Baja,True
+green_light_duration,Media,0.7311,397,0.001946,2.3259,543,vehicle_count=Medio Y average_speed=Alta Y traffic_density=Baja Y queue_length=Extensa,True
+green_light_duration,Media,0.7113,547,0.002681,2.2629,769,traffic_density=Moderada Y vehicle_count=Alto Y average_speed=Media Y queue_length=Moderada,True
+green_light_duration,Media,0.6705,529,0.002593,2.133,789,traffic_density=Moderada Y vehicle_count=Alto Y average_speed=Media Y queue_length=Corta,True
+green_light_duration,Media,0.6667,2,1e-05,2.1209,3,average_speed=Baja Y vehicle_count=Medio Y traffic_density=Baja Y queue_length=Extensa,True
+green_light_duration,Media,0.4524,57,0.000279,1.4392,126,average_speed=Baja Y traffic_density=Moderada Y vehicle_count=Alto Y queue_length=Extensa,False
+green_light_duration,Media,0.3846,5,2.5e-05,1.2236,13,average_speed=Baja Y vehicle_count=Alto Y traffic_density=Moderada Y queue_length=Moderada,False
+green_light_duration,Media,0.0393,2058,0.010088,0.125,52375,average_speed=Baja Y traffic_density=Alta Y queue_length=Extensa Y vehicle_count=Alto,False
+signal_cycle_adjustment,Extender,1.0,526,0.002578,3.9541,526,vehicle_count=Alto Y traffic_density=Alta Y average_speed=Alta Y queue_length=Corta,True
+signal_cycle_adjustment,Extender,1.0,243,0.001191,3.9541,243,vehicle_count=Alto Y traffic_density=Alta Y average_speed=Alta Y queue_length=Extensa,True
+signal_cycle_adjustment,Extender,1.0,12,5.9e-05,3.9541,12,vehicle_count=Alto Y traffic_density=Alta Y average_speed=Baja Y queue_length=Corta,True
+signal_cycle_adjustment,Extender,0.9989,909,0.004456,3.9498,910,vehicle_count=Alto Y traffic_density=Alta Y average_speed=Alta Y queue_length=Moderada,True
+signal_cycle_adjustment,Extender,0.9913,5935,0.029093,3.9198,5987,vehicle_count=Alto Y traffic_density=Alta Y average_speed=Media Y queue_length=Extensa,True
+signal_cycle_adjustment,Extender,0.9014,64,0.000314,3.5643,71,vehicle_count=Alto Y traffic_density=Alta Y queue_length=Moderada Y average_speed=Baja,True
+signal_cycle_adjustment,Extender,0.8499,1557,0.007632,3.3606,1832,vehicle_count=Alto Y traffic_density=Alta Y queue_length=Moderada Y average_speed=Media,True
+signal_cycle_adjustment,Extender,0.7652,40077,0.196456,3.0257,52375,vehicle_count=Alto Y traffic_density=Alta Y queue_length=Extensa Y average_speed=Baja,True
+signal_cycle_adjustment,Extender,0.712,744,0.003647,2.8152,1045,vehicle_count=Alto Y traffic_density=Alta Y queue_length=Corta Y average_speed=Media,True
+signal_cycle_adjustment,Extender,0.5721,115,0.000564,2.2623,201,vehicle_count=Alto Y average_speed=Alta Y queue_length=Extensa Y traffic_density=Moderada,False
+signal_cycle_adjustment,Extender,0.4779,670,0.003284,1.8896,1402,vehicle_count=Alto Y average_speed=Alta Y queue_length=Moderada Y traffic_density=Moderada,False
+signal_cycle_adjustment,Extender,0.4629,656,0.003216,1.8306,1417,vehicle_count=Alto Y average_speed=Alta Y traffic_density=Moderada Y queue_length=Corta,False
+signal_cycle_adjustment,Mantener,1.0,6,2.9e-05,2.9751,6,average_speed=Media Y vehicle_count=Medio Y traffic_density=Alta Y queue_length=Extensa,True
+signal_cycle_adjustment,Mantener,0.9778,44,0.000216,2.9089,45,average_speed=Media Y vehicle_count=Medio Y traffic_density=Alta Y queue_length=Corta,True
+signal_cycle_adjustment,Mantener,0.9633,1261,0.006181,2.866,1309,average_speed=Baja Y vehicle_count=Medio Y traffic_density=Alta Y queue_length=Corta,True
+signal_cycle_adjustment,Mantener,0.9571,1159,0.005681,2.8473,1211,average_speed=Baja Y traffic_density=Baja Y queue_length=Corta Y vehicle_count=Bajo,True
+signal_cycle_adjustment,Mantener,0.9509,2169,0.010632,2.829,2281,average_speed=Baja Y vehicle_count=Medio Y traffic_density=Alta Y queue_length=Moderada,True
+signal_cycle_adjustment,Mantener,0.9492,1253,0.006142,2.8241,1320,average_speed=Baja Y vehicle_count=Medio Y traffic_density=Alta Y queue_length=Extensa,True
+signal_cycle_adjustment,Mantener,0.9474,36,0.000176,2.8185,38,average_speed=Media Y vehicle_count=Medio Y traffic_density=Alta Y queue_length=Moderada,True
+signal_cycle_adjustment,Mantener,0.9458,1064,0.005216,2.8137,1125,average_speed=Baja Y traffic_density=Baja Y queue_length=Moderada Y vehicle_count=Bajo,True
+signal_cycle_adjustment,Mantener,0.9231,132,0.000647,2.7462,143,average_speed=Baja Y traffic_density=Baja Y vehicle_count=Bajo Y queue_length=Extensa,True
+signal_cycle_adjustment,Mantener,0.904,2769,0.013574,2.6895,3063,average_speed=Baja Y queue_length=Corta Y vehicle_count=Medio Y traffic_density=Moderada,True
+signal_cycle_adjustment,Mantener,0.9026,2752,0.01349,2.6853,3049,average_speed=Baja Y queue_length=Moderada Y vehicle_count=Medio Y traffic_density=Moderada,True
+signal_cycle_adjustment,Mantener,0.8919,13370,0.065539,2.6535,14990,average_speed=Media Y traffic_density=Baja Y vehicle_count=Bajo Y queue_length=Corta,True
+signal_cycle_adjustment,Mantener,0.887,12746,0.06248,2.6388,14370,average_speed=Media Y traffic_density=Baja Y vehicle_count=Bajo Y queue_length=Moderada,True
+signal_cycle_adjustment,Mantener,0.8676,1389,0.006809,2.5811,1601,average_speed=Media Y vehicle_count=Bajo Y traffic_density=Baja Y queue_length=Extensa,True
+signal_cycle_adjustment,Mantener,0.8421,32,0.000157,2.5053,38,average_speed=Baja Y vehicle_count=Bajo Y queue_length=Extensa Y traffic_density=Moderada,True
+signal_cycle_adjustment,Mantener,0.7955,393,0.001926,2.3668,494,average_speed=Baja Y vehicle_count=Bajo Y queue_length=Moderada Y traffic_density=Moderada,True
+signal_cycle_adjustment,Mantener,0.7841,3595,0.017623,2.3327,4585,average_speed=Media Y vehicle_count=Bajo Y queue_length=Corta Y traffic_density=Moderada,True
+signal_cycle_adjustment,Mantener,0.7788,3510,0.017206,2.3169,4507,average_speed=Media Y vehicle_count=Bajo Y queue_length=Moderada Y traffic_density=Moderada,True
+signal_cycle_adjustment,Mantener,0.7679,344,0.001686,2.2844,448,average_speed=Baja Y vehicle_count=Bajo Y traffic_density=Moderada Y queue_length=Corta,True
+signal_cycle_adjustment,Mantener,0.7647,403,0.001975,2.275,527,average_speed=Media Y vehicle_count=Bajo Y traffic_density=Moderada Y queue_length=Extensa,True
+signal_cycle_adjustment,Mantener,0.6965,670,0.003284,2.072,962,average_speed=Baja Y vehicle_count=Medio Y traffic_density=Moderada Y queue_length=Extensa,True
+signal_cycle_adjustment,Mantener,0.4828,3824,0.018745,1.4364,7920,average_speed=Media Y vehicle_count=Medio Y queue_length=Corta Y traffic_density=Moderada,False
+signal_cycle_adjustment,Mantener,0.4738,407,0.001995,1.4096,859,average_speed=Media Y vehicle_count=Medio Y queue_length=Extensa Y traffic_density=Moderada,False
+signal_cycle_adjustment,Mantener,0.4686,3625,0.01777,1.3941,7736,average_speed=Media Y vehicle_count=Medio Y traffic_density=Moderada Y queue_length=Moderada,False
+signal_cycle_adjustment,Mantener,0.2218,11617,0.056946,0.6599,52375,average_speed=Baja Y traffic_density=Alta Y queue_length=Extensa Y vehicle_count=Alto,False
+signal_cycle_adjustment,Reducir,1.0,39078,0.191559,2.4333,39078,average_speed=Alta Y vehicle_count=Medio,True
+signal_cycle_adjustment,Reducir,1.0,24165,0.118456,2.4333,24165,average_speed=Alta Y traffic_density=Baja,True
+signal_cycle_adjustment,Reducir,1.0,13,6.4e-05,2.4333,13,traffic_density=Moderada Y vehicle_count=Alto Y average_speed=Baja Y queue_length=Moderada,True
+signal_cycle_adjustment,Reducir,1.0,10,4.9e-05,2.4333,10,traffic_density=Moderada Y vehicle_count=Alto Y average_speed=Baja Y queue_length=Corta,True
+signal_cycle_adjustment,Reducir,1.0,160,0.000784,2.4333,160,traffic_density=Baja Y vehicle_count=Medio,True
+signal_cycle_adjustment,Reducir,0.9844,757,0.003711,2.3953,769,traffic_density=Moderada Y vehicle_count=Alto Y average_speed=Media Y queue_length=Moderada,True
+signal_cycle_adjustment,Reducir,0.9823,775,0.003799,2.3901,789,traffic_density=Moderada Y vehicle_count=Alto Y average_speed=Media Y queue_length=Corta,True
+signal_cycle_adjustment,Reducir,0.905,219,0.001074,2.202,242,traffic_density=Moderada Y vehicle_count=Alto Y average_speed=Media Y queue_length=Extensa,True
+signal_cycle_adjustment,Reducir,0.7222,91,0.000446,1.7574,126,traffic_density=Moderada Y vehicle_count=Alto Y average_speed=Baja Y queue_length=Extensa,True
+signal_cycle_adjustment,Reducir,0.5371,761,0.00373,1.3068,1417,traffic_density=Moderada Y vehicle_count=Alto Y queue_length=Corta Y average_speed=Alta,False
+signal_cycle_adjustment,Reducir,0.5314,4111,0.020152,1.2931,7736,traffic_density=Moderada Y average_speed=Media Y vehicle_count=Medio Y queue_length=Moderada,False
+signal_cycle_adjustment,Reducir,0.5262,452,0.002216,1.2804,859,traffic_density=Moderada Y queue_length=Extensa Y average_speed=Media Y vehicle_count=Medio,False
+signal_cycle_adjustment,Reducir,0.5221,732,0.003588,1.2704,1402,traffic_density=Moderada Y vehicle_count=Alto Y queue_length=Moderada Y average_speed=Alta,False
+signal_cycle_adjustment,Reducir,0.5172,4096,0.020078,1.2584,7920,traffic_density=Moderada Y average_speed=Media Y vehicle_count=Medio Y queue_length=Corta,False
+signal_cycle_adjustment,Reducir,0.4279,86,0.000422,1.0411,201,traffic_density=Moderada Y vehicle_count=Alto Y queue_length=Extensa Y average_speed=Alta,False
+signal_cycle_adjustment,Reducir,0.3035,292,0.001431,0.7386,962,traffic_density=Moderada Y queue_length=Extensa Y vehicle_count=Medio Y average_speed=Baja,False
+signal_cycle_adjustment,Reducir,0.288,301,0.001475,0.7009,1045,queue_length=Corta Y vehicle_count=Alto Y average_speed=Media Y traffic_density=Alta,False
+signal_cycle_adjustment,Reducir,0.2353,124,0.000608,0.5725,527,traffic_density=Moderada Y queue_length=Extensa Y average_speed=Media Y vehicle_count=Bajo,False
+signal_cycle_adjustment,Reducir,0.2321,104,0.00051,0.5649,448,traffic_density=Moderada Y vehicle_count=Bajo Y queue_length=Corta Y average_speed=Baja,False
+signal_cycle_adjustment,Reducir,0.2212,997,0.004887,0.5383,4507,traffic_density=Moderada Y average_speed=Media Y queue_length=Moderada Y vehicle_count=Bajo,False
+signal_cycle_adjustment,Reducir,0.2159,990,0.004853,0.5254,4585,traffic_density=Moderada Y average_speed=Media Y queue_length=Corta Y vehicle_count=Bajo,False
+signal_cycle_adjustment,Reducir,0.2045,101,0.000495,0.4975,494,vehicle_count=Bajo Y traffic_density=Moderada Y queue_length=Moderada Y average_speed=Baja,False
+signal_cycle_adjustment,Reducir,0.1579,6,2.9e-05,0.3842,38,vehicle_count=Bajo Y traffic_density=Moderada Y queue_length=Extensa Y average_speed=Baja,False
+signal_cycle_adjustment,Reducir,0.1501,275,0.001348,0.3653,1832,queue_length=Moderada Y average_speed=Media Y vehicle_count=Alto Y traffic_density=Alta,False
+signal_cycle_adjustment,Reducir,0.1324,212,0.001039,0.3222,1601,traffic_density=Baja Y queue_length=Extensa Y average_speed=Media Y vehicle_count=Bajo,False
+signal_cycle_adjustment,Reducir,0.113,1624,0.007961,0.275,14370,traffic_density=Baja Y average_speed=Media Y queue_length=Moderada Y vehicle_count=Bajo,False
+signal_cycle_adjustment,Reducir,0.1081,1620,0.007941,0.263,14990,traffic_density=Baja Y average_speed=Media Y queue_length=Corta Y vehicle_count=Bajo,False
+signal_cycle_adjustment,Reducir,0.0986,7,3.4e-05,0.2399,71,average_speed=Baja Y queue_length=Moderada Y traffic_density=Alta Y vehicle_count=Alto,False
+signal_cycle_adjustment,Reducir,0.0974,297,0.001456,0.237,3049,traffic_density=Moderada Y queue_length=Moderada Y vehicle_count=Medio Y average_speed=Baja,False
+signal_cycle_adjustment,Reducir,0.096,294,0.001441,0.2336,3063,traffic_density=Moderada Y queue_length=Corta Y vehicle_count=Medio Y average_speed=Baja,False
+signal_cycle_adjustment,Reducir,0.0769,11,5.4e-05,0.1872,143,traffic_density=Baja Y queue_length=Extensa Y vehicle_count=Bajo Y average_speed=Baja,False
+signal_cycle_adjustment,Reducir,0.0542,61,0.000299,0.1319,1125,traffic_density=Baja Y queue_length=Moderada Y vehicle_count=Bajo Y average_speed=Baja,False
+signal_cycle_adjustment,Reducir,0.0526,2,1e-05,0.1281,38,vehicle_count=Medio Y queue_length=Moderada Y average_speed=Media Y traffic_density=Alta,False
+signal_cycle_adjustment,Reducir,0.0508,67,0.000328,0.1235,1320,vehicle_count=Medio Y queue_length=Extensa Y average_speed=Baja Y traffic_density=Alta,False
+signal_cycle_adjustment,Reducir,0.0491,112,0.000549,0.1195,2281,vehicle_count=Medio Y queue_length=Moderada Y traffic_density=Alta Y average_speed=Baja,False
+signal_cycle_adjustment,Reducir,0.0429,52,0.000255,0.1045,1211,traffic_density=Baja Y queue_length=Corta Y vehicle_count=Bajo Y average_speed=Baja,False
+signal_cycle_adjustment,Reducir,0.0367,48,0.000235,0.0892,1309,vehicle_count=Medio Y average_speed=Baja Y traffic_density=Alta Y queue_length=Corta,False
+signal_cycle_adjustment,Reducir,0.0222,1,5e-06,0.0541,45,vehicle_count=Medio Y queue_length=Corta Y traffic_density=Alta Y average_speed=Media,False
+signal_cycle_adjustment,Reducir,0.013,681,0.003338,0.0316,52375,average_speed=Baja Y queue_length=Extensa Y traffic_density=Alta Y vehicle_count=Alto,False
