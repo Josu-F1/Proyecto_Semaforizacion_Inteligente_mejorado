@@ -23,9 +23,10 @@ np.random.seed(RANDOM_STATE)
 print('Librerías cargadas correctamente (incluye DEAP para el Algoritmo Genético).')
 
 
-DATA_PATH = Path('../data/smart_city_traffic_mobility.csv')
-RUTA_PRISM = Path('../01_Reglas_PRISM')
-RUTA_DIFUSO = Path('../02_Sistema_Difuso_MIMO')
+BASE_DIR = Path(__file__).parent.resolve()
+DATA_PATH = BASE_DIR / '../data/smart_city_traffic_mobility.csv'
+RUTA_PRISM = BASE_DIR / '../01_Reglas_PRISM'
+RUTA_DIFUSO = BASE_DIR / '../02_Sistema_Difuso_MIMO'
 
 df = pd.read_csv(DATA_PATH, sep=';')
 df['costo_ambiental'] = df['emission_estimate'] + df['air_quality_index']
