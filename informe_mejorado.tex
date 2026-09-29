@@ -8,12 +8,12 @@
 \usepackage[spanish]{babel}
 
 \usepackage[
-    a4paper,
-    top=2.5cm,
-    bottom=2.5cm,
-    left=3cm,
-    right=3cm,
-    headheight=70pt
+ a4paper,
+ top=2.5cm,
+ bottom=2.5cm,
+ left=3cm,
+ right=3cm,
+ headheight=70pt
 ]{geometry}
 
 % ==========================================================
@@ -45,13 +45,13 @@
 % ==========================================================
 
 \hypersetup{
-    colorlinks=true,
-    linkcolor=black,
-    filecolor=black,
-    urlcolor=blue,
-    citecolor=black,
-    pdftitle={Sistema Difuso MIMO y Algoritmos Geneticos para Semaforizacion Inteligente},
-    pdfauthor={Marlon Guevara}
+ colorlinks=true,
+ linkcolor=black,
+ filecolor=black,
+ urlcolor=blue,
+ citecolor=black,
+ pdftitle={Sistema Difuso MIMO y Algoritmos Geneticos para Semaforizacion Inteligente},
+ pdfauthor={Marlon Guevara}
 }
 
 % ==========================================================
@@ -69,25 +69,25 @@
 \fancyhf{}
 
 \fancyhead[C]{%
-    \begin{minipage}[c]{2.5cm}
-        \centering
-        \textbf{\includegraphics[width=1.2cm]{imagenes/uta.png}}
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[c]{8cm}
-        \centering
-        \small \textbf{UNIVERSIDAD TÉCNICA DE AMBATO}\\[0.1cm]
-        \scriptsize \textit{
-        FACULTAD DE INGENIERÍA EN SISTEMAS,
-        ELECTRÓNICA E INDUSTRIAL}\\[0.1cm]
-        \scriptsize \textbf{CARRERA DE SOFTWARE}\\[0.1cm]
-        \scriptsize \textbf{CICLO ACADÉMICO: AGOSTO -- DICIEMBRE 2026}
-    \end{minipage}%
-    \hfill
-    \begin{minipage}[c]{2.5cm}
-        \centering
-        \textbf{\includegraphics[width=1.2cm]{imagenes/fisei.png}}
-    \end{minipage}%
+ \begin{minipage}[c]{2.5cm}
+ \centering
+ \textbf{\includegraphics[width=1.2cm]{imagenes/uta.png}}
+ \end{minipage}%
+ \hfill
+ \begin{minipage}[c]{8cm}
+ \centering
+ \small \textbf{UNIVERSIDAD TÉCNICA DE AMBATO}\\[0.1cm]
+ \scriptsize \textit{
+ FACULTAD DE INGENIERÍA EN SISTEMAS,
+ ELECTRÓNICA E INDUSTRIAL}\\[0.1cm]
+ \scriptsize \textbf{CARRERA DE SOFTWARE}\\[0.1cm]
+ \scriptsize \textbf{CICLO ACADÉMICO: AGOSTO -- DICIEMBRE 2026}
+ \end{minipage}%
+ \hfill
+ \begin{minipage}[c]{2.5cm}
+ \centering
+ \textbf{\includegraphics[width=1.2cm]{imagenes/fisei.png}}
+ \end{minipage}%
 }
 
 \fancyfoot[C]{\thepage}
@@ -150,8 +150,8 @@ Inteligencia Artificial
 \textbf{Alumno participante:}
 
 \begin{itemize}
-    \item Guevara Panimboza Marlon Steven
-    \item Fiallos Yanza Jonathan Josue
+ \item Guevara Panimboza Marlon Steven
+ \item Fiallos Yanza Jonathan Josue
 \end{itemize}
 
 \end{flushleft}
@@ -230,39 +230,39 @@ inteligente estructurado en tres fases metodológicas basadas en el
 análisis del dataset de movilidad:
 
 \begin{itemize}
-    \item \textbf{Fase 1 -- Extracción de reglas y modelado de entradas:}
-    se parte del análisis de cuatro variables clave de entrada del
-    tráfico: densidad vehicular (\texttt{traffic\_density}), longitud de
-    la cola (\texttt{queue\_length}), conteo total de vehículos
-    (\texttt{vehicle\_count}) y velocidad promedio
-    (\texttt{average\_speed}), para definir reglas de control lógicas que
-    gobiernen dos salidas críticas: la duración del verde
-    (\texttt{green\_light\_duration}) y el ajuste global del ciclo
-    (\texttt{signal\_cycle\_adjustment}). En este proyecto, dicha
-    extracción de reglas se realiza aplicando el \textbf{algoritmo
-    PRISM}, empleado ya en la guía práctica previa del curso.
+ \item \textbf{Fase 1 -- Extracción de reglas y modelado de entradas:}
+ se parte del análisis de cuatro variables clave de entrada del
+ tráfico: densidad vehicular (\texttt{traffic\_density}), longitud de
+ la cola (\texttt{queue\_length}), conteo total de vehículos
+ (\texttt{vehicle\_count}) y velocidad promedio
+ (\texttt{average\_speed}), para definir reglas de control lógicas que
+ gobiernen dos salidas críticas: la duración del verde
+ (\texttt{green\_light\_duration}) y el ajuste global del ciclo
+ (\texttt{signal\_cycle\_adjustment}). En este proyecto, dicha
+ extracción de reglas se realiza aplicando el \textbf{algoritmo
+ PRISM}, empleado ya en la guía práctica previa del curso.
 
-    \item \textbf{Fase 2 -- Lógica difusa (MIMO):} dado que los
-    parámetros del tráfico son inherentemente imprecisos (por ejemplo,
-    definir cuándo una cola es ``extensa'' o cuándo el tráfico es
-    ``denso''), se implementará un sistema difuso de múltiples entradas y
-    salidas para modelar el razonamiento humano y suavizar la toma de
-    decisiones del semáforo.
+ \item \textbf{Fase 2 -- Lógica difusa (MIMO):} dado que los
+ parámetros del tráfico son inherentemente imprecisos (por ejemplo,
+ definir cuándo una cola es ``extensa'' o cuándo el tráfico es
+ ``denso''), se implementará un sistema difuso de múltiples entradas y
+ salidas para modelar el razonamiento humano y suavizar la toma de
+ decisiones del semáforo.
 
-    \item \textbf{Fase 3 -- Optimización evolutiva (Algoritmos
-    Genéticos):} las reglas y funciones de pertenencia iniciales pueden
-    no ser óptimas. Por ello, se aplicará un Algoritmo Genético (AG) cuya
-    función de aptitud (\textit{fitness}) tendrá como objetivo evolutivo
-    minimizar las emisiones y el índice de aire contaminado:
+ \item \textbf{Fase 3 -- Optimización evolutiva (Algoritmos
+ Genéticos):} las reglas y funciones de pertenencia iniciales pueden
+ no ser óptimas. Por ello, se aplicará un Algoritmo Genético (AG) cuya
+ función de aptitud (\textit{fitness}) tendrá como objetivo evolutivo
+ minimizar las emisiones y el índice de aire contaminado:
 
-    \begin{equation}
-        \text{Minimizar } f(x) = \texttt{emission\_estimation} +
-        \texttt{air\_quality\_index}
-    \end{equation}
+ \begin{equation}
+ \text{Minimizar } f(x) = \texttt{emission\_estimation} +
+ \texttt{air\_quality\_index}
+ \end{equation}
 
-    El AG evolucionará iterativamente los parámetros del sistema hasta
-    hallar la configuración óptima que reduzca el impacto ecológico en la
-    zona.
+ El AG evolucionará iterativamente los parámetros del sistema hasta
+ hallar la configuración óptima que reduzca el impacto ecológico en la
+ zona.
 \end{itemize}
 
 % ==========================================================
@@ -282,21 +282,21 @@ intersecciones urbanas de alta densidad vehicular.
 \subsection{Objetivos específicos}
 
 \begin{itemize}
-    \item Aplicar el algoritmo PRISM sobre el conjunto de variables de
-    tráfico (\texttt{traffic\_density}, \texttt{queue\_length},
-    \texttt{vehicle\_count}, \texttt{average\_speed}) para obtener reglas
-    de clasificación que orienten el diseño de las reglas difusas.
-    \item Definir las funciones de pertenencia y los conjuntos
-    lingüísticos de las cuatro variables de entrada y las dos variables
-    de salida del sistema.
-    \item Construir la base de reglas difusas del sistema MIMO con
-    enfoque ambiental, priorizando la reducción de tiempos de ralentí y
-    emisiones.
-    \item Diseñar la función de aptitud del Algoritmo Genético orientada
-    a minimizar conjuntamente \texttt{emission\_estimation} y
-    \texttt{air\_quality\_index}.
-    \item Evaluar el comportamiento del sistema optimizado frente al
-    esquema estático tradicional de semaforización.
+ \item Aplicar el algoritmo PRISM sobre el conjunto de variables de
+ tráfico (\texttt{traffic\_density}, \texttt{queue\_length},
+ \texttt{vehicle\_count}, \texttt{average\_speed}) para obtener reglas
+ de clasificación que orienten el diseño de las reglas difusas.
+ \item Definir las funciones de pertenencia y los conjuntos
+ lingüísticos de las cuatro variables de entrada y las dos variables
+ de salida del sistema.
+ \item Construir la base de reglas difusas del sistema MIMO con
+ enfoque ambiental, priorizando la reducción de tiempos de ralentí y
+ emisiones.
+ \item Diseñar la función de aptitud del Algoritmo Genético orientada
+ a minimizar conjuntamente \texttt{emission\_estimation} y
+ \texttt{air\_quality\_index}.
+ \item Evaluar el comportamiento del sistema optimizado frente al
+ esquema estático tradicional de semaforización.
 \end{itemize}
 
 % ==========================================================
@@ -351,10 +351,10 @@ variables de salida definidas en la propuesta original del proyecto.
 \toprule
 \textbf{Variable} & \textbf{Nombre técnico} & \textbf{Conjuntos lingüísticos} \\
 \midrule
-Densidad vehicular   & \texttt{traffic\_density} & Baja, Moderada, Alta \\
-Longitud de la cola  & \texttt{queue\_length}    & Corta, Moderada, Extensa \\
-Conteo de vehículos  & \texttt{vehicle\_count}   & Bajo, Medio, Alto \\
-Velocidad promedio   & \texttt{average\_speed}   & Baja, Media, Alta \\
+Densidad vehicular & \texttt{traffic\_density} & Baja, Moderada, Alta \\
+Longitud de la cola & \texttt{queue\_length} & Corta, Moderada, Extensa \\
+Conteo de vehículos & \texttt{vehicle\_count} & Bajo, Medio, Alto \\
+Velocidad promedio & \texttt{average\_speed} & Baja, Media, Alta \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -368,7 +368,7 @@ Velocidad promedio   & \texttt{average\_speed}   & Baja, Media, Alta \\
 \toprule
 \textbf{Variable} & \textbf{Nombre técnico} & \textbf{Conjuntos lingüísticos} \\
 \midrule
-Duración de luz verde     & \texttt{green\_light\_duration}     & Corta, Media, Larga \\
+Duración de luz verde & \texttt{green\_light\_duration} & Corta, Media, Larga \\
 Ajuste del ciclo semafórico & \texttt{signal\_cycle\_adjustment} & Reducir, Mantener, Extender \\
 \bottomrule
 \end{tabular}
@@ -420,9 +420,9 @@ Para la extracción de las reglas que componen la base de conocimiento del siste
 \begin{lstlisting}[language=Python, caption={Extracto de código de inicialización y ejecución del algoritmo PRISM (\texttt{Extraccion\_Reglas\_PRISM.ipynb})}, label={lst:prism}]
 # Instanciación y entrenamiento del modelo PRISM
 prism_gld = SecuencialCoveringPRISM(
-    min_coverage=5,
-    min_accuracy=0.85,
-    max_rules=20
+ min_coverage=5,
+ min_accuracy=0.85,
+ max_rules=20
 )
 
 # Ajuste del modelo sobre el conjunto de datos de entrenamiento
@@ -431,7 +431,7 @@ prism_gld.fit(X_train_binned, y_train_gld_binned)
 # Extracción y guardado de las reglas en formato JSON
 reglas_gld = prism_gld.get_rules()
 with open('reglas_prism_green_light_duration.json', 'w') as f:
-    json.dump(reglas_gld, f, indent=4)
+ json.dump(reglas_gld, f, indent=4)
 \end{lstlisting}
 El código muestra la definición de hiperparámetros críticos como \texttt{min\_coverage} y \texttt{min\_accuracy}, asegurando la fiabilidad de las reglas extraídas que posteriormente alimentarán el sistema difuso.
 
@@ -454,11 +454,11 @@ cuatro variables de entrada y la variable de salida
 \toprule
 \textbf{Variable} & \textbf{Mínimo} & \textbf{Máximo} & \textbf{Media} \\
 \midrule
-\texttt{traffic\_density} (veh/zona)   & 9.0   & 378.5   & 90.66 \\
-\texttt{queue\_length} (m)             & 0.0   & 10111.6 & 121.47 \\
-\texttt{vehicle\_count}                & 54    & 3162    & -- \\
-\texttt{average\_speed} (km/h)         & 5.0   & 90.0    & -- \\
-\texttt{green\_light\_duration} (s)    & 18    & 84      & -- \\
+\texttt{traffic\_density} (veh/zona) & 9.0 & 378.5 & 90.66 \\
+\texttt{queue\_length} (m) & 0.0 & 10111.6 & 121.47 \\
+\texttt{vehicle\_count} & 54 & 3162 & -- \\
+\texttt{average\_speed} (km/h) & 5.0 & 90.0 & -- \\
+\texttt{green\_light\_duration} (s) & 18 & 84 & -- \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -478,10 +478,10 @@ referencia inicial para ubicar las funciones de pertenencia difusas.
 \toprule
 \textbf{Variable} & \textbf{Baja/Corta/Bajo} & \textbf{Moderada/Medio} & \textbf{Alta/Extensa/Alto} \\
 \midrule
-\texttt{traffic\_density}   & $\leq 23.8$  & $23.8 < x \leq 122.3$ & $> 122.3$ \\
-\texttt{queue\_length}      & $\leq 9.9$   & $9.9 < x \leq 44.4$   & $> 44.4$  \\
-\texttt{vehicle\_count}     & $\leq 204$   & $204 < x \leq 983$    & $> 983$   \\
-\texttt{average\_speed}     & $\leq 34.2$  & $34.2 < x \leq 53.6$  & $> 53.6$  \\
+\texttt{traffic\_density} & $\leq 23.8$ & $23.8 < x \leq 122.3$ & $> 122.3$ \\
+\texttt{queue\_length} & $\leq 9.9$ & $9.9 < x \leq 44.4$ & $> 44.4$ \\
+\texttt{vehicle\_count} & $\leq 204$ & $204 < x \leq 983$ & $> 983$ \\
+\texttt{average\_speed} & $\leq 34.2$ & $34.2 < x \leq 53.6$ & $> 53.6$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -509,18 +509,18 @@ instancias.
 \toprule
 \textbf{Condición} & \textbf{N(A)} & \textbf{N(A$\land$Larga)} & \textbf{Confianza} & \textbf{Cobertura} & \textbf{Soporte} & \textbf{Lift} \\
 \midrule
-\textbf{Si vehicle\_count = Alto then Larga}   & \textbf{67\,970} & \textbf{64\,625} & \textbf{0.9508} & \textbf{64\,625} & \textbf{0.3168} & \textbf{3.00} \\
-Si traffic\_density = Alta then Larga          & 67\,968 & 60\,932 & 0.8965 & 60\,932 & 0.2987 & 2.83 \\
-Si queue\_length = Extensa then Larga          & 67\,971 & 56\,951 & 0.8379 & 56\,951 & 0.2792 & 2.64 \\
-Si average\_speed = Baja then Larga            & 68\,053 & 50\,479 & 0.7418 & 50\,479 & 0.2474 & 2.34 \\
-Si average\_speed = Media then Larga           & 68\,005 & 9\,483  & 0.1394 & 9\,483  & 0.0465 & 0.44 \\
-Si average\_speed = Alta then Larga            & 67\,942 & 4\,663  & 0.0686 & 4\,663  & 0.0229 & 0.22 \\
-Si queue\_length = Moderada then Larga         & 67\,829 & 4\,431  & 0.0653 & 4\,431  & 0.0217 & 0.21 \\
-Si traffic\_density = Moderada then Larga      & 67\,810 & 3\,693  & 0.0545 & 3\,693  & 0.0181 & 0.17 \\
-Si queue\_length = Corta then Larga            & 68\,200 & 3\,243  & 0.0476 & 3\,243  & 0.0159 & 0.15 \\
-Si traffic\_density = Baja then Larga          & 68\,222 & 0       & 0.0000 & 0       & 0.0000 & 0.00 \\
-Si vehicle\_count = Bajo then Larga            & 68\,204 & 0       & 0.0000 & 0       & 0.0000 & 0.00 \\
-Si vehicle\_count = Medio then Larga           & 67\,826 & 0       & 0.0000 & 0       & 0.0000 & 0.00 \\
+\textbf{Si vehicle\_count = Alto then Larga} & \textbf{67\,970} & \textbf{64\,625} & \textbf{0.9508} & \textbf{64\,625} & \textbf{0.3168} & \textbf{3.00} \\
+Si traffic\_density = Alta then Larga & 67\,968 & 60\,932 & 0.8965 & 60\,932 & 0.2987 & 2.83 \\
+Si queue\_length = Extensa then Larga & 67\,971 & 56\,951 & 0.8379 & 56\,951 & 0.2792 & 2.64 \\
+Si average\_speed = Baja then Larga & 68\,053 & 50\,479 & 0.7418 & 50\,479 & 0.2474 & 2.34 \\
+Si average\_speed = Media then Larga & 68\,005 & 9\,483 & 0.1394 & 9\,483 & 0.0465 & 0.44 \\
+Si average\_speed = Alta then Larga & 67\,942 & 4\,663 & 0.0686 & 4\,663 & 0.0229 & 0.22 \\
+Si queue\_length = Moderada then Larga & 67\,829 & 4\,431 & 0.0653 & 4\,431 & 0.0217 & 0.21 \\
+Si traffic\_density = Moderada then Larga & 67\,810 & 3\,693 & 0.0545 & 3\,693 & 0.0181 & 0.17 \\
+Si queue\_length = Corta then Larga & 68\,200 & 3\,243 & 0.0476 & 3\,243 & 0.0159 & 0.15 \\
+Si traffic\_density = Baja then Larga & 68\,222 & 0 & 0.0000 & 0 & 0.0000 & 0.00 \\
+Si vehicle\_count = Bajo then Larga & 68\,204 & 0 & 0.0000 & 0 & 0.0000 & 0.00 \\
+Si vehicle\_count = Medio then Larga & 67\,826 & 0 & 0.0000 & 0 & 0.0000 & 0.00 \\
 \bottomrule
 \end{tabular}
 }
@@ -550,14 +550,14 @@ evaluado únicamente sobre el subconjunto ya cubierto.
 \toprule
 \textbf{Condición (vehicle\_count=Alto AND ...)} & \textbf{N(A)} & \textbf{N(A$\land$Larga)} & \textbf{Confianza} & \textbf{Cobertura} & \textbf{Soporte} & \textbf{Lift} \\
 \midrule
-\textbf{average\_speed = Alta}    & \textbf{4\,699}  & \textbf{4\,663}  & \textbf{0.9923} & \textbf{4\,663}  & \textbf{0.0229} & \textbf{3.13} \\
-traffic\_density = Alta           & 62\,990 & 60\,932 & 0.9673 & 60\,932 & 0.2987 & 3.05 \\
-queue\_length = Extensa           & 59\,174 & 56\,951 & 0.9624 & 56\,951 & 0.2792 & 3.04 \\
-average\_speed = Baja             & 52\,607 & 50\,479 & 0.9595 & 50\,479 & 0.2474 & 3.03 \\
-average\_speed = Media            & 10\,664 & 9\,483  & 0.8893 & 9\,483  & 0.0465 & 2.81 \\
-queue\_length = Moderada          & 4\,997  & 4\,431  & 0.8867 & 4\,431  & 0.0217 & 2.80 \\
-queue\_length = Corta             & 3\,799  & 3\,243  & 0.8536 & 3\,243  & 0.0159 & 2.69 \\
-traffic\_density = Moderada       & 4\,980  & 3\,693  & 0.7416 & 3\,693  & 0.0181 & 2.34 \\
+\textbf{average\_speed = Alta} & \textbf{4\,699} & \textbf{4\,663} & \textbf{0.9923} & \textbf{4\,663} & \textbf{0.0229} & \textbf{3.13} \\
+traffic\_density = Alta & 62\,990 & 60\,932 & 0.9673 & 60\,932 & 0.2987 & 3.05 \\
+queue\_length = Extensa & 59\,174 & 56\,951 & 0.9624 & 56\,951 & 0.2792 & 3.04 \\
+average\_speed = Baja & 52\,607 & 50\,479 & 0.9595 & 50\,479 & 0.2474 & 3.03 \\
+average\_speed = Media & 10\,664 & 9\,483 & 0.8893 & 9\,483 & 0.0465 & 2.81 \\
+queue\_length = Moderada & 4\,997 & 4\,431 & 0.8867 & 4\,431 & 0.0217 & 2.80 \\
+queue\_length = Corta & 3\,799 & 3\,243 & 0.8536 & 3\,243 & 0.0159 & 2.69 \\
+traffic\_density = Moderada & 4\,980 & 3\,693 & 0.7416 & 3\,693 & 0.0181 & 2.34 \\
 \bottomrule
 \end{tabular}
 }
@@ -591,11 +591,11 @@ atributo.
 \toprule
 \textbf{Condición (... AND)} & \textbf{N(A)} & \textbf{N(A$\land$Larga)} & \textbf{Confianza} & \textbf{Cobertura} & \textbf{Soporte} & \textbf{Lift} \\
 \midrule
-\textbf{traffic\_density = Alta}  & \textbf{1\,676} & \textbf{1\,676} & \textbf{1.0000} & \textbf{1\,676} & \textbf{0.0082} & \textbf{3.16} \\
-queue\_length = Moderada          & 2\,312 & 2\,298 & 0.9939 & 2\,298 & 0.0113 & 3.14 \\
-queue\_length = Extensa           & 444   & 441   & 0.9932 & 441   & 0.0022 & 3.14 \\
-queue\_length = Corta             & 1\,943 & 1\,924 & 0.9902 & 1\,924 & 0.0094 & 3.13 \\
-traffic\_density = Moderada       & 3\,023 & 2\,987 & 0.9881 & 2\,987 & 0.0146 & 3.12 \\
+\textbf{traffic\_density = Alta} & \textbf{1\,676} & \textbf{1\,676} & \textbf{1.0000} & \textbf{1\,676} & \textbf{0.0082} & \textbf{3.16} \\
+queue\_length = Moderada & 2\,312 & 2\,298 & 0.9939 & 2\,298 & 0.0113 & 3.14 \\
+queue\_length = Extensa & 444 & 441 & 0.9932 & 441 & 0.0022 & 3.14 \\
+queue\_length = Corta & 1\,943 & 1\,924 & 0.9902 & 1\,924 & 0.0094 & 3.13 \\
+traffic\_density = Moderada & 3\,023 & 2\,987 & 0.9881 & 2\,987 & 0.0146 & 3.12 \\
 \bottomrule
 \end{tabular}
 }
@@ -650,27 +650,27 @@ permita aplicar PRISM también sobre \texttt{signal\_cycle\_adjustment}.
 \section{Metodología general}
 
 \begin{enumerate}
-    \item \textbf{Extracción de reglas (PRISM):} construcción del
-    dataset discretizado y ejecución iterativa de PRISM para cada clase
-    objetivo de interés (\texttt{green\_light\_duration} y
-    \texttt{signal\_cycle\_adjustment}).
-    \item \textbf{Diseño del sistema difuso MIMO:} definición de las
-    funciones de pertenencia para las cuatro entradas y las dos salidas,
-    e integración de la base de reglas obtenida en el paso anterior junto
-    con las reglas cualitativas ya propuestas.
-    \item \textbf{Simulación del sistema base:} evaluación del
-    comportamiento del sistema difuso sin optimizar, registrando
-    \texttt{emission\_estimation} y \texttt{air\_quality\_index} para un
-    conjunto de escenarios de prueba.
-    \item \textbf{Optimización con Algoritmo Genético:} codificación de
-    los parámetros de las funciones de pertenencia como cromosomas,
-    definición de la función de aptitud
-    $f(x)=\texttt{emission\_estimation}+\texttt{air\_quality\_index}$, y
-    ejecución del ciclo evolutivo (selección, cruce, mutación) hasta
-    convergencia.
-    \item \textbf{Comparación de resultados:} contraste entre el esquema
-    estático tradicional, el sistema difuso base y el sistema difuso
-    optimizado por el AG, en términos de emisiones y calidad del aire.
+ \item \textbf{Extracción de reglas (PRISM):} construcción del
+ dataset discretizado y ejecución iterativa de PRISM para cada clase
+ objetivo de interés (\texttt{green\_light\_duration} y
+ \texttt{signal\_cycle\_adjustment}).
+ \item \textbf{Diseño del sistema difuso MIMO:} definición de las
+ funciones de pertenencia para las cuatro entradas y las dos salidas,
+ e integración de la base de reglas obtenida en el paso anterior junto
+ con las reglas cualitativas ya propuestas.
+ \item \textbf{Simulación del sistema base:} evaluación del
+ comportamiento del sistema difuso sin optimizar, registrando
+ \texttt{emission\_estimation} y \texttt{air\_quality\_index} para un
+ conjunto de escenarios de prueba.
+ \item \textbf{Optimización con Algoritmo Genético:} codificación de
+ los parámetros de las funciones de pertenencia como cromosomas,
+ definición de la función de aptitud
+ $f(x)=\texttt{emission\_estimation}+\texttt{air\_quality\_index}$, y
+ ejecución del ciclo evolutivo (selección, cruce, mutación) hasta
+ convergencia.
+ \item \textbf{Comparación de resultados:} contraste entre el esquema
+ estático tradicional, el sistema difuso base y el sistema difuso
+ optimizado por el AG, en términos de emisiones y calidad del aire.
 \end{enumerate}
 
 % ==========================================================
@@ -683,26 +683,26 @@ permita aplicar PRISM también sobre \texttt{signal\_cycle\_adjustment}.
 \vspace{0.5cm}
 El diseño del sistema difuso MIMO se basa en las reglas previamente extraídas y requiere la definición precisa de las funciones de pertenencia para las variables de entrada y salida. 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{02_Sistema_Difuso_MIMO/funciones_pertenencia_entrada_normalizadas.png}
-    \caption{Funciones de pertenencia normalizadas para las variables de entrada del sistema difuso.}
-    \label{fig:mf_entradas}
+ \centering
+ \includegraphics[width=0.8\textwidth]{02_Sistema_Difuso_MIMO/funciones_pertenencia_entrada_normalizadas.png}
+ \caption{Funciones de pertenencia normalizadas para las variables de entrada del sistema difuso.}
+ \label{fig:mf_entradas}
 \end{figure}
 Como se observa en la Figura \ref{fig:mf_entradas}, las variables de entrada han sido normalizadas para garantizar una mayor estabilidad numérica y generalización del sistema. La selección de formas triangulares y trapezoidales responde a la necesidad de mantener un bajo costo computacional en la inferencia.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{02_Sistema_Difuso_MIMO/superficie_decision_gld.png}
-    \caption{Superficie de decisión generada por el sistema de inferencia difuso para la variable \texttt{Green\_Light\_Duration}.}
-    \label{fig:superficie}
+ \centering
+ \includegraphics[width=0.8\textwidth]{02_Sistema_Difuso_MIMO/superficie_decision_gld.png}
+ \caption{Superficie de decisión generada por el sistema de inferencia difuso para la variable \texttt{Green\_Light\_Duration}.}
+ \label{fig:superficie}
 \end{figure}
 La Figura \ref{fig:superficie} muestra la superficie de decisión obtenida tras evaluar el conjunto de reglas. La suavidad de la superficie evidencia la correcta configuración del motor de inferencia (Mamdani), justificando su uso para obtener transiciones progresivas en los tiempos semafóricos, evitando cambios bruscos.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{02_Sistema_Difuso_MIMO/dispersión_real_vs_difuso.png}
-    \caption{Gráfico de dispersión comparando los valores reales frente a las predicciones del sistema difuso.}
-    \label{fig:dispersion_mimo}
+ \centering
+ \includegraphics[width=0.8\textwidth]{02_Sistema_Difuso_MIMO/dispersión_real_vs_difuso.png}
+ \caption{Gráfico de dispersión comparando los valores reales frente a las predicciones del sistema difuso.}
+ \label{fig:dispersion_mimo}
 \end{figure}
 Para validar la precisión del modelo inicial, la Figura \ref{fig:dispersion_mimo} ilustra la correlación entre las salidas del sistema difuso y los datos reales, demostrando una adherencia aceptable antes del proceso de optimización fina.
 
@@ -798,28 +798,28 @@ CROSSOVER_RATE = 0.8
 
 # Bucle principal de evolución
 for gen in range(GENERATIONS):
-    # Selección de padres
-    parents = selector.select(population)
-    # Cruzamiento y mutación
-    offspring = crossover.apply(parents, CROSSOVER_RATE)
-    offspring = mutator.apply(offspring, MUTATION_RATE)
-    # Evaluación del fitness basado en MSE
-    fitness = evaluator.evaluate(offspring, X_val, y_val)
+ # Selección de padres
+ parents = selector.select(population)
+ # Cruzamiento y mutación
+ offspring = crossover.apply(parents, CROSSOVER_RATE)
+ offspring = mutator.apply(offspring, MUTATION_RATE)
+ # Evaluación del fitness basado en MSE
+ fitness = evaluator.evaluate(offspring, X_val, y_val)
 \end{lstlisting}
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{03_Optimizacion_Genetica/curva_convergencia_ag.png}
-    \caption{Curva de convergencia del Algoritmo Genético a lo largo de las generaciones.}
-    \label{fig:convergencia_ag}
+ \centering
+ \includegraphics[width=0.8\textwidth]{03_Optimizacion_Genetica/curva_convergencia_ag.png}
+ \caption{Curva de convergencia del Algoritmo Genético a lo largo de las generaciones.}
+ \label{fig:convergencia_ag}
 \end{figure}
 Tal como se detalla en la Figura \ref{fig:convergencia_ag}, el error medio cuadrado (MSE) se reduce significativamente en las primeras generaciones y converge de forma estable, lo cual justifica los parámetros elegidos (tamaño de población y tasa de mutación) asegurando que no se caiga en óptimos locales prematuros.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{03_Optimizacion_Genetica/comparacion_esquemas.png}
-    \caption{Comparación de esquemas de tráfico: Sistema base vs. Sistema Optimizado.}
-    \label{fig:comparacion}
+ \centering
+ \includegraphics[width=0.8\textwidth]{03_Optimizacion_Genetica/comparacion_esquemas.png}
+ \caption{Comparación de esquemas de tráfico: Sistema base vs. Sistema Optimizado.}
+ \label{fig:comparacion}
 \end{figure}
 La Figura \ref{fig:comparacion} ilustra el rendimiento en simulación, evidenciando una reducción notable en los tiempos de espera y la longitud de las colas vehiculares al emplear el sistema optimizado en comparación con la lógica semafórica tradicional.
 
@@ -864,14 +864,14 @@ $\boldsymbol{\theta}^{*} = \arg\min_{\boldsymbol{\theta}} \phi(\boldsymbol{\thet
 El esquema de selección generacional implementado combina:
 
 \begin{itemize}
-    \item \textbf{Elitismo (15\%):} el subconjunto
-    $E \subset P_g$ de tamaño $\lfloor 0.15 \, |P_g| \rfloor$ con menor
-    $\phi(\boldsymbol{\theta})$ pasa intacto a la siguiente generación,
-    garantizando que $\phi(\boldsymbol{\theta}^{*}_{g+1}) \le \phi(\boldsymbol{\theta}^{*}_{g})$.
-    \item \textbf{Reemplazo aleatorio uniforme (85\%):} el resto de la
-    descendencia se obtiene muestreando individuos de $P_g$ con
-    distribución uniforme, $\theta \sim \mathcal{U}(P_g)$, sin
-    condicionar la probabilidad de selección a $\phi(\boldsymbol{\theta})$.
+ \item \textbf{Elitismo (15\%):} el subconjunto
+ $E \subset P_g$ de tamaño $\lfloor 0.15 \, |P_g| \rfloor$ con menor
+ $\phi(\boldsymbol{\theta})$ pasa intacto a la siguiente generación,
+ garantizando que $\phi(\boldsymbol{\theta}^{*}_{g+1}) \le \phi(\boldsymbol{\theta}^{*}_{g})$.
+ \item \textbf{Reemplazo aleatorio uniforme (85\%):} el resto de la
+ descendencia se obtiene muestreando individuos de $P_g$ con
+ distribución uniforme, $\theta \sim \mathcal{U}(P_g)$, sin
+ condicionar la probabilidad de selección a $\phi(\boldsymbol{\theta})$.
 \end{itemize}
 
 Este esquema difiere de un torneo clásico: la presión selectiva sobre
@@ -947,9 +947,9 @@ validación ($N=900$, disjunto del lote de entrenamiento del AG):
 \toprule
 \textbf{Esquema} & \textbf{Costo promedio} & \textbf{Desv. estándar} & \textbf{Mejora vs. estático} \\
 \midrule
-Estático tradicional        & 329.61 & 304.93 & --      \\
-Difuso base (PRISM)         & 373.36 & 434.69 & $-13.27\%$ \\
-Difuso + AG (optimizado)    & 236.92 & 419.75 & $+28.12\%$ \\
+Estático tradicional & 329.61 & 304.93 & -- \\
+Difuso base (PRISM) & 373.36 & 434.69 & $-13.27\%$ \\
+Difuso + AG (optimizado) & 236.92 & 419.75 & $+28.12\%$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -973,46 +973,46 @@ híbrido reside en la combinación PRISM+AG, no en PRISM por sí solo.
 \section{Conclusiones}
 
 \begin{itemize}
-    \item \textbf{Eficacia del recubrimiento secuencial (PRISM) como
-    base empírica:} la aplicación del algoritmo PRISM permitió extraer
-    reglas con niveles de confianza de hasta $1.00$ sobre subconjuntos
-    críticos del tráfico (Sección VII), ofreciendo una inicialización
-    de la topología del controlador anclada a la distribución real de
-    los datos, en lugar de depender exclusivamente del criterio experto.
+ \item \textbf{Eficacia del recubrimiento secuencial (PRISM) como
+ base empírica:} la aplicación del algoritmo PRISM permitió extraer
+ reglas con niveles de confianza de hasta $1.00$ sobre subconjuntos
+ críticos del tráfico (Sección VII), ofreciendo una inicialización
+ de la topología del controlador anclada a la distribución real de
+ los datos, en lugar de depender exclusivamente del criterio experto.
 
-    \item \textbf{El sistema Mamdani exacto y el motor sustituto
-    cumplen roles distintos:} el motor Mamdani con defuzzificación por
-    centroide (Sección IX) constituye el sistema de referencia para
-    la evaluación final, mientras que el motor vectorizado por
-    promedio ponderado permite explorar el espacio de
-    $\boldsymbol{\theta}$ de forma computacionalmente viable durante la
-    optimización. La correlación entre ambos motores (Sección IX)
-    respalda su uso conjunto, aunque no los hace intercambiables.
+ \item \textbf{El sistema Mamdani exacto y el motor sustituto
+ cumplen roles distintos:} el motor Mamdani con defuzzificación por
+ centroide (Sección IX) constituye el sistema de referencia para
+ la evaluación final, mientras que el motor vectorizado por
+ promedio ponderado permite explorar el espacio de
+ $\boldsymbol{\theta}$ de forma computacionalmente viable durante la
+ optimización. La correlación entre ambos motores (Sección IX)
+ respalda su uso conjunto, aunque no los hace intercambiables.
 
-    \item \textbf{Los umbrales de PRISM por sí solos no optimizan el
-    objetivo ambiental:} los resultados de validación muestran que el
-    Difuso Base es $13.27\%$ peor que el esquema estático. La
-    calibración evolutiva es, por tanto, condición necesaria y no
-    solo una mejora incremental: es la que revierte la degradación y
-    produce la ganancia neta de $28.12\%$ frente al estático.
+ \item \textbf{Los umbrales de PRISM por sí solos no optimizan el
+ objetivo ambiental:} los resultados de validación muestran que el
+ Difuso Base es $13.27\%$ peor que el esquema estático. La
+ calibración evolutiva es, por tanto, condición necesaria y no
+ solo una mejora incremental: es la que revierte la degradación y
+ produce la ganancia neta de $28.12\%$ frente al estático.
 
-    \item \textbf{La presión selectiva del AG requiere revisión:} el
-    esquema de selección implementado combina $15\%$ de elitismo con
-    $85\%$ de reemplazo aleatorio uniforme, no con torneo real como se
-    documentó inicialmente (Sección X). Aun así, el AG logró converger
-    y mejorar sobre el sistema base, lo que sugiere que, para este
-    espacio de búsqueda de 8 dimensiones, el elitismo por sí solo
-    aportó suficiente presión selectiva; una versión con torneo
-    activado (código propuesto en Sección X) es el trabajo futuro más
-    directo para verificar si mejora aún más la convergencia.
+ \item \textbf{La presión selectiva del AG requiere revisión:} el
+ esquema de selección implementado combina $15\%$ de elitismo con
+ $85\%$ de reemplazo aleatorio uniforme, no con torneo real como se
+ documentó inicialmente (Sección X). Aun así, el AG logró converger
+ y mejorar sobre el sistema base, lo que sugiere que, para este
+ espacio de búsqueda de 8 dimensiones, el elitismo por sí solo
+ aportó suficiente presión selectiva; una versión con torneo
+ activado (código propuesto en Sección X) es el trabajo futuro más
+ directo para verificar si mejora aún más la convergencia.
 
-    \item \textbf{Limitación a reportar:} la convergencia del umbral de
-    \texttt{average\_speed} a un valor degenerado ($th_1=th_2=88.0$)
-    indica que el límite superior del espacio de búsqueda
-    ($\ell^{(95)}$) fue insuficiente para esa variable; se recomienda
-    ampliar los percentiles de búsqueda o penalizar explícitamente en
-    $\phi(\boldsymbol{\theta})$ las particiones degeneradas en trabajo
-    futuro.
+ \item \textbf{Limitación a reportar:} la convergencia del umbral de
+ \texttt{average\_speed} a un valor degenerado ($th_1=th_2=88.0$)
+ indica que el límite superior del espacio de búsqueda
+ ($\ell^{(95)}$) fue insuficiente para esa variable; se recomienda
+ ampliar los percentiles de búsqueda o penalizar explícitamente en
+ $\phi(\boldsymbol{\theta})$ las particiones degeneradas en trabajo
+ futuro.
 \end{itemize}
 
 % ==========================================================

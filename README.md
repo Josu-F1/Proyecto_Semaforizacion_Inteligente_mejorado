@@ -12,18 +12,18 @@
 ```
 proyecto/
 ├── data/
-│   └── smart_city_traffic_mobility.csv      (dataset compartido, 204 000 registros)
+│ └── smart_city_traffic_mobility.csv (dataset compartido, 204 000 registros)
 │
 ├── 01_Reglas_PRISM/
-│   └── Extraccion_Reglas_PRISM.ipynb        (Carpeta 1: extracción de reglas)
+│ └── Extraccion_Reglas_PRISM.ipynb (Carpeta 1: extracción de reglas)
 │
 ├── 02_Sistema_Difuso_MIMO/
-│   └── Sistema_Difuso_MIMO.ipynb            (Carpeta 2: sistema difuso Mamdani MIMO)
+│ └── Sistema_Difuso_MIMO.ipynb (Carpeta 2: sistema difuso Mamdani MIMO)
 │
 ├── 03_Optimizacion_Genetica/
-│   └── Optimizacion_Algoritmo_Genetico.ipynb (Carpeta 3: optimización con AG)
+│ └── Optimizacion_Algoritmo_Genetico.ipynb (Carpeta 3: optimización con AG)
 │
-└── README.md   (este archivo)
+└── README.md (este archivo)
 ```
 
 Cada carpeta contiene, además de su libreta Jupyter (`.ipynb`), los archivos de resultados
@@ -33,21 +33,21 @@ trabajo es secuencial: ejecute las libretas en orden 1 → 2 → 3.**
 ## Orden de ejecución
 
 1. **`01_Reglas_PRISM/Extraccion_Reglas_PRISM.ipynb`**
-   Implementa el algoritmo **PRISM** desde cero (no existe una librería madura de PRISM en
-   Python) para extraer reglas `SI...ENTONCES` a partir de las 4 variables de tráfico de
-   entrada, para las 2 variables de salida (`green_light_duration` y la variable derivada
-   `signal_cycle_adjustment`). Exporta las reglas en formato `.json`.
+ Implementa el algoritmo **PRISM** desde cero (no existe una librería madura de PRISM en
+ Python) para extraer reglas `SI...ENTONCES` a partir de las 4 variables de tráfico de
+ entrada, para las 2 variables de salida (`green_light_duration` y la variable derivada
+ `signal_cycle_adjustment`). Exporta las reglas en formato `.json`.
 
 2. **`02_Sistema_Difuso_MIMO/Sistema_Difuso_MIMO.ipynb`**
-   Construye un **Sistema de Inferencia Difusa Mamdani MIMO** con `scikit-fuzzy`
-   (`skfuzzy.control`, alias `ctrl`), usando **únicamente** las reglas extraídas en el paso 1.
-   Define las funciones de pertenencia, simula el sistema y lo compara contra los datos reales.
+ Construye un **Sistema de Inferencia Difusa Mamdani MIMO** con `scikit-fuzzy`
+ (`skfuzzy.control`, alias `ctrl`), usando **únicamente** las reglas extraídas en el paso 1.
+ Define las funciones de pertenencia, simula el sistema y lo compara contra los datos reales.
 
 3. **`03_Optimizacion_Genetica/Optimizacion_Algoritmo_Genetico.ipynb`**
-   Usa un **Algoritmo Genético** (librería `DEAP`) para calibrar la posición de las funciones
-   de pertenencia del sistema difuso, minimizando un indicador de impacto ambiental
-   (`emission_estimate + air_quality_index`) estimado mediante un modelo sustituto entrenado
-   sobre el propio dataset.
+ Usa un **Algoritmo Genético** (librería `DEAP`) para calibrar la posición de las funciones
+ de pertenencia del sistema difuso, minimizando un indicador de impacto ambiental
+ (`emission_estimate + air_quality_index`) estimado mediante un modelo sustituto entrenado
+ sobre el propio dataset.
 
 ## Requisitos (instalación)
 
