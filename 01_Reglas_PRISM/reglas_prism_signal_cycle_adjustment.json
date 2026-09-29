@@ -10,13 +10,14 @@
         "Medio"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
+    "variable_objetivo": "signal_cycle_adjustment",
     "confianza": 1.0,
     "cobertura": 39078,
     "soporte": 0.191559,
     "lift": 2.4333,
-    "t": 39078
+    "t": 39078,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Alta'), ('vehicle_count_lbl', 'Medio')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=1.0, cobertura=39078, soporte=0.19155882352941175, lift=np.float64(2.433264152293709), t=39078)"
   },
   {
     "antecedente": [
@@ -29,13 +30,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
+    "variable_objetivo": "signal_cycle_adjustment",
     "confianza": 1.0,
     "cobertura": 24165,
     "soporte": 0.118456,
     "lift": 2.4333,
-    "t": 24165
+    "t": 24165,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Alta'), ('traffic_density_lbl', 'Baja')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=1.0, cobertura=24165, soporte=0.11845588235294117, lift=np.float64(2.433264152293709), t=24165)"
   },
   {
     "antecedente": [
@@ -56,13 +58,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.9844,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.984395,
     "cobertura": 757,
     "soporte": 0.003711,
     "lift": 2.3953,
-    "t": 769
+    "t": 769,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Media'), ('queue_length_lbl', 'Moderada')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.9843953185955787, cobertura=757, soporte=0.00371078431372549, lift=np.float64(2.3952938404243667), t=769)"
   },
   {
     "antecedente": [
@@ -83,13 +86,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.9823,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.982256,
     "cobertura": 775,
     "soporte": 0.003799,
     "lift": 2.3901,
-    "t": 789
+    "t": 789,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Media'), ('queue_length_lbl', 'Corta')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.982256020278834, cobertura=775, soporte=0.003799019607843137, lift=np.float64(2.3900883625191693), t=789)"
   },
   {
     "antecedente": [
@@ -110,13 +114,14 @@
         "Extensa"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.905,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.904959,
     "cobertura": 219,
     "soporte": 0.001074,
     "lift": 2.202,
-    "t": 242
+    "t": 242,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Media'), ('queue_length_lbl', 'Extensa')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.9049586776859504, cobertura=219, soporte=0.0010735294117647058, lift=np.float64(2.20200350972034), t=242)"
   },
   {
     "antecedente": [
@@ -137,13 +142,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
+    "variable_objetivo": "signal_cycle_adjustment",
     "confianza": 1.0,
     "cobertura": 13,
     "soporte": 6.4e-05,
     "lift": 2.4333,
-    "t": 13
+    "t": 13,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Baja'), ('queue_length_lbl', 'Moderada')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=1.0, cobertura=13, soporte=6.372549019607843e-05, lift=np.float64(2.433264152293709), t=13)"
   },
   {
     "antecedente": [
@@ -164,13 +170,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
+    "variable_objetivo": "signal_cycle_adjustment",
     "confianza": 1.0,
     "cobertura": 10,
     "soporte": 4.9e-05,
     "lift": 2.4333,
-    "t": 10
+    "t": 10,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Baja'), ('queue_length_lbl', 'Corta')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=1.0, cobertura=10, soporte=4.901960784313725e-05, lift=np.float64(2.433264152293709), t=10)"
   },
   {
     "antecedente": [
@@ -191,13 +198,14 @@
         "Extensa"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.7222,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.722222,
     "cobertura": 91,
     "soporte": 0.000446,
     "lift": 1.7574,
-    "t": 126
+    "t": 126,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Baja'), ('queue_length_lbl', 'Extensa')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.7222222222222222, cobertura=91, soporte=0.00044607843137254904, lift=np.float64(1.7573574433232344), t=126)"
   },
   {
     "antecedente": [
@@ -218,13 +226,14 @@
         "Alta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.5371,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.53705,
     "cobertura": 761,
     "soporte": 0.00373,
     "lift": 1.3068,
-    "t": 1417
+    "t": 1417,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Alto'), ('queue_length_lbl', 'Corta'), ('average_speed_lbl', 'Alta')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.5370501058574453, cobertura=761, soporte=0.003730392156862745, lift=np.float64(1.3067847705684634), t=1417)"
   },
   {
     "antecedente": [
@@ -245,13 +254,14 @@
         "Alta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.5221,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.522111,
     "cobertura": 732,
     "soporte": 0.003588,
     "lift": 1.2704,
-    "t": 1402
+    "t": 1402,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Alto'), ('queue_length_lbl', 'Moderada'), ('average_speed_lbl', 'Alta')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.5221112696148359, cobertura=732, soporte=0.003588235294117647, lift=np.float64(1.270434635862336), t=1402)"
   },
   {
     "antecedente": [
@@ -272,13 +282,14 @@
         "Alta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.4279,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.427861,
     "cobertura": 86,
     "soporte": 0.000422,
     "lift": 1.0411,
-    "t": 201
+    "t": 201,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Alto'), ('queue_length_lbl', 'Extensa'), ('average_speed_lbl', 'Alta')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.42786069651741293, cobertura=86, soporte=0.0004215686274509804, lift=np.float64(1.0410980950112387), t=201)"
   },
   {
     "antecedente": [
@@ -299,13 +310,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.5314,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.531412,
     "cobertura": 4111,
     "soporte": 0.020152,
     "lift": 1.2931,
-    "t": 7736
+    "t": 7736,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Medio'), ('queue_length_lbl', 'Moderada')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.53141158221303, cobertura=4111, soporte=0.020151960784313725, lift=np.float64(1.2930647531126471), t=7736)"
   },
   {
     "antecedente": [
@@ -326,13 +338,14 @@
         "Medio"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.5262,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.526193,
     "cobertura": 452,
     "soporte": 0.002216,
     "lift": 1.2804,
-    "t": 859
+    "t": 859,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Extensa'), ('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Medio')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.5261932479627474, cobertura=452, soporte=0.002215686274509804, lift=np.float64(1.2803671674467478), t=859)"
   },
   {
     "antecedente": [
@@ -353,13 +366,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.5172,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.517172,
     "cobertura": 4096,
     "soporte": 0.020078,
     "lift": 1.2584,
-    "t": 7920
+    "t": 7920,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Medio'), ('queue_length_lbl', 'Corta')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.5171717171717172, cobertura=4096, soporte=0.02007843137254902, lift=np.float64(1.2584153999741203), t=7920)"
   },
   {
     "antecedente": [
@@ -380,13 +394,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.3035,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.303534,
     "cobertura": 292,
     "soporte": 0.001431,
     "lift": 0.7386,
-    "t": 962
+    "t": 962,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Extensa'), ('vehicle_count_lbl', 'Medio'), ('average_speed_lbl', 'Baja')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.30353430353430355, cobertura=292, soporte=0.0014313725490196078, lift=np.float64(0.7385791397814585), t=962)"
   },
   {
     "antecedente": [
@@ -407,13 +422,14 @@
         "Bajo"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.2353,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.235294,
     "cobertura": 124,
     "soporte": 0.000608,
     "lift": 0.5725,
-    "t": 527
+    "t": 527,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Extensa'), ('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Bajo')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.23529411764705882, cobertura=124, soporte=0.0006078431372549019, lift=np.float64(0.5725327417161669), t=527)"
   },
   {
     "antecedente": [
@@ -434,13 +450,14 @@
         "Bajo"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.2212,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.221211,
     "cobertura": 997,
     "soporte": 0.004887,
     "lift": 0.5383,
-    "t": 4507
+    "t": 4507,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('average_speed_lbl', 'Media'), ('queue_length_lbl', 'Moderada'), ('vehicle_count_lbl', 'Bajo')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.22121144885733304, cobertura=997, soporte=0.0048872549019607844, lift=np.float64(0.5382658885815017), t=4507)"
   },
   {
     "antecedente": [
@@ -461,13 +478,14 @@
         "Bajo"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.2159,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.215921,
     "cobertura": 990,
     "soporte": 0.004853,
     "lift": 0.5254,
-    "t": 4585
+    "t": 4585,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('average_speed_lbl', 'Media'), ('queue_length_lbl', 'Corta'), ('vehicle_count_lbl', 'Bajo')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.2159214830970556, cobertura=990, soporte=0.0048529411764705885, lift=np.float64(0.5253940045301575), t=4585)"
   },
   {
     "antecedente": [
@@ -488,13 +506,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.2321,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.232143,
     "cobertura": 104,
     "soporte": 0.00051,
     "lift": 0.5649,
-    "t": 448
+    "t": 448,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Bajo'), ('queue_length_lbl', 'Corta'), ('average_speed_lbl', 'Baja')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.23214285714285715, cobertura=104, soporte=0.0005098039215686275, lift=np.float64(0.564864892496754), t=448)"
   },
   {
     "antecedente": [
@@ -507,13 +526,14 @@
         "Medio"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
+    "variable_objetivo": "signal_cycle_adjustment",
     "confianza": 1.0,
     "cobertura": 160,
     "soporte": 0.000784,
     "lift": 2.4333,
-    "t": 160
+    "t": 160,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Baja'), ('vehicle_count_lbl', 'Medio')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=1.0, cobertura=160, soporte=0.000784313725490196, lift=np.float64(2.433264152293709), t=160)"
   },
   {
     "antecedente": [
@@ -534,13 +554,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.2045,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.204453,
     "cobertura": 101,
     "soporte": 0.000495,
     "lift": 0.4975,
-    "t": 494
+    "t": 494,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Bajo'), ('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Moderada'), ('average_speed_lbl', 'Baja')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.20445344129554655, cobertura=101, soporte=0.0004950980392156863, lift=np.float64(0.4974892295175397), t=494)"
   },
   {
     "antecedente": [
@@ -561,13 +582,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.1579,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.157895,
     "cobertura": 6,
     "soporte": 2.9e-05,
     "lift": 0.3842,
-    "t": 38
+    "t": 38,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Bajo'), ('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Extensa'), ('average_speed_lbl', 'Baja')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.15789473684210525, cobertura=6, soporte=2.9411764705882354e-05, lift=np.float64(0.3841996029937435), t=38)"
   },
   {
     "antecedente": [
@@ -588,13 +610,14 @@
         "Bajo"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.1324,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.132417,
     "cobertura": 212,
     "soporte": 0.001039,
     "lift": 0.3222,
-    "t": 1601
+    "t": 1601,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Baja'), ('queue_length_lbl', 'Extensa'), ('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Bajo')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.13241723922548407, cobertura=212, soporte=0.00103921568627451, lift=np.float64(0.3222061213530708), t=1601)"
   },
   {
     "antecedente": [
@@ -615,13 +638,14 @@
         "Bajo"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.113,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.113013,
     "cobertura": 1624,
     "soporte": 0.007961,
     "lift": 0.275,
-    "t": 14370
+    "t": 14370,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Baja'), ('average_speed_lbl', 'Media'), ('queue_length_lbl', 'Moderada'), ('vehicle_count_lbl', 'Bajo')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.11301322199025748, cobertura=1624, soporte=0.00796078431372549, lift=np.float64(0.2749910218041047), t=14370)"
   },
   {
     "antecedente": [
@@ -642,13 +666,14 @@
         "Alta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.288,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.288038,
     "cobertura": 301,
     "soporte": 0.001475,
     "lift": 0.7009,
-    "t": 1045
+    "t": 1045,
+    "regla_str": "ReglaPRISM(antecedente=[('queue_length_lbl', 'Corta'), ('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Media'), ('traffic_density_lbl', 'Alta')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.2880382775119617, cobertura=301, soporte=0.0014754901960784314, lift=np.float64(0.7008732151582836), t=1045)"
   },
   {
     "antecedente": [
@@ -669,13 +694,14 @@
         "Bajo"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.1081,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.108072,
     "cobertura": 1620,
     "soporte": 0.007941,
     "lift": 0.263,
-    "t": 14990
+    "t": 14990,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Baja'), ('average_speed_lbl', 'Media'), ('queue_length_lbl', 'Corta'), ('vehicle_count_lbl', 'Bajo')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.10807204803202135, cobertura=1620, soporte=0.007941176470588234, lift=np.float64(0.26296784034128146), t=14990)"
   },
   {
     "antecedente": [
@@ -696,13 +722,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.0974,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.097409,
     "cobertura": 297,
     "soporte": 0.001456,
     "lift": 0.237,
-    "t": 3049
+    "t": 3049,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Moderada'), ('vehicle_count_lbl', 'Medio'), ('average_speed_lbl', 'Baja')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.09740898655296819, cobertura=297, soporte=0.0014558823529411764, lift=np.float64(0.23702179509059745), t=3049)"
   },
   {
     "antecedente": [
@@ -723,13 +750,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.096,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.095984,
     "cobertura": 294,
     "soporte": 0.001441,
     "lift": 0.2336,
-    "t": 3063
+    "t": 3063,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Corta'), ('vehicle_count_lbl', 'Medio'), ('average_speed_lbl', 'Baja')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.09598432908912831, cobertura=294, soporte=0.0014411764705882352, lift=np.float64(0.2335552271545382), t=3063)"
   },
   {
     "antecedente": [
@@ -750,13 +778,14 @@
         "Alta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.1501,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.150109,
     "cobertura": 275,
     "soporte": 0.001348,
     "lift": 0.3653,
-    "t": 1832
+    "t": 1832,
+    "regla_str": "ReglaPRISM(antecedente=[('queue_length_lbl', 'Moderada'), ('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Alta')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.15010917030567686, cobertura=275, soporte=0.0013480392156862745, lift=np.float64(0.3652552630353548), t=1832)"
   },
   {
     "antecedente": [
@@ -777,13 +806,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.0769,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.076923,
     "cobertura": 11,
     "soporte": 5.4e-05,
     "lift": 0.1872,
-    "t": 143
+    "t": 143,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Baja'), ('queue_length_lbl', 'Extensa'), ('vehicle_count_lbl', 'Bajo'), ('average_speed_lbl', 'Baja')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.07692307692307693, cobertura=11, soporte=5.392156862745098e-05, lift=np.float64(0.18717416556105457), t=143)"
   },
   {
     "antecedente": [
@@ -804,13 +834,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.0542,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.054222,
     "cobertura": 61,
     "soporte": 0.000299,
     "lift": 0.1319,
-    "t": 1125
+    "t": 1125,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Baja'), ('queue_length_lbl', 'Moderada'), ('vehicle_count_lbl', 'Bajo'), ('average_speed_lbl', 'Baja')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.05422222222222222, cobertura=61, soporte=0.00029901960784313724, lift=np.float64(0.13193698959103667), t=1125)"
   },
   {
     "antecedente": [
@@ -831,13 +862,14 @@
         "Alta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.0508,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.050758,
     "cobertura": 67,
     "soporte": 0.000328,
     "lift": 0.1235,
-    "t": 1320
+    "t": 1320,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('queue_length_lbl', 'Extensa'), ('average_speed_lbl', 'Baja'), ('traffic_density_lbl', 'Alta')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.05075757575757576, cobertura=67, soporte=0.0003284313725490196, lift=np.float64(0.1235065895482413), t=1320)"
   },
   {
     "antecedente": [
@@ -858,13 +890,14 @@
         "Alta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.0526,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.052632,
     "cobertura": 2,
     "soporte": 1e-05,
     "lift": 0.1281,
-    "t": 38
+    "t": 38,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('queue_length_lbl', 'Moderada'), ('average_speed_lbl', 'Media'), ('traffic_density_lbl', 'Alta')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.05263157894736842, cobertura=2, soporte=9.803921568627451e-06, lift=np.float64(0.12806653433124784), t=38)"
   },
   {
     "antecedente": [
@@ -885,13 +918,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.0491,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.049101,
     "cobertura": 112,
     "soporte": 0.000549,
     "lift": 0.1195,
-    "t": 2281
+    "t": 2281,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('queue_length_lbl', 'Moderada'), ('traffic_density_lbl', 'Alta'), ('average_speed_lbl', 'Baja')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.04910127137220517, cobertura=112, soporte=0.0005490196078431372, lift=np.float64(0.11947636346203218), t=2281)"
   },
   {
     "antecedente": [
@@ -912,13 +946,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.0429,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.04294,
     "cobertura": 52,
     "soporte": 0.000255,
     "lift": 0.1045,
-    "t": 1211
+    "t": 1211,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Baja'), ('queue_length_lbl', 'Corta'), ('vehicle_count_lbl', 'Bajo'), ('average_speed_lbl', 'Baja')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.042939719240297276, cobertura=52, soporte=0.00025490196078431374, lift=np.float64(0.10448367953697182), t=1211)"
   },
   {
     "antecedente": [
@@ -939,13 +974,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.0367,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.036669,
     "cobertura": 48,
     "soporte": 0.000235,
     "lift": 0.0892,
-    "t": 1309
+    "t": 1309,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('average_speed_lbl', 'Baja'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Corta')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.03666921313980138, cobertura=48, soporte=0.00023529411764705883, lift=np.float64(0.08922588182589614), t=1309)"
   },
   {
     "antecedente": [
@@ -966,13 +1002,14 @@
         "Media"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.0222,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.022222,
     "cobertura": 1,
     "soporte": 5e-06,
     "lift": 0.0541,
-    "t": 45
+    "t": 45,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('queue_length_lbl', 'Corta'), ('traffic_density_lbl', 'Alta'), ('average_speed_lbl', 'Media')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.022222222222222223, cobertura=1, soporte=4.901960784313726e-06, lift=np.float64(0.05407253671763798), t=45)"
   },
   {
     "antecedente": [
@@ -993,13 +1030,14 @@
         "Alto"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.0986,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.098592,
     "cobertura": 7,
     "soporte": 3.4e-05,
     "lift": 0.2399,
-    "t": 71
+    "t": 71,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('queue_length_lbl', 'Moderada'), ('traffic_density_lbl', 'Alta'), ('vehicle_count_lbl', 'Alto')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.09859154929577464, cobertura=7, soporte=3.431372549019608e-05, lift=np.float64(0.23989928262050653), t=71)"
   },
   {
     "antecedente": [
@@ -1020,13 +1058,14 @@
         "Alto"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Reducir",
-    "confianza": 0.013,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.013002,
     "cobertura": 681,
     "soporte": 0.003338,
     "lift": 0.0316,
-    "t": 52375
+    "t": 52375,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('queue_length_lbl', 'Extensa'), ('traffic_density_lbl', 'Alta'), ('vehicle_count_lbl', 'Alto')], clase_objetivo='Reducir', variable_objetivo='signal_cycle_adjustment', confianza=0.013002386634844869, cobertura=681, soporte=0.003338235294117647, lift=np.float64(0.031638241292830854), t=52375)"
   },
   {
     "antecedente": [
@@ -1047,13 +1086,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.8919,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.891928,
     "cobertura": 13370,
     "soporte": 0.065539,
     "lift": 2.6535,
-    "t": 14990
+    "t": 14990,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Media'), ('traffic_density_lbl', 'Baja'), ('vehicle_count_lbl', 'Bajo'), ('queue_length_lbl', 'Corta')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.8919279519679787, cobertura=13370, soporte=0.06553921568627451, lift=np.float64(2.653540939207637), t=14990)"
   },
   {
     "antecedente": [
@@ -1074,13 +1114,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.887,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.886987,
     "cobertura": 12746,
     "soporte": 0.06248,
     "lift": 2.6388,
-    "t": 14370
+    "t": 14370,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Media'), ('traffic_density_lbl', 'Baja'), ('vehicle_count_lbl', 'Bajo'), ('queue_length_lbl', 'Moderada')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.8869867780097426, cobertura=12746, soporte=0.06248039215686275, lift=np.float64(2.6388406404256597), t=14370)"
   },
   {
     "antecedente": [
@@ -1101,13 +1142,14 @@
         "Extensa"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.8676,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.867583,
     "cobertura": 1389,
     "soporte": 0.006809,
     "lift": 2.5811,
-    "t": 1601
+    "t": 1601,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Bajo'), ('traffic_density_lbl', 'Baja'), ('queue_length_lbl', 'Extensa')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.8675827607745159, cobertura=1389, soporte=0.006808823529411765, lift=np.float64(2.5811124864809867), t=1601)"
   },
   {
     "antecedente": [
@@ -1128,13 +1170,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.7841,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.784079,
     "cobertura": 3595,
     "soporte": 0.017623,
     "lift": 2.3327,
-    "t": 4585
+    "t": 4585,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Bajo'), ('queue_length_lbl', 'Corta'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.7840785169029444, cobertura=3595, soporte=0.017622549019607844, lift=np.float64(2.3326821853317874), t=4585)"
   },
   {
     "antecedente": [
@@ -1155,13 +1198,14 @@
         "Bajo"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.9571,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.95706,
     "cobertura": 1159,
     "soporte": 0.005681,
     "lift": 2.8473,
-    "t": 1211
+    "t": 1211,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('traffic_density_lbl', 'Baja'), ('queue_length_lbl', 'Corta'), ('vehicle_count_lbl', 'Bajo')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.9570602807597027, cobertura=1159, soporte=0.005681372549019608, lift=np.float64(2.84731365429458), t=1211)"
   },
   {
     "antecedente": [
@@ -1182,13 +1226,14 @@
         "Bajo"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.9458,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.945778,
     "cobertura": 1064,
     "soporte": 0.005216,
     "lift": 2.8137,
-    "t": 1125
+    "t": 1125,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('traffic_density_lbl', 'Baja'), ('queue_length_lbl', 'Moderada'), ('vehicle_count_lbl', 'Bajo')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.9457777777777778, cobertura=1064, soporte=0.0052156862745098035, lift=np.float64(2.8137475086286523), t=1125)"
   },
   {
     "antecedente": [
@@ -1209,13 +1254,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.7788,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.778789,
     "cobertura": 3510,
     "soporte": 0.017206,
     "lift": 2.3169,
-    "t": 4507
+    "t": 4507,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Bajo'), ('queue_length_lbl', 'Moderada'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.778788551142667, cobertura=3510, soporte=0.017205882352941175, lift=np.float64(2.3169442093204617), t=4507)"
   },
   {
     "antecedente": [
@@ -1236,13 +1282,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.9633,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.963331,
     "cobertura": 1261,
     "soporte": 0.006181,
     "lift": 2.866,
-    "t": 1309
+    "t": 1309,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Corta')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.9633307868601986, cobertura=1261, soporte=0.006181372549019608, lift=np.float64(2.865968798592395), t=1309)"
   },
   {
     "antecedente": [
@@ -1263,13 +1310,14 @@
         "Extensa"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.9231,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.923077,
     "cobertura": 132,
     "soporte": 0.000647,
     "lift": 2.7462,
-    "t": 143
+    "t": 143,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('traffic_density_lbl', 'Baja'), ('vehicle_count_lbl', 'Bajo'), ('queue_length_lbl', 'Extensa')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.9230769230769231, cobertura=132, soporte=0.0006470588235294118, lift=np.float64(2.74621105888424), t=143)"
   },
   {
     "antecedente": [
@@ -1290,13 +1338,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.9509,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.950899,
     "cobertura": 2169,
     "soporte": 0.010632,
     "lift": 2.829,
-    "t": 2281
+    "t": 2281,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Moderada')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.9508987286277948, cobertura=2169, soporte=0.010632352941176471, lift=np.float64(2.8289826548063313), t=2281)"
   },
   {
     "antecedente": [
@@ -1317,13 +1366,14 @@
         "Extensa"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.9492,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.949242,
     "cobertura": 1253,
     "soporte": 0.006142,
     "lift": 2.8241,
-    "t": 1320
+    "t": 1320,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Extensa')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.9492424242424242, cobertura=1253, soporte=0.006142156862745098, lift=np.float64(2.8240550466013494), t=1320)"
   },
   {
     "antecedente": [
@@ -1344,13 +1394,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.904,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.904016,
     "cobertura": 2769,
     "soporte": 0.013574,
     "lift": 2.6895,
-    "t": 3063
+    "t": 3063,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('queue_length_lbl', 'Corta'), ('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.9040156709108716, cobertura=2769, soporte=0.013573529411764707, lift=np.float64(2.689502652265099), t=3063)"
   },
   {
     "antecedente": [
@@ -1371,13 +1422,14 @@
         "Extensa"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.7647,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.764706,
     "cobertura": 403,
     "soporte": 0.001975,
     "lift": 2.275,
-    "t": 527
+    "t": 527,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Bajo'), ('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Extensa')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.7647058823529411, cobertura=403, soporte=0.0019754901960784316, lift=np.float64(2.275047396820767), t=527)"
   },
   {
     "antecedente": [
@@ -1398,13 +1450,14 @@
         "Extensa"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
+    "variable_objetivo": "signal_cycle_adjustment",
     "confianza": 1.0,
     "cobertura": 6,
     "soporte": 2.9e-05,
     "lift": 2.9751,
-    "t": 6
+    "t": 6,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Extensa')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=1.0, cobertura=6, soporte=2.9411764705882354e-05, lift=np.float64(2.975061980457926), t=6)"
   },
   {
     "antecedente": [
@@ -1425,13 +1478,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.9778,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.977778,
     "cobertura": 44,
     "soporte": 0.000216,
     "lift": 2.9089,
-    "t": 45
+    "t": 45,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Corta')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.9777777777777777, cobertura=44, soporte=0.00021568627450980392, lift=np.float64(2.9089494920033054), t=45)"
   },
   {
     "antecedente": [
@@ -1452,13 +1506,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.9474,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.947368,
     "cobertura": 36,
     "soporte": 0.000176,
     "lift": 2.8185,
-    "t": 38
+    "t": 38,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Moderada')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.9473684210526315, cobertura=36, soporte=0.00017647058823529413, lift=np.float64(2.8184797709601406), t=38)"
   },
   {
     "antecedente": [
@@ -1479,13 +1534,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.4828,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.482828,
     "cobertura": 3824,
     "soporte": 0.018745,
     "lift": 1.4364,
-    "t": 7920
+    "t": 7920,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Medio'), ('queue_length_lbl', 'Corta'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.48282828282828283, cobertura=3824, soporte=0.018745098039215688, lift=np.float64(1.436444067332211), t=7920)"
   },
   {
     "antecedente": [
@@ -1506,13 +1562,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.9026,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.902591,
     "cobertura": 2752,
     "soporte": 0.01349,
     "lift": 2.6853,
-    "t": 3049
+    "t": 3049,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('queue_length_lbl', 'Moderada'), ('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.9025910134470319, cobertura=2752, soporte=0.013490196078431372, lift=np.float64(2.6852642080092535), t=3049)"
   },
   {
     "antecedente": [
@@ -1533,13 +1590,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.8421,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.842105,
     "cobertura": 32,
     "soporte": 0.000157,
     "lift": 2.5053,
-    "t": 38
+    "t": 38,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('vehicle_count_lbl', 'Bajo'), ('queue_length_lbl', 'Extensa'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.8421052631578947, cobertura=32, soporte=0.00015686274509803922, lift=np.float64(2.5053153519645694), t=38)"
   },
   {
     "antecedente": [
@@ -1560,13 +1618,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.7955,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.795547,
     "cobertura": 393,
     "soporte": 0.001926,
     "lift": 2.3668,
-    "t": 494
+    "t": 494,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('vehicle_count_lbl', 'Bajo'), ('queue_length_lbl', 'Moderada'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.7955465587044535, cobertura=393, soporte=0.001926470588235294, lift=np.float64(2.3668003204857593), t=494)"
   },
   {
     "antecedente": [
@@ -1587,13 +1646,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.7679,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.767857,
     "cobertura": 344,
     "soporte": 0.001686,
     "lift": 2.2844,
-    "t": 448
+    "t": 448,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('vehicle_count_lbl', 'Bajo'), ('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Corta')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.7678571428571429, cobertura=344, soporte=0.0016862745098039215, lift=np.float64(2.2844225921373362), t=448)"
   },
   {
     "antecedente": [
@@ -1614,13 +1674,14 @@
         "Extensa"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.6965,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.696466,
     "cobertura": 670,
     "soporte": 0.003284,
     "lift": 2.072,
-    "t": 962
+    "t": 962,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Extensa')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.6964656964656964, cobertura=670, soporte=0.003284313725490196, lift=np.float64(2.072028614248244), t=962)"
   },
   {
     "antecedente": [
@@ -1641,13 +1702,14 @@
         "Alto"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.2218,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.221804,
     "cobertura": 11617,
     "soporte": 0.056946,
     "lift": 0.6599,
-    "t": 52375
+    "t": 52375,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Extensa'), ('vehicle_count_lbl', 'Alto')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.22180429594272077, cobertura=11617, soporte=0.056946078431372546, lift=np.float64(0.6598815279614269), t=52375)"
   },
   {
     "antecedente": [
@@ -1668,13 +1730,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.4738,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.473807,
     "cobertura": 407,
     "soporte": 0.001995,
     "lift": 1.4096,
-    "t": 859
+    "t": 859,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Medio'), ('queue_length_lbl', 'Extensa'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.47380675203725264, cobertura=407, soporte=0.001995098039215686, lift=np.float64(1.4096044540702863), t=859)"
   },
   {
     "antecedente": [
@@ -1695,13 +1758,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Mantener",
-    "confianza": 0.4686,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.468588,
     "cobertura": 3625,
     "soporte": 0.01777,
     "lift": 1.3941,
-    "t": 7736
+    "t": 7736,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Moderada')], clase_objetivo='Mantener', variable_objetivo='signal_cycle_adjustment', confianza=0.46858841778697, cobertura=3625, soporte=0.017769607843137254, lift=np.float64(1.3940795862409492), t=7736)"
   },
   {
     "antecedente": [
@@ -1722,13 +1786,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Extender",
+    "variable_objetivo": "signal_cycle_adjustment",
     "confianza": 1.0,
     "cobertura": 526,
     "soporte": 0.002578,
     "lift": 3.9541,
-    "t": 526
+    "t": 526,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Alta'), ('average_speed_lbl', 'Alta'), ('queue_length_lbl', 'Corta')], clase_objetivo='Extender', variable_objetivo='signal_cycle_adjustment', confianza=1.0, cobertura=526, soporte=0.00257843137254902, lift=np.float64(3.954101411071484), t=526)"
   },
   {
     "antecedente": [
@@ -1749,13 +1814,14 @@
         "Extensa"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Extender",
+    "variable_objetivo": "signal_cycle_adjustment",
     "confianza": 1.0,
     "cobertura": 243,
     "soporte": 0.001191,
     "lift": 3.9541,
-    "t": 243
+    "t": 243,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Alta'), ('average_speed_lbl', 'Alta'), ('queue_length_lbl', 'Extensa')], clase_objetivo='Extender', variable_objetivo='signal_cycle_adjustment', confianza=1.0, cobertura=243, soporte=0.0011911764705882352, lift=np.float64(3.954101411071484), t=243)"
   },
   {
     "antecedente": [
@@ -1776,13 +1842,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Extender",
-    "confianza": 0.9989,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.998901,
     "cobertura": 909,
     "soporte": 0.004456,
     "lift": 3.9498,
-    "t": 910
+    "t": 910,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Alta'), ('average_speed_lbl', 'Alta'), ('queue_length_lbl', 'Moderada')], clase_objetivo='Extender', variable_objetivo='signal_cycle_adjustment', confianza=0.9989010989010989, cobertura=909, soporte=0.004455882352941177, lift=np.float64(3.9497562446856915), t=910)"
   },
   {
     "antecedente": [
@@ -1803,13 +1870,14 @@
         "Extensa"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Extender",
-    "confianza": 0.9913,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.991315,
     "cobertura": 5935,
     "soporte": 0.029093,
     "lift": 3.9198,
-    "t": 5987
+    "t": 5987,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Alta'), ('average_speed_lbl', 'Media'), ('queue_length_lbl', 'Extensa')], clase_objetivo='Extender', variable_objetivo='signal_cycle_adjustment', confianza=0.9913145147820277, cobertura=5935, soporte=0.029093137254901962, lift=np.float64(3.9197581217152595), t=5987)"
   },
   {
     "antecedente": [
@@ -1830,13 +1898,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Extender",
-    "confianza": 0.9014,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.901408,
     "cobertura": 64,
     "soporte": 0.000314,
     "lift": 3.5643,
-    "t": 71
+    "t": 71,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Moderada'), ('average_speed_lbl', 'Baja')], clase_objetivo='Extender', variable_objetivo='signal_cycle_adjustment', confianza=0.9014084507042254, cobertura=64, soporte=0.00031372549019607844, lift=np.float64(3.564260426881338), t=71)"
   },
   {
     "antecedente": [
@@ -1857,13 +1926,14 @@
         "Media"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Extender",
-    "confianza": 0.8499,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.849891,
     "cobertura": 1557,
     "soporte": 0.007632,
     "lift": 3.3606,
-    "t": 1832
+    "t": 1832,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Moderada'), ('average_speed_lbl', 'Media')], clase_objetivo='Extender', variable_objetivo='signal_cycle_adjustment', confianza=0.8498908296943232, cobertura=1557, soporte=0.00763235294117647, lift=np.float64(3.3605545289510377), t=1832)"
   },
   {
     "antecedente": [
@@ -1884,13 +1954,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Extender",
+    "variable_objetivo": "signal_cycle_adjustment",
     "confianza": 1.0,
     "cobertura": 12,
     "soporte": 5.9e-05,
     "lift": 3.9541,
-    "t": 12
+    "t": 12,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Alta'), ('average_speed_lbl', 'Baja'), ('queue_length_lbl', 'Corta')], clase_objetivo='Extender', variable_objetivo='signal_cycle_adjustment', confianza=1.0, cobertura=12, soporte=5.882352941176471e-05, lift=np.float64(3.954101411071484), t=12)"
   },
   {
     "antecedente": [
@@ -1911,13 +1982,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Extender",
-    "confianza": 0.7652,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.765193,
     "cobertura": 40077,
     "soporte": 0.196456,
     "lift": 3.0257,
-    "t": 52375
+    "t": 52375,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Extensa'), ('average_speed_lbl', 'Baja')], clase_objetivo='Extender', variable_objetivo='signal_cycle_adjustment', confianza=0.7651933174224343, cobertura=40077, soporte=0.19645588235294117, lift=np.float64(3.025651976162518), t=52375)"
   },
   {
     "antecedente": [
@@ -1938,13 +2010,14 @@
         "Media"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Extender",
-    "confianza": 0.712,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.711962,
     "cobertura": 744,
     "soporte": 0.003647,
     "lift": 2.8152,
-    "t": 1045
+    "t": 1045,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Corta'), ('average_speed_lbl', 'Media')], clase_objetivo='Extender', variable_objetivo='signal_cycle_adjustment', confianza=0.7119617224880382, cobertura=744, soporte=0.0036470588235294117, lift=np.float64(2.8151688515188367), t=1045)"
   },
   {
     "antecedente": [
@@ -1965,13 +2038,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Extender",
-    "confianza": 0.5721,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.572139,
     "cobertura": 115,
     "soporte": 0.000564,
     "lift": 2.2623,
-    "t": 201
+    "t": 201,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Alta'), ('queue_length_lbl', 'Extensa'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Extender', variable_objetivo='signal_cycle_adjustment', confianza=0.572139303482587, cobertura=115, soporte=0.0005637254901960784, lift=np.float64(2.2622968272299535), t=201)"
   },
   {
     "antecedente": [
@@ -1992,13 +2066,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Extender",
-    "confianza": 0.4779,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.477889,
     "cobertura": 670,
     "soporte": 0.003284,
     "lift": 1.8896,
-    "t": 1402
+    "t": 1402,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Alta'), ('queue_length_lbl', 'Moderada'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Extender', variable_objetivo='signal_cycle_adjustment', confianza=0.47788873038516405, cobertura=670, soporte=0.003284313725490196, lift=np.float64(1.8896205031511373), t=1402)"
   },
   {
     "antecedente": [
@@ -2019,12 +2094,13 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "signal_cycle_adjustment",
     "clase_objetivo": "Extender",
-    "confianza": 0.4629,
+    "variable_objetivo": "signal_cycle_adjustment",
+    "confianza": 0.46295,
     "cobertura": 656,
     "soporte": 0.003216,
     "lift": 1.8306,
-    "t": 1417
+    "t": 1417,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Alta'), ('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Corta')], clase_objetivo='Extender', variable_objetivo='signal_cycle_adjustment', confianza=0.4629498941425547, cobertura=656, soporte=0.003215686274509804, lift=np.float64(1.83055082968447), t=1417)"
   }
 ]

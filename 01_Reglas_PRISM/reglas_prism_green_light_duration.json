@@ -6,13 +6,14 @@
         "Bajo"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Corta",
+    "variable_objetivo": "green_light_duration",
     "confianza": 1.0,
     "cobertura": 68204,
     "soporte": 0.334333,
     "lift": 2.7109,
-    "t": 68204
+    "t": 68204,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Bajo')], clase_objetivo='Corta', variable_objetivo='green_light_duration', confianza=1.0, cobertura=68204, soporte=0.3343333333333333, lift=np.float64(2.71092742953582), t=68204)"
   },
   {
     "antecedente": [
@@ -25,13 +26,14 @@
         "Media"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Corta",
+    "variable_objetivo": "green_light_duration",
     "confianza": 1.0,
     "cobertura": 157,
     "soporte": 0.00077,
     "lift": 2.7109,
-    "t": 157
+    "t": 157,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Baja'), ('average_speed_lbl', 'Media')], clase_objetivo='Corta', variable_objetivo='green_light_duration', confianza=1.0, cobertura=157, soporte=0.000769607843137255, lift=np.float64(2.71092742953582), t=157)"
   },
   {
     "antecedente": [
@@ -52,13 +54,14 @@
         "Medio"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Corta",
-    "confianza": 0.3333,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.333333,
     "cobertura": 1,
     "soporte": 5e-06,
     "lift": 0.9036,
-    "t": 3
+    "t": 3,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Baja'), ('average_speed_lbl', 'Baja'), ('queue_length_lbl', 'Extensa'), ('vehicle_count_lbl', 'Medio')], clase_objetivo='Corta', variable_objetivo='green_light_duration', confianza=0.3333333333333333, cobertura=1, soporte=4.901960784313726e-06, lift=np.float64(0.90364247651194), t=3)"
   },
   {
     "antecedente": [
@@ -79,13 +82,14 @@
         "Alta"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Corta",
-    "confianza": 0.2689,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.268877,
     "cobertura": 146,
     "soporte": 0.000716,
     "lift": 0.7289,
-    "t": 543
+    "t": 543,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Baja'), ('queue_length_lbl', 'Extensa'), ('vehicle_count_lbl', 'Medio'), ('average_speed_lbl', 'Alta')], clase_objetivo='Corta', variable_objetivo='green_light_duration', confianza=0.26887661141804786, cobertura=146, soporte=0.0007156862745098039, lift=np.float64(0.7289049810538301), t=543)"
   },
   {
     "antecedente": [
@@ -106,13 +110,14 @@
         "Alta"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Corta",
-    "confianza": 0.2682,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.268222,
     "cobertura": 1299,
     "soporte": 0.006368,
     "lift": 0.7271,
-    "t": 4843
+    "t": 4843,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Baja'), ('queue_length_lbl', 'Moderada'), ('vehicle_count_lbl', 'Medio'), ('average_speed_lbl', 'Alta')], clase_objetivo='Corta', variable_objetivo='green_light_duration', confianza=0.2682221763369812, cobertura=1299, soporte=0.006367647058823529, lift=np.float64(0.7271308550417159), t=4843)"
   },
   {
     "antecedente": [
@@ -133,13 +138,14 @@
         "Alta"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Corta",
-    "confianza": 0.2467,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.246697,
     "cobertura": 1251,
     "soporte": 0.006132,
     "lift": 0.6688,
-    "t": 5071
+    "t": 5071,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Baja'), ('queue_length_lbl', 'Corta'), ('vehicle_count_lbl', 'Medio'), ('average_speed_lbl', 'Alta')], clase_objetivo='Corta', variable_objetivo='green_light_duration', confianza=0.24669690396371524, cobertura=1251, soporte=0.006132352941176471, lift=np.float64(0.6687774037367996), t=5071)"
   },
   {
     "antecedente": [
@@ -160,13 +166,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Corta",
-    "confianza": 0.1314,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.131439,
     "cobertura": 1041,
     "soporte": 0.005103,
     "lift": 0.3563,
-    "t": 7920
+    "t": 7920,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Medio'), ('queue_length_lbl', 'Corta'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Corta', variable_objetivo='green_light_duration', confianza=0.13143939393939394, cobertura=1041, soporte=0.005102941176470588, lift=np.float64(0.35632265835186727), t=7920)"
   },
   {
     "antecedente": [
@@ -187,13 +194,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Corta",
-    "confianza": 0.1263,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.126293,
     "cobertura": 977,
     "soporte": 0.004789,
     "lift": 0.3424,
-    "t": 7736
+    "t": 7736,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Medio'), ('queue_length_lbl', 'Moderada')], clase_objetivo='Corta', variable_objetivo='green_light_duration', confianza=0.12629265770423992, cobertura=977, soporte=0.00478921568627451, lift=np.float64(0.3423702299194023), t=7736)"
   },
   {
     "antecedente": [
@@ -214,13 +222,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Corta",
-    "confianza": 0.0693,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.069307,
     "cobertura": 105,
     "soporte": 0.000515,
     "lift": 0.1879,
-    "t": 1515
+    "t": 1515,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Alta'), ('vehicle_count_lbl', 'Medio'), ('queue_length_lbl', 'Extensa'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Corta', variable_objetivo='green_light_duration', confianza=0.06930693069306931, cobertura=105, soporte=0.0005147058823529412, lift=np.float64(0.18788605947277964), t=1515)"
   },
   {
     "antecedente": [
@@ -241,13 +250,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Corta",
-    "confianza": 0.0635,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.063454,
     "cobertura": 836,
     "soporte": 0.004098,
     "lift": 0.172,
-    "t": 13175
+    "t": 13175,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Alta'), ('vehicle_count_lbl', 'Medio'), ('queue_length_lbl', 'Moderada'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Corta', variable_objetivo='green_light_duration', confianza=0.06345351043643263, cobertura=836, soporte=0.004098039215686275, lift=np.float64(0.17201786194246266), t=13175)"
   },
   {
     "antecedente": [
@@ -268,13 +278,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Corta",
-    "confianza": 0.0622,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.062235,
     "cobertura": 867,
     "soporte": 0.00425,
     "lift": 0.1687,
-    "t": 13931
+    "t": 13931,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Alta'), ('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Corta')], clase_objetivo='Corta', variable_objetivo='green_light_duration', confianza=0.06223530256263011, cobertura=867, soporte=0.00425, lift=np.float64(0.16871538880249487), t=13931)"
   },
   {
     "antecedente": [
@@ -295,13 +306,14 @@
         "Medio"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Corta",
-    "confianza": 0.1199,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.119907,
     "cobertura": 103,
     "soporte": 0.000505,
     "lift": 0.3251,
-    "t": 859
+    "t": 859,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Extensa'), ('average_speed_lbl', 'Media'), ('vehicle_count_lbl', 'Medio')], clase_objetivo='Corta', variable_objetivo='green_light_duration', confianza=0.119906868451688, cobertura=103, soporte=0.0005049019607843137, lift=np.float64(0.3250588186754243), t=859)"
   },
   {
     "antecedente": [
@@ -322,13 +334,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Corta",
-    "confianza": 0.0418,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.041789,
     "cobertura": 128,
     "soporte": 0.000627,
     "lift": 0.1133,
-    "t": 3063
+    "t": 3063,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Medio'), ('queue_length_lbl', 'Corta'), ('average_speed_lbl', 'Baja')], clase_objetivo='Corta', variable_objetivo='green_light_duration', confianza=0.04178909565785178, cobertura=128, soporte=0.0006274509803921569, lift=np.float64(0.11328720567436662), t=3063)"
   },
   {
     "antecedente": [
@@ -341,13 +354,14 @@
         "Alta"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
+    "variable_objetivo": "green_light_duration",
     "confianza": 1.0,
     "cobertura": 4999,
     "soporte": 0.024505,
     "lift": 3.1813,
-    "t": 4999
+    "t": 4999,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Alta')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=1.0, cobertura=4999, soporte=0.024504901960784312, lift=np.float64(3.1813361611876987), t=4999)"
   },
   {
     "antecedente": [
@@ -368,13 +382,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.9886,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.988565,
     "cobertura": 951,
     "soporte": 0.004662,
     "lift": 3.145,
-    "t": 962
+    "t": 962,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('average_speed_lbl', 'Baja'), ('queue_length_lbl', 'Extensa'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.9885654885654885, cobertura=951, soporte=0.004661764705882353, lift=np.float64(3.144959136475573), t=962)"
   },
   {
     "antecedente": [
@@ -395,13 +410,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.959,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.959003,
     "cobertura": 2924,
     "soporte": 0.014333,
     "lift": 3.0509,
-    "t": 3049
+    "t": 3049,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('average_speed_lbl', 'Baja'), ('queue_length_lbl', 'Moderada'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.9590029517874713, cobertura=2924, soporte=0.014333333333333333, lift=np.float64(3.0509107692072255), t=3049)"
   },
   {
     "antecedente": [
@@ -422,13 +438,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.9582,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.958211,
     "cobertura": 2935,
     "soporte": 0.014387,
     "lift": 3.0484,
-    "t": 3063
+    "t": 3063,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('average_speed_lbl', 'Baja'), ('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Corta')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.9582109043421482, cobertura=2935, soporte=0.014387254901960784, lift=np.float64(3.048391000028043), t=3063)"
   },
   {
     "antecedente": [
@@ -449,13 +466,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.9378,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.937765,
     "cobertura": 13064,
     "soporte": 0.064039,
     "lift": 2.9833,
-    "t": 13931
+    "t": 13931,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Moderada'), ('average_speed_lbl', 'Alta'), ('queue_length_lbl', 'Corta')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.9377646974373699, cobertura=13064, soporte=0.0640392156862745, lift=np.float64(2.983344742642746), t=13931)"
   },
   {
     "antecedente": [
@@ -476,13 +494,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.9365,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.936546,
     "cobertura": 12339,
     "soporte": 0.060485,
     "lift": 2.9795,
-    "t": 13175
+    "t": 13175,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Moderada'), ('average_speed_lbl', 'Alta'), ('queue_length_lbl', 'Moderada')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.9365464895635673, cobertura=12339, soporte=0.06048529411764706, lift=np.float64(2.9794692138819743), t=13175)"
   },
   {
     "antecedente": [
@@ -503,13 +522,14 @@
         "Alta"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.9307,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.930693,
     "cobertura": 1410,
     "soporte": 0.006912,
     "lift": 2.9608,
-    "t": 1515
+    "t": 1515,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('queue_length_lbl', 'Extensa'), ('traffic_density_lbl', 'Moderada'), ('average_speed_lbl', 'Alta')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.9306930693069307, cobertura=1410, soporte=0.006911764705882353, lift=np.float64(2.9608475163529078), t=1515)"
   },
   {
     "antecedente": [
@@ -530,13 +550,14 @@
         "Media"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.8801,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.880093,
     "cobertura": 756,
     "soporte": 0.003706,
     "lift": 2.7999,
-    "t": 859
+    "t": 859,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Extensa'), ('average_speed_lbl', 'Media')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.880093131548312, cobertura=756, soporte=0.0037058823529411765, lift=np.float64(2.799872104607567), t=859)"
   },
   {
     "antecedente": [
@@ -557,13 +578,14 @@
         "Media"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.8737,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.873707,
     "cobertura": 6759,
     "soporte": 0.033132,
     "lift": 2.7796,
-    "t": 7736
+    "t": 7736,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Moderada'), ('average_speed_lbl', 'Media')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.8737073422957601, cobertura=6759, soporte=0.033132352941176474, lift=np.float64(2.7795567623407), t=7736)"
   },
   {
     "antecedente": [
@@ -584,13 +606,14 @@
         "Media"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.8686,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.868561,
     "cobertura": 6879,
     "soporte": 0.033721,
     "lift": 2.7632,
-    "t": 7920
+    "t": 7920,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Corta'), ('average_speed_lbl', 'Media')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.868560606060606, cobertura=6879, soporte=0.03372058823529412, lift=np.float64(2.7631832642437093), t=7920)"
   },
   {
     "antecedente": [
@@ -611,13 +634,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.7533,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.753303,
     "cobertura": 3820,
     "soporte": 0.018725,
     "lift": 2.3965,
-    "t": 5071
+    "t": 5071,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('average_speed_lbl', 'Alta'), ('queue_length_lbl', 'Corta'), ('traffic_density_lbl', 'Baja')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.7533030960362848, cobertura=3820, soporte=0.018725490196078432, lift=np.float64(2.3965103797548823), t=5071)"
   },
   {
     "antecedente": [
@@ -638,13 +662,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.7318,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.731778,
     "cobertura": 3544,
     "soporte": 0.017373,
     "lift": 2.328,
-    "t": 4843
+    "t": 4843,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('average_speed_lbl', 'Alta'), ('queue_length_lbl', 'Moderada'), ('traffic_density_lbl', 'Baja')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.7317778236630188, cobertura=3544, soporte=0.017372549019607844, lift=np.float64(2.3280312523743967), t=4843)"
   },
   {
     "antecedente": [
@@ -665,13 +690,14 @@
         "Extensa"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.7311,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.731123,
     "cobertura": 397,
     "soporte": 0.001946,
     "lift": 2.3259,
-    "t": 543
+    "t": 543,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Medio'), ('average_speed_lbl', 'Alta'), ('traffic_density_lbl', 'Baja'), ('queue_length_lbl', 'Extensa')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.7311233885819521, cobertura=397, soporte=0.001946078431372549, lift=np.float64(2.3259492743858496), t=543)"
   },
   {
     "antecedente": [
@@ -692,13 +718,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.7113,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.711313,
     "cobertura": 547,
     "soporte": 0.002681,
     "lift": 2.2629,
-    "t": 769
+    "t": 769,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Media'), ('queue_length_lbl', 'Moderada')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.7113133940182055, cobertura=547, soporte=0.002681372549019608, lift=np.float64(2.2629270223272706), t=769)"
   },
   {
     "antecedente": [
@@ -719,13 +746,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.6705,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.670469,
     "cobertura": 529,
     "soporte": 0.002593,
     "lift": 2.133,
-    "t": 789
+    "t": 789,
+    "regla_str": "ReglaPRISM(antecedente=[('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Media'), ('queue_length_lbl', 'Corta')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.670468948035488, cobertura=529, soporte=0.0025931372549019608, lift=np.float64(2.132987109338774), t=789)"
   },
   {
     "antecedente": [
@@ -746,13 +774,14 @@
         "Extensa"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.6667,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.666667,
     "cobertura": 2,
     "soporte": 1e-05,
     "lift": 2.1209,
-    "t": 3
+    "t": 3,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('vehicle_count_lbl', 'Medio'), ('traffic_density_lbl', 'Baja'), ('queue_length_lbl', 'Extensa')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.6666666666666666, cobertura=2, soporte=9.803921568627451e-06, lift=np.float64(2.120890774125132), t=3)"
   },
   {
     "antecedente": [
@@ -773,13 +802,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
+    "variable_objetivo": "green_light_duration",
     "confianza": 0.8,
     "cobertura": 8,
     "soporte": 3.9e-05,
     "lift": 2.5451,
-    "t": 10
+    "t": 10,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Alto'), ('queue_length_lbl', 'Corta')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.8, cobertura=8, soporte=3.9215686274509805e-05, lift=np.float64(2.545068928950159), t=10)"
   },
   {
     "antecedente": [
@@ -800,13 +830,14 @@
         "Extensa"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.4524,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.452381,
     "cobertura": 57,
     "soporte": 0.000279,
     "lift": 1.4392,
-    "t": 126
+    "t": 126,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('traffic_density_lbl', 'Moderada'), ('vehicle_count_lbl', 'Alto'), ('queue_length_lbl', 'Extensa')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.4523809523809524, cobertura=57, soporte=0.00027941176470588236, lift=np.float64(1.4391758824420542), t=126)"
   },
   {
     "antecedente": [
@@ -827,13 +858,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.3846,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.384615,
     "cobertura": 5,
     "soporte": 2.5e-05,
     "lift": 1.2236,
-    "t": 13
+    "t": 13,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Moderada')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.38461538461538464, cobertura=5, soporte=2.4509803921568626e-05, lift=np.float64(1.223590831226038), t=13)"
   },
   {
     "antecedente": [
@@ -854,13 +886,14 @@
         "Alto"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Media",
-    "confianza": 0.0393,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.039294,
     "cobertura": 2058,
     "soporte": 0.010088,
     "lift": 0.125,
-    "t": 52375
+    "t": 52375,
+    "regla_str": "ReglaPRISM(antecedente=[('average_speed_lbl', 'Baja'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Extensa'), ('vehicle_count_lbl', 'Alto')], clase_objetivo='Media', variable_objetivo='green_light_duration', confianza=0.039293556085918856, cobertura=2058, soporte=0.010088235294117648, lift=np.float64(0.12500601087779062), t=52375)"
   },
   {
     "antecedente": [
@@ -877,13 +910,14 @@
         "Alta"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Larga",
+    "variable_objetivo": "green_light_duration",
     "confianza": 1.0,
     "cobertura": 1679,
     "soporte": 0.00823,
     "lift": 3.1567,
-    "t": 1679
+    "t": 1679,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Alta'), ('traffic_density_lbl', 'Alta')], clase_objetivo='Larga', variable_objetivo='green_light_duration', confianza=1.0, cobertura=1679, soporte=0.008230392156862745, lift=np.float64(3.156673114119923), t=1679)"
   },
   {
     "antecedente": [
@@ -904,13 +938,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Larga",
-    "confianza": 0.99,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.990014,
     "cobertura": 1388,
     "soporte": 0.006804,
     "lift": 3.1252,
-    "t": 1402
+    "t": 1402,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Alta'), ('queue_length_lbl', 'Moderada'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Larga', variable_objetivo='green_light_duration', confianza=0.9900142653352354, cobertura=1388, soporte=0.006803921568627451, lift=np.float64(3.125151413978925), t=1402)"
   },
   {
     "antecedente": [
@@ -931,13 +966,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Larga",
-    "confianza": 0.9866,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.986591,
     "cobertura": 1398,
     "soporte": 0.006853,
     "lift": 3.1143,
-    "t": 1417
+    "t": 1417,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Alta'), ('queue_length_lbl', 'Corta'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Larga', variable_objetivo='green_light_duration', confianza=0.9865913902611151, cobertura=1398, soporte=0.0068529411764705886, lift=np.float64(3.114346516259458), t=1417)"
   },
   {
     "antecedente": [
@@ -958,13 +994,14 @@
         "Extensa"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Larga",
-    "confianza": 0.9851,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.985075,
     "cobertura": 198,
     "soporte": 0.000971,
     "lift": 3.1096,
-    "t": 201
+    "t": 201,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Alta'), ('traffic_density_lbl', 'Moderada'), ('queue_length_lbl', 'Extensa')], clase_objetivo='Larga', variable_objetivo='green_light_duration', confianza=0.9850746268656716, cobertura=198, soporte=0.0009705882352941176, lift=np.float64(3.1095585900285805), t=201)"
   },
   {
     "antecedente": [
@@ -981,13 +1018,14 @@
         "Media"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Larga",
+    "variable_objetivo": "green_light_duration",
     "confianza": 1.0,
     "cobertura": 8864,
     "soporte": 0.043451,
     "lift": 3.1567,
-    "t": 8864
+    "t": 8864,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Alta'), ('average_speed_lbl', 'Media')], clase_objetivo='Larga', variable_objetivo='green_light_duration', confianza=1.0, cobertura=8864, soporte=0.04345098039215686, lift=np.float64(3.156673114119923), t=8864)"
   },
   {
     "antecedente": [
@@ -1004,13 +1042,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Larga",
+    "variable_objetivo": "green_light_duration",
     "confianza": 1.0,
     "cobertura": 71,
     "soporte": 0.000348,
     "lift": 3.1567,
-    "t": 71
+    "t": 71,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Moderada')], clase_objetivo='Larga', variable_objetivo='green_light_duration', confianza=1.0, cobertura=71, soporte=0.0003480392156862745, lift=np.float64(3.156673114119923), t=71)"
   },
   {
     "antecedente": [
@@ -1027,13 +1066,14 @@
         "Corta"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Larga",
+    "variable_objetivo": "green_light_duration",
     "confianza": 1.0,
     "cobertura": 12,
     "soporte": 5.9e-05,
     "lift": 3.1567,
-    "t": 12
+    "t": 12,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Corta')], clase_objetivo='Larga', variable_objetivo='green_light_duration', confianza=1.0, cobertura=12, soporte=5.882352941176471e-05, lift=np.float64(3.156673114119923), t=12)"
   },
   {
     "antecedente": [
@@ -1054,13 +1094,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Larga",
-    "confianza": 0.9607,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.960706,
     "cobertura": 50317,
     "soporte": 0.246652,
     "lift": 3.0326,
-    "t": 52375
+    "t": 52375,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('traffic_density_lbl', 'Alta'), ('queue_length_lbl', 'Extensa'), ('average_speed_lbl', 'Baja')], clase_objetivo='Larga', variable_objetivo='green_light_duration', confianza=0.9607064439140811, cobertura=50317, soporte=0.24665196078431373, lift=np.float64(3.0326362020653392), t=52375)"
   },
   {
     "antecedente": [
@@ -1081,13 +1122,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Larga",
-    "confianza": 0.5661,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.566116,
     "cobertura": 137,
     "soporte": 0.000672,
     "lift": 1.787,
-    "t": 242
+    "t": 242,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('queue_length_lbl', 'Extensa'), ('average_speed_lbl', 'Media'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Larga', variable_objetivo='green_light_duration', confianza=0.5661157024793388, cobertura=137, soporte=0.0006715686274509804, lift=np.float64(1.7870422174976421), t=242)"
   },
   {
     "antecedente": [
@@ -1108,13 +1150,14 @@
         "Baja"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Larga",
-    "confianza": 0.5476,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.547619,
     "cobertura": 69,
     "soporte": 0.000338,
     "lift": 1.7287,
-    "t": 126
+    "t": 126,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('queue_length_lbl', 'Extensa'), ('traffic_density_lbl', 'Moderada'), ('average_speed_lbl', 'Baja')], clase_objetivo='Larga', variable_objetivo='green_light_duration', confianza=0.5476190476190477, cobertura=69, soporte=0.00033823529411764706, lift=np.float64(1.7286543243990056), t=126)"
   },
   {
     "antecedente": [
@@ -1135,13 +1178,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Larga",
-    "confianza": 0.6154,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.615385,
     "cobertura": 8,
     "soporte": 3.9e-05,
     "lift": 1.9426,
-    "t": 13
+    "t": 13,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('average_speed_lbl', 'Baja'), ('queue_length_lbl', 'Moderada'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Larga', variable_objetivo='green_light_duration', confianza=0.6153846153846154, cobertura=8, soporte=3.9215686274509805e-05, lift=np.float64(1.9425680702276449), t=13)"
   },
   {
     "antecedente": [
@@ -1162,13 +1206,14 @@
         "Moderada"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Larga",
-    "confianza": 0.3295,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.329531,
     "cobertura": 260,
     "soporte": 0.001275,
     "lift": 1.0402,
-    "t": 789
+    "t": 789,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('queue_length_lbl', 'Corta'), ('average_speed_lbl', 'Media'), ('traffic_density_lbl', 'Moderada')], clase_objetivo='Larga', variable_objetivo='green_light_duration', confianza=0.32953105196451205, cobertura=260, soporte=0.0012745098039215687, lift=np.float64(1.0402218120040303), t=789)"
   },
   {
     "antecedente": [
@@ -1189,12 +1234,13 @@
         "Media"
       ]
     ],
-    "variable_objetivo": "green_light_duration",
     "clase_objetivo": "Larga",
-    "confianza": 0.2887,
+    "variable_objetivo": "green_light_duration",
+    "confianza": 0.288687,
     "cobertura": 222,
     "soporte": 0.001088,
     "lift": 0.9113,
-    "t": 769
+    "t": 769,
+    "regla_str": "ReglaPRISM(antecedente=[('vehicle_count_lbl', 'Alto'), ('queue_length_lbl', 'Moderada'), ('traffic_density_lbl', 'Moderada'), ('average_speed_lbl', 'Media')], clase_objetivo='Larga', variable_objetivo='green_light_duration', confianza=0.2886866059817945, cobertura=222, soporte=0.001088235294117647, lift=np.float64(0.9112892475092624), t=769)"
   }
 ]
