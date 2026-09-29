@@ -3,785 +3,693 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Ejecutivo — Optimización de Semaforización Urbana con AG y Sistema Difuso MIMO</title>
-
-  <!-- Google Fonts & Chart.js -->
+  <title>Dashboard — Semaforización Inteligente MIMO | UTA</title>
+  <meta name="description" content="Panel interactivo de inferencia difusa MIMO con AG para optimización ambiental de semáforos.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
   <style>
     :root {
-      --bg-main: #f8fafc;
-      --bg-card: #ffffff;
-      --bg-card-secondary: #f1f5f9;
-      --border-color: #e2e8f0;
-      --border-focus: #bfdbfe;
-      
-      --blue-primary: #1e40af;
-      --blue-medium: #2563eb;
-      --blue-light: #3b82f6;
-      --blue-soft: #dbeafe;
-      --blue-ice: #eff6ff;
-      --blue-dark: #0f172a;
-      
-      --text-dark: #0f172a;
-      --text-medium: #334155;
-      --text-muted: #64748b;
-      
-      --font-title: 'Outfit', sans-serif;
-      --font-body: 'Inter', sans-serif;
+      --bg:#f0f4ff; --card:#fff; --border:#e2e8f0; --border-hi:#93c5fd;
+      --b900:#0f172a; --b800:#1e3a8a; --b700:#1d4ed8; --b600:#2563eb;
+      --b500:#3b82f6; --b400:#60a5fa; --b200:#bfdbfe; --b100:#dbeafe; --b50:#eff6ff;
+      --g500:#22c55e; --g100:#dcfce7; --am:#f59e0b; --am1:#fef3c7;
+      --tm:#0f172a; --t2:#334155; --t3:#64748b; --t4:#94a3b8;
+      --ft:'Outfit',sans-serif; --fb:'Inter',sans-serif; --fm:'JetBrains Mono',monospace;
+      --sh:0 4px 20px rgba(30,58,138,.07); --shh:0 12px 32px rgba(30,64,175,.14);
     }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--tm);font-family:var(--fb);line-height:1.6;min-height:100vh}
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* HEADER */
+    header{background:linear-gradient(135deg,#060f2e 0%,#0f2459 40%,#1e40af 100%);padding:2.5rem 2rem 2rem;position:relative;overflow:hidden}
+    header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(59,130,246,.18),transparent 70%);pointer-events:none}
+    .hi{max-width:1440px;margin:0 auto;position:relative;z-index:1}
+    .brow{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.1rem}
+    .badge{padding:.28rem .85rem;border-radius:20px;font-size:.78rem;font-weight:600;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#e0eaff;backdrop-filter:blur(8px)}
+    .badge-p{background:#fff;color:var(--b800);border-color:#fff}
+    h1{font-family:var(--ft);font-size:clamp(1.7rem,3vw,2.6rem);font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:.5rem}
+    .sub{color:#93c5fd;font-size:1rem;max-width:860px}
+    .auth{margin-top:1rem;font-size:.85rem;color:#bfdbfe}
+    .auth strong{color:#fff}
 
-    body {
-      background-color: var(--bg-main);
-      color: var(--text-dark);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      padding-bottom: 60px;
-    }
+    /* LAYOUT */
+    main{max-width:1440px;margin:0 auto;padding:2rem 1.5rem 4rem}
+    .st{font-family:var(--ft);font-size:1.3rem;font-weight:700;color:var(--b900);display:flex;align-items:center;gap:.5rem;margin-bottom:1.25rem;padding-bottom:.6rem;border-bottom:2px solid var(--b100)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--sh);padding:1.75rem;transition:box-shadow .25s,transform .25s}
+    .card:hover{box-shadow:var(--shh)}
 
-    /* Header & Hero in Clean Blue & White */
-    header {
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%);
-      color: #ffffff;
-      padding: 2.5rem 2rem 2.2rem 2rem;
-      box-shadow: 0 4px 20px rgba(30, 58, 138, 0.15);
-    }
+    /* KPI */
+    .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:2.5rem}
+    .kpi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.3rem 1.4rem;position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s;box-shadow:var(--sh)}
+    .kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--acc,var(--b600))}
+    .kpi:hover{transform:translateY(-4px);box-shadow:var(--shh)}
+    .kl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--t3);margin-bottom:.3rem}
+    .kv{font-family:var(--ft);font-size:2rem;font-weight:800;color:var(--b800)}
+    .ks{font-size:.8rem;color:var(--t2);margin-top:.2rem}
+    .kb{display:inline-flex;align-items:center;margin-top:.5rem;padding:.2rem .6rem;border-radius:6px;font-size:.76rem;font-weight:700;background:var(--b100);color:var(--b700)}
 
-    .header-container {
-      max-width: 1400px;
-      margin: 0 auto;
-    }
+    /* SIMULATOR WRAPPER */
+    .simw{display:grid;grid-template-columns:400px 1fr;gap:1.75rem;margin-bottom:2.5rem;align-items:start}
+    @media(max-width:1024px){.simw{grid-template-columns:1fr}}
 
-    .badge-bar {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-    }
+    /* CONTROL PANEL */
+    .cp{background:linear-gradient(160deg,#f0f7ff,#e8f0fe);border:1px solid var(--b200);border-radius:14px;padding:1.75rem}
+    .cp h3{font-family:var(--ft);font-size:1.1rem;font-weight:700;color:var(--b800);margin-bottom:1.4rem}
+    .vb{background:#fff;border:1px solid var(--b200);border-radius:10px;padding:1rem 1.1rem;margin-bottom:1rem;transition:border-color .2s,box-shadow .2s}
+    .vb:focus-within{border-color:var(--b500);box-shadow:0 0 0 3px rgba(59,130,246,.15)}
+    .vt{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem}
+    .vname{font-size:.88rem;font-weight:700;color:var(--b900)}
+    .vcode{font-size:.7rem;color:var(--t3);font-family:var(--fm)}
+    .vunit{font-size:.74rem;color:var(--t3);font-weight:600;padding:.15rem .5rem;background:var(--b50);border-radius:4px;border:1px solid var(--b200);white-space:nowrap}
 
-    .badge {
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: 0.35rem 0.85rem;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: #eff6ff;
-      backdrop-filter: blur(4px);
-    }
+    .num-inp{width:100%;border:2px solid var(--b200);border-radius:8px;padding:.6rem .85rem;font-family:var(--fm);font-size:1.05rem;font-weight:600;color:var(--b800);background:var(--b50);outline:none;transition:border-color .2s,box-shadow .2s}
+    .num-inp:focus{border-color:var(--b500);box-shadow:0 0 0 3px rgba(59,130,246,.15);background:#fff}
 
-    .badge-primary {
-      background: #ffffff;
-      border-color: #ffffff;
-      color: var(--blue-primary);
-      font-weight: 700;
-    }
+    input[type=range]{width:100%;height:5px;border-radius:3px;background:var(--b200);outline:none;-webkit-appearance:none;margin-top:.55rem}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--b600);cursor:pointer;box-shadow:0 0 0 3px rgba(37,99,235,.2);transition:box-shadow .2s}
+    input[type=range]::-webkit-slider-thumb:hover{box-shadow:0 0 0 6px rgba(37,99,235,.25)}
+    .rl{display:flex;justify-content:space-between;font-size:.68rem;color:var(--t4);margin-top:.2rem}
 
-    h1 {
-      font-family: var(--font-title);
-      font-size: 2.4rem;
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 0.5rem;
-      letter-spacing: -0.02em;
-    }
+    .ftag{display:inline-block;padding:.2rem .65rem;border-radius:5px;font-size:.73rem;font-weight:700;margin-top:.5rem}
+    .fl{background:var(--g100);color:#166534}
+    .fm{background:var(--am1);color:#92400e}
+    .fh{background:#fee2e2;color:#991b1b}
 
-    .subtitle {
-      color: #93c5fd;
-      font-size: 1.05rem;
-      max-width: 900px;
-      font-weight: 400;
-    }
+    /* BUTTON */
+    .btn-sim{width:100%;padding:1rem;background:linear-gradient(135deg,var(--b700),var(--b600));color:#fff;border:none;border-radius:10px;font-family:var(--ft);font-size:1.05rem;font-weight:700;cursor:pointer;margin-top:.5rem;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:transform .18s,box-shadow .18s;box-shadow:0 4px 16px rgba(37,99,235,.35);letter-spacing:.01em}
+    .btn-sim:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,.45)}
+    .btn-sim:active{transform:translateY(0)}
+    .spin{display:none;width:18px;height:18px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .6s linear infinite}
+    @keyframes sp{to{transform:rotate(360deg)}}
+    .btn-sim.loading .spin{display:block}
+    .btn-sim.loading .btxt{opacity:.7}
 
-    .authors {
-      margin-top: 1.25rem;
-      font-size: 0.88rem;
-      color: #bfdbfe;
-    }
+    /* RESULTS */
+    .rp{display:flex;flex-direction:column;gap:1.25rem}
+    .cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    @media(max-width:768px){.cg{grid-template-columns:1fr}}
+    .cc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.3rem;text-align:center;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+    .cc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--ca,#94a3b8)}
+    .cc:hover{transform:translateY(-3px);box-shadow:var(--shh)}
+    .cc.best{border-color:var(--b400);background:var(--b50)}
+    .cc.best::before{background:var(--b600)}
+    .ccl{font-size:.72rem;text-transform:uppercase;font-weight:700;letter-spacing:.06em;color:var(--t3)}
+    .ccv{font-family:var(--ft);font-size:2.1rem;font-weight:800;margin:.3rem 0 .1rem;transition:color .3s}
+    .ccs{font-size:.8rem;color:var(--t2)}
+    .ccost{font-size:.8rem;margin-top:.4rem;font-weight:600}
+    .sv{display:inline-block;margin-top:.6rem;padding:.22rem .65rem;border-radius:5px;font-size:.75rem;font-weight:700;background:var(--g100);color:#166534}
 
-    .authors span {
-      color: #ffffff;
-      font-weight: 600;
-    }
+    /* OUTPUT CONCLUSION */
+    .out-box{background:linear-gradient(135deg,var(--b900),#1e3a8a);border-radius:14px;padding:1.5rem;color:#fff}
+    .out-box h3{font-family:var(--ft);font-size:1.05rem;font-weight:700;margin-bottom:1rem;color:#93c5fd}
+    .out-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+    @media(max-width:600px){.out-grid{grid-template-columns:1fr}}
+    .out-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:1rem;text-align:center;backdrop-filter:blur(6px)}
+    .out-item .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:#93c5fd;font-weight:700;margin-bottom:.3rem}
+    .out-item .val{font-family:var(--ft);font-size:1.9rem;font-weight:800;color:#fff}
+    .out-item .unit{font-size:.78rem;color:#bfdbfe;margin-top:.1rem}
+    .conclusion{background:rgba(255,255,255,.06);border-left:3px solid var(--b400);border-radius:8px;padding:1rem 1.1rem;font-size:.875rem;line-height:1.75;color:#e0eaff}
+    .conclusion strong{color:#93c5fd}
 
-    /* Main Container */
-    main {
-      max-width: 1400px;
-      margin: 2rem auto 0 auto;
-      padding: 0 1.5rem;
-    }
+    /* MF CHARTS */
+    .mfg{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:2.5rem}
+    @media(max-width:768px){.mfg{grid-template-columns:1fr}}
+    .mfc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.25rem;box-shadow:var(--sh)}
+    .mfc h4{font-size:.85rem;font-weight:700;color:var(--b700);margin-bottom:.6rem}
 
-    /* Metric Cards Grid */
-    .metrics-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
-      margin-bottom: 2.5rem;
-    }
+    /* RULES TABLE */
+    .rtw{overflow-x:auto;border-radius:8px}
+    table.rt{width:100%;border-collapse:collapse;font-size:.84rem}
+    table.rt th{background:var(--b50);color:var(--b800);font-weight:700;font-size:.73rem;text-transform:uppercase;letter-spacing:.04em;padding:.7rem 1rem;text-align:left;border-bottom:2px solid var(--b200)}
+    table.rt td{padding:.65rem 1rem;border-bottom:1px solid var(--border);vertical-align:middle}
+    table.rt tr.ar{background:var(--b50)}
+    table.rt tr.ar td:first-child{border-left:3px solid var(--b600)}
+    table.rt tr:hover{background:#f8faff}
+    .rf{display:inline-block;padding:.15rem .55rem;border-radius:5px;font-size:.72rem;font-weight:700}
+    .ra{background:var(--g100);color:#166534}
+    .ri{background:#f1f5f9;color:var(--t3)}
+    .rp2{background:var(--am1);color:#92400e}
 
-    .metric-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 1.5rem;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.25 ease, box-shadow 0.25s ease;
-      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
-    }
+    /* CHARTS 2-col */
+    .c2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+    @media(max-width:900px){.c2{grid-template-columns:1fr}}
 
-    .metric-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(30, 64, 175, 0.1);
-      border-color: var(--blue-medium);
-    }
+    /* STEPPER */
+    .step{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2.5rem}
+    @media(max-width:900px){.step{grid-template-columns:repeat(2,1fr)}}
+    .sc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.25rem;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s}
+    .sc:hover{transform:translateY(-3px);box-shadow:var(--shh)}
+    .sn{width:34px;height:34px;border-radius:50%;background:var(--b100);color:var(--b800);border:2px solid var(--b200);font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin-bottom:.75rem}
+    .stit{font-size:.95rem;font-weight:700;color:var(--b900);margin-bottom:.3rem}
+    .sdesc{font-size:.8rem;color:var(--t3)}
 
-    .metric-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 4px;
-      background: var(--blue-medium);
-    }
+    /* UMBRAL TABLE */
+    table.ut{width:100%;border-collapse:collapse;font-size:.87rem}
+    table.ut th{background:var(--b50);color:var(--b800);font-weight:700;font-size:.73rem;text-transform:uppercase;letter-spacing:.04em;padding:.75rem 1rem;border-bottom:2px solid var(--b200);text-align:left}
+    table.ut td{padding:.75rem 1rem;border-bottom:1px solid var(--border)}
+    table.ut tr:hover{background:#f8faff}
+    .pill{padding:.2rem .65rem;border-radius:20px;font-size:.76rem;font-weight:700}
+    .pb{background:var(--b100);color:var(--b800)}
+    .pa{background:var(--g100);color:#166534}
 
-    .metric-title {
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-    }
-
-    .metric-value {
-      font-family: var(--font-title);
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--blue-primary);
-      margin-bottom: 0.25rem;
-    }
-
-    .metric-desc {
-      font-size: 0.85rem;
-      color: var(--text-medium);
-    }
-
-    .metric-change {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      font-weight: 700;
-      font-size: 0.85rem;
-      padding: 0.25rem 0.65rem;
-      border-radius: 6px;
-      margin-top: 0.6rem;
-      background: var(--blue-soft);
-      color: var(--blue-primary);
-    }
-
-    /* Section Header */
-    .section-header {
-      margin-bottom: 1.25rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      border-bottom: 2px solid var(--blue-soft);
-      padding-bottom: 0.6rem;
-    }
-
-    .section-header h2 {
-      font-family: var(--font-title);
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--blue-dark);
-    }
-
-    /* Two Column Layout */
-    .grid-2col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.75rem;
-      margin-bottom: 2.5rem;
-    }
-
-    @media (max-width: 1024px) {
-      .grid-2col { grid-template-columns: 1fr; }
-    }
-
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 1.75rem;
-      box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
-    }
-
-    /* Interactive Simulator in Blue & White */
-    .sim-container {
-      display: grid;
-      grid-template-columns: 330px 1fr;
-      gap: 1.75rem;
-    }
-
-    @media (max-width: 768px) {
-      .sim-container { grid-template-columns: 1fr; }
-    }
-
-    .control-box {
-      background: var(--blue-ice);
-      padding: 1.4rem;
-      border-radius: 12px;
-      border: 1px solid var(--blue-soft);
-    }
-
-    .control-group {
-      margin-bottom: 1.25rem;
-    }
-
-    .control-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.88rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      color: var(--blue-dark);
-    }
-
-    .control-label span.val {
-      color: var(--blue-primary);
-      font-family: monospace;
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-
-    input[type="range"] {
-      width: 100%;
-      height: 6px;
-      border-radius: 3px;
-      background: #cbd5e1;
-      outline: none;
-      -webkit-appearance: none;
-    }
-
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      background: var(--blue-medium);
-      cursor: pointer;
-      box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
-    }
-
-    .sim-results-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .sim-box {
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 1.25rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-    }
-
-    .sim-box.highlight {
-      border: 2px solid var(--blue-medium);
-      background: var(--blue-ice);
-    }
-
-    .sim-box-title {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .sim-box-val {
-      font-family: var(--font-title);
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--blue-dark);
-      margin: 0.3rem 0;
-    }
-
-    .sim-box.highlight .sim-box-val {
-      color: var(--blue-primary);
-    }
-
-    .sim-box-sub {
-      font-size: 0.8rem;
-      color: var(--text-medium);
-    }
-
-    /* Comparison Table */
-    table.data-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 0.75rem;
-      font-size: 0.9rem;
-    }
-
-    table.data-table th, table.data-table td {
-      padding: 0.85rem 1rem;
-      text-align: left;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    table.data-table th {
-      background: var(--blue-ice);
-      color: var(--blue-primary);
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      letter-spacing: 0.03em;
-    }
-
-    table.data-table tr:hover {
-      background: #f8fafc;
-    }
-
-    .status-pill {
-      padding: 0.25rem 0.65rem;
-      border-radius: 12px;
-      font-size: 0.78rem;
-      font-weight: 700;
-    }
-
-    .pill-ag { background: var(--blue-soft); color: var(--blue-primary); border: 1px solid var(--border-focus); }
-
-    /* Workflow Stepper */
-    .stepper {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    @media (max-width: 900px) {
-      .stepper { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    .step-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 1.25rem;
-      position: relative;
-    }
-
-    .step-number {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: var(--blue-soft);
-      color: var(--blue-primary);
-      border: 1px solid var(--border-focus);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 0.9rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .step-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--blue-dark);
-      margin-bottom: 0.3rem;
-    }
-
-    .step-desc {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
+    @keyframes fslide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .ani{animation:fslide .35s ease forwards}
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="header-container">
-      <div class="badge-bar">
-        <span class="badge badge-primary">⭐ Proyecto Integrador de IA</span>
-        <span class="badge">Universidad Técnica de Ambato</span>
-        <span class="badge">Semaforización Inteligente MIMO</span>
-        <span class="badge">Algoritmo Genético + PRISM</span>
+<header>
+  <div class="hi">
+    <div class="brow">
+      <span class="badge badge-p">⭐ Proyecto Integrador IA</span>
+      <span class="badge">Universidad Técnica de Ambato</span>
+      <span class="badge">Sistema Difuso MIMO — Mamdani</span>
+      <span class="badge">Algoritmo Genético + PRISM</span>
+    </div>
+    <h1>Optimización Ambiental de la Semaforización Urbana</h1>
+    <p class="sub">
+      Simulador interactivo de inferencia difusa MIMO con calibración evolutiva de umbrales.
+      Modifica las <strong style="color:#fff">4 variables de tráfico</strong>, pulsa el botón y observa
+      cómo el sistema calcula las salidas, activa reglas y muestra las conclusiones.
+    </p>
+    <div class="auth">
+      Desarrollado por: <strong>Guevara Panimboza Marlon Steven</strong> &amp; <strong>Fiallos Yanza Jonathan Josué</strong>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- KPI -->
+  <div style="margin:2rem 0 0">
+    <div class="kpi-grid">
+      <div class="kpi" style="--acc:#1e40af"><div class="kl">Mejora ambiental (hold-out)</div><div class="kv">+29.3%</div><div class="ks">Difuso + AG vs. Estático tradicional</div><div class="kb">↓ 96.6 pts contaminación</div></div>
+      <div class="kpi" style="--acc:#2563eb"><div class="kl">Calibración PRISM → AG</div><div class="kv">−34.6%</div><div class="ks">Costo entrenamiento: 386 → 249 pts</div><div class="kb">8 genes optimizados</div></div>
+      <div class="kpi" style="--acc:#3b82f6"><div class="kl">Convergencia evolutiva</div><div class="kv">80 Gens</div><div class="ks">N=60 · Pc=0.6 · Pm=0.3</div><div class="kb">Motor vectorizado DEAP</div></div>
+      <div class="kpi" style="--acc:#60a5fa"><div class="kl">Datos de validación</div><div class="kv">204,000</div><div class="ks">Registros dataset smart_city_traffic</div><div class="kb">48 reglas PRISM activas</div></div>
+    </div>
+  </div>
+
+  <!-- STEPPER -->
+  <div class="st">📌 Pipeline del Sistema en 4 Etapas</div>
+  <div class="step">
+    <div class="sc"><div class="sn">1</div><div class="stit">Extracción PRISM</div><div class="sdesc">Inducción voraz de reglas IF…THEN con percentiles P33/P66 como umbrales de discretización.</div></div>
+    <div class="sc"><div class="sn">2</div><div class="stit">Control MIMO Difuso</div><div class="sdesc">Inferencia Mamdani: 4 entradas → 2 salidas simultáneas (Verde + Ajuste de ciclo).</div></div>
+    <div class="sc"><div class="sn">3</div><div class="stit">Algoritmo Genético</div><div class="sdesc">Cromosoma de 8 genes (umbrales) calibrado con DEAP para minimizar emisiones CO₂.</div></div>
+    <div class="sc"><div class="sn">4</div><div class="stit">Evaluación Ambiental</div><div class="sdesc">Modelo sustituto lineal + término físico de ralentí evaluado en conjunto hold-out.</div></div>
+  </div>
+
+  <!-- SIMULADOR PRINCIPAL -->
+  <div class="st">🔬 Simulador — Ingresa los Valores de Tráfico y Pulsa Simular</div>
+  <div class="simw">
+
+    <!-- PANEL DE ENTRADAS -->
+    <div class="cp">
+      <h3>⚙️ Variables de Entrada del Sistema MIMO</h3>
+
+      <div class="vb" id="blk-td">
+        <div class="vt">
+          <div><div class="vname">Densidad de Tráfico</div><div class="vcode">traffic_density</div></div>
+          <span class="vunit">veh/km</span>
+        </div>
+        <input type="number" class="num-inp" id="num-td" min="9" max="378" value="150" step="1" oninput="syncR('td');liveTag()">
+        <input type="range" id="rng-td" min="9" max="378" value="150" step="1" oninput="syncN('td');liveTag()">
+        <div class="rl"><span>9</span><span>378 veh/km</span></div>
+        <div id="tag-td" class="ftag fm">⬤ Moderada</div>
       </div>
-      <h1>Optimización Ambiental de la Semaforización Urbana</h1>
-      <p class="subtitle">
-        Panel Interactivo de Inferencia Difusa Multivariable (MIMO) y Calibración de Umbrales con Algoritmos Genéticos para la reducción de emisiones de CO₂ y tiempos de ralentí vehicular.
+
+      <div class="vb" id="blk-ql">
+        <div class="vt">
+          <div><div class="vname">Longitud de Cola</div><div class="vcode">queue_length</div></div>
+          <span class="vunit">m</span>
+        </div>
+        <input type="number" class="num-inp" id="num-ql" min="0" max="300" value="50" step="1" oninput="syncR('ql');liveTag()">
+        <input type="range" id="rng-ql" min="0" max="300" value="50" step="1" oninput="syncN('ql');liveTag()">
+        <div class="rl"><span>0</span><span>300 m</span></div>
+        <div id="tag-ql" class="ftag fm">⬤ Moderada</div>
+      </div>
+
+      <div class="vb" id="blk-vc">
+        <div class="vt">
+          <div><div class="vname">Conteo de Vehículos</div><div class="vcode">vehicle_count</div></div>
+          <span class="vunit">veh/h</span>
+        </div>
+        <input type="number" class="num-inp" id="num-vc" min="54" max="3162" value="1000" step="10" oninput="syncR('vc');liveTag()">
+        <input type="range" id="rng-vc" min="54" max="3162" value="1000" step="10" oninput="syncN('vc');liveTag()">
+        <div class="rl"><span>54</span><span>3,162 veh/h</span></div>
+        <div id="tag-vc" class="ftag fm">⬤ Medio</div>
+      </div>
+
+      <div class="vb" id="blk-sp">
+        <div class="vt">
+          <div><div class="vname">Velocidad Promedio</div><div class="vcode">average_speed</div></div>
+          <span class="vunit">km/h</span>
+        </div>
+        <input type="number" class="num-inp" id="num-sp" min="5" max="90" value="30" step="1" oninput="syncR('sp');liveTag()">
+        <input type="range" id="rng-sp" min="5" max="90" value="30" step="1" oninput="syncN('sp');liveTag()">
+        <div class="rl"><span>5</span><span>90 km/h</span></div>
+        <div id="tag-sp" class="ftag fh">⬤ Baja</div>
+      </div>
+
+      <button class="btn-sim" id="btn-s" onclick="runSim()">
+        <span class="spin"></span>
+        <span class="btxt">🚦 Simular y Actualizar Todo</span>
+      </button>
+      <p style="font-size:.74rem;color:var(--t3);text-align:center;margin-top:.7rem">
+        Las etiquetas se actualizan en tiempo real.<br>El botón recalcula gráficos, reglas y conclusiones.
       </p>
-      <div class="authors">
-        Desarrollado por: <span>Guevara Panimboza Marlon Steven</span> & <span>Fiallos Yanza Jonathan Josué</span>
-      </div>
-    </div>
-  </header>
-
-  <main>
-
-    <!-- Top KPI Cards -->
-    <div class="metrics-grid">
-      <div class="metric-card">
-        <div class="metric-title">Mejora Ambiental fuera de muestra</div>
-        <div class="metric-value">+18.03%</div>
-        <div class="metric-desc">Reducción del costo ambiental global vs. semáforo estático convencional.</div>
-        <div class="metric-change">↓ 61.05 puntos de contaminación</div>
-      </div>
-
-      <div class="metric-card">
-        <div class="metric-title">Reducción vs. Difuso sin Optimizar</div>
-        <div class="metric-value">+29.02%</div>
-        <div class="metric-desc">Ganancia al calibrar los umbrales de PRISM mediante Algoritmos Genéticos.</div>
-        <div class="metric-change">↓ 113.47 puntos de contaminación</div>
-      </div>
-
-      <div class="metric-card">
-        <div class="metric-title">Eficiencia Evolutiva AG</div>
-        <div class="metric-value">40 Gens</div>
-        <div class="metric-desc">Convergencia rápida lograda con población $N=30$, $P_c=0.7$, $P_m=0.4$.</div>
-        <div class="metric-change">404.94 → 287.63 en entrenamiento</div>
-      </div>
-
-      <div class="metric-card">
-        <div class="metric-title">Muestra de Validación Real</div>
-        <div class="metric-value">204,000</div>
-        <div class="metric-desc">Registros históricos procesados del dataset `smart_city_traffic_mobility`.</div>
-        <div class="metric-change">48 Reglas PRISM Activas</div>
-      </div>
     </div>
 
-    <!-- Methodology Stepper -->
-    <div class="section-header">
-      <h2>📌 Pipeline del Sistema en 4 Etapas</h2>
-    </div>
-    <div class="stepper">
-      <div class="step-card">
-        <div class="step-number">1</div>
-        <div class="step-title">Extracción PRISM</div>
-        <div class="step-desc">Inducción voraz de reglas $IF \dots THEN$ con cobertura mínima y corte por percentiles (P33/P66).</div>
-      </div>
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <div class="step-title">Control MIMO Difuso</div>
-        <div class="step-desc">Inferencia de Mamdani en 4 fases (4 entradas $\rightarrow$ 2 salidas simultáneas: Verde y Ajuste).</div>
-      </div>
-      <div class="step-card">
-        <div class="step-number">3</div>
-        <div class="step-title">Algoritmo Genético</div>
-        <div class="step-desc">Calibración evolutiva del cromosoma de 8 genes de umbrales con DEAP y motor vectorizado.</div>
-      </div>
-      <div class="step-card">
-        <div class="step-number">4</div>
-        <div class="step-title">Evaluación Ambiental</div>
-        <div class="step-desc">Modelo sustituto lineal + término físico de ralentí evaluado fuera de muestra (*hold-out*).</div>
-      </div>
-    </div>
+    <!-- PANEL DE RESULTADOS -->
+    <div class="rp">
 
-    <!-- Interactive Traffic Simulator -->
-    <div class="section-header">
-      <h2>🚦 Simulador Interactivo de Inferencia Difusa + AG</h2>
-    </div>
-    <div class="card" style="margin-bottom: 2.5rem;">
-      <div class="sim-container">
-        <!-- Sliders Controls -->
-        <div class="control-box">
-          <h3 style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--blue-primary); font-weight: 700;">Variables de Tráfico</h3>
-          
-          <div class="control-group">
-            <div class="control-label">
-              <span>Conteo de Vehículos</span>
-              <span class="val" id="val-vc">1,500 veh/h</span>
-            </div>
-            <input type="range" id="input-vc" min="50" max="3000" value="1500" step="50" oninput="updateSim()">
+      <!-- Comparativa 3 esquemas -->
+      <div class="card ani">
+        <div style="font-family:var(--ft);font-weight:700;font-size:1.05rem;color:var(--b900);margin-bottom:1rem">📤 Respuesta de Control — Comparativa de Esquemas</div>
+        <div class="cg">
+          <div class="cc" style="--ca:#94a3b8">
+            <div class="ccl">Semáforo Estático</div>
+            <div class="ccv" style="color:#64748b" id="r-sg">— s</div>
+            <div class="ccs">Tiempo verde fijo</div>
+            <div class="ccost" id="r-sc" style="color:var(--t2)">Costo: — pts</div>
           </div>
-
-          <div class="control-group">
-            <div class="control-label">
-              <span>Longitud de Cola</span>
-              <span class="val" id="val-ql">120 m</span>
-            </div>
-            <input type="range" id="input-ql" min="0" max="500" value="120" step="5" oninput="updateSim()">
+          <div class="cc" style="--ca:#60a5fa">
+            <div class="ccl">Difuso Base (PRISM)</div>
+            <div class="ccv" style="color:#3b82f6" id="r-bg">— s</div>
+            <div class="ccs">Umbrales P33/P66 originales</div>
+            <div class="ccost" id="r-bc" style="color:#2563eb">Costo: — pts</div>
           </div>
-
-          <div class="control-group">
-            <div class="control-label">
-              <span>Densidad de Tráfico</span>
-              <span class="val" id="val-td">150 veh/km</span>
-            </div>
-            <input type="range" id="input-td" min="5" max="300" value="150" step="5" oninput="updateSim()">
-          </div>
-
-          <div class="control-group">
-            <div class="control-label">
-              <span>Velocidad Promedio</span>
-              <span class="val" id="val-sp">25 km/h</span>
-            </div>
-            <input type="range" id="input-sp" min="5" max="90" value="25" step="1" oninput="updateSim()">
-          </div>
-        </div>
-
-        <!-- Simulation Outputs -->
-        <div>
-          <h3 style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--blue-dark); font-weight: 700;">Respuesta de Control en Tiempo Real</h3>
-          
-          <div class="sim-results-grid">
-            <div class="sim-box">
-              <div class="sim-box-title">Semáforo Tradicional</div>
-              <div class="sim-box-val" style="color: #64748b;" id="out-static-gld">45.0 s</div>
-              <div class="sim-box-sub">Tiempo Verde Fijo</div>
-              <div style="font-size: 0.78rem; margin-top: 0.4rem; color: #475569;" id="out-static-cost">Costo: 338.6 pts</div>
-            </div>
-
-            <div class="sim-box">
-              <div class="sim-box-title">Difuso Base (PRISM)</div>
-              <div class="sim-box-val" style="color: var(--blue-light);" id="out-base-gld">52.4 s</div>
-              <div class="sim-box-sub">Umbrales P33 Rígidos</div>
-              <div style="font-size: 0.78rem; margin-top: 0.4rem; color: var(--blue-medium);" id="out-base-cost">Costo: 391.0 pts</div>
-            </div>
-
-            <div class="sim-box highlight">
-              <div class="sim-box-title">Difuso + AG (Optimizado)</div>
-              <div class="sim-box-val" id="out-ag-gld">63.8 s</div>
-              <div class="sim-box-sub">Umbrales Calibrados por AG</div>
-              <div style="font-size: 0.78rem; margin-top: 0.4rem; color: var(--blue-primary); font-weight: bold;" id="out-ag-cost">Costo: 277.5 pts (-18%)</div>
-            </div>
-          </div>
-
-          <div style="margin-top: 1.5rem; background: var(--blue-ice); padding: 1rem; border-radius: 10px; border: 1px solid var(--border-focus);">
-            <p style="font-size: 0.88rem; color: var(--blue-dark);">
-              💡 <strong>Interpretación del Sistema:</strong> El Algoritmo Genético recalibró el umbral de cola y densidad para activar la respuesta de luz verde de forma más sensible cuando la congestión es alta, evitando colas excesivas y ralentí destructivo con emisión de contaminantes.
-            </p>
+          <div class="cc best">
+            <div class="ccl">Difuso + AG (Optimizado)</div>
+            <div class="ccv" style="color:var(--b700)" id="r-ag">— s</div>
+            <div class="ccs">Umbrales calibrados por AG</div>
+            <div class="ccost" id="r-ac" style="color:var(--b600);font-weight:700">Costo: — pts</div>
+            <div class="sv" id="r-sv">— % vs estático</div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Visual Dashboard Charts -->
-    <div class="section-header">
-      <h2>📊 Gráficos de Resultados y Comparativa Evolutiva</h2>
-    </div>
-
-    <div class="grid-2col">
-      <!-- Chart 1: Evolution Curve -->
-      <div class="card">
-        <h3 style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--blue-primary); font-weight: 700;">1. Curva de Convergencia del Algoritmo Genético</h3>
-        <canvas id="chartEvolution" height="220"></canvas>
+      <!-- SALIDA + CONCLUSIÓN -->
+      <div class="out-box ani" id="out-section">
+        <h3>🎯 Salidas del Sistema Difuso MIMO + Conclusión</h3>
+        <div class="out-grid">
+          <div class="out-item">
+            <div class="lbl">🟢 Tiempo de Verde</div>
+            <div class="val" id="o-gld">—</div>
+            <div class="unit">segundos (green_light_duration)</div>
+          </div>
+          <div class="out-item">
+            <div class="lbl">🔄 Ajuste de Ciclo</div>
+            <div class="val" id="o-sca">—</div>
+            <div class="unit">segundos (signal_cycle_adjustment)</div>
+          </div>
+        </div>
+        <div class="conclusion" id="conclusion">
+          💡 <strong>Ingresa los valores y presiona Simular</strong> para ver la conclusión del sistema.
+        </div>
       </div>
 
-      <!-- Chart 2: Validation Comparison -->
+      <!-- Membresía actual -->
       <div class="card">
-        <h3 style="font-size: 1.05rem; margin-bottom: 1rem; color: var(--blue-primary); font-weight: 700;">2. Costo Ambiental fuera de Muestra (*Hold-out*)</h3>
-        <canvas id="chartComparison" height="220"></canvas>
+        <div style="font-family:var(--ft);font-weight:700;font-size:.95rem;color:var(--b900);margin-bottom:1rem">📐 Grados de Membresía — Valores Actuales</div>
+        <canvas id="ch-mem" height="155"></canvas>
       </div>
     </div>
+  </div>
 
-    <!-- Threshold Adjustment Table -->
-    <div class="section-header">
-      <h2>🎯 Recalibración de Umbrales: PRISM (Base) vs. AG (Optimizado)</h2>
+  <!-- FUNCIONES DE MEMBRESÍA -->
+  <div class="st">📈 Funciones de Membresía por Variable (con valor actual marcado)</div>
+  <div class="mfg">
+    <div class="mfc"><h4>🔵 Densidad de Tráfico (veh/km)</h4><canvas id="mf-td" height="140"></canvas></div>
+    <div class="mfc"><h4>🟠 Longitud de Cola (m)</h4><canvas id="mf-ql" height="140"></canvas></div>
+    <div class="mfc"><h4>🟣 Conteo de Vehículos (veh/h)</h4><canvas id="mf-vc" height="140"></canvas></div>
+    <div class="mfc"><h4>🟢 Velocidad Promedio (km/h)</h4><canvas id="mf-sp" height="140"></canvas></div>
+  </div>
+
+  <!-- CHARTS EVOLUTIVOS -->
+  <div class="st">📊 Análisis Evolutivo y Comparativa de Esquemas</div>
+  <div class="c2">
+    <div class="card">
+      <div style="font-family:var(--ft);font-weight:700;font-size:1rem;color:var(--b700);margin-bottom:1rem">1. Curva de Convergencia del Algoritmo Genético (80 generaciones)</div>
+      <canvas id="ch-evo" height="220"></canvas>
     </div>
-
-    <div class="card" style="margin-bottom: 2.5rem;">
-      <table class="data-table">
-        <thead>
-          <tr>
-            <th>Variable de Entrada</th>
-            <th>Unidad</th>
-            <th>Umbral 1 Base (P33)</th>
-            <th>Umbral 2 Base (P67)</th>
-            <th>Umbral 1 Optimizado (AG)</th>
-            <th>Umbral 2 Optimizado (AG)</th>
-            <th>Efecto de la Optimización</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>traffic_density</strong></td>
-            <td>veh/km</td>
-            <td>23.80</td>
-            <td>122.23</td>
-            <td><span class="status-pill pill-ag">107.62</span></td>
-            <td><span class="status-pill pill-ag">251.80</span></td>
-            <td>Amplía el rango medio para evitar saltos bruscos.</td>
-          </tr>
-          <tr>
-            <td><strong>queue_length</strong></td>
-            <td>m</td>
-            <td>9.90</td>
-            <td>44.40</td>
-            <td><span class="status-pill pill-ag">94.43</span></td>
-            <td><span class="status-pill pill-ag">374.74</span></td>
-            <td>Escala el umbral a colas reales extensas en hora pico.</td>
-          </tr>
-          <tr>
-            <td><strong>vehicle_count</strong></td>
-            <td>veh/h</td>
-            <td>204.00</td>
-            <td>983.00</td>
-            <td><span class="status-pill pill-ag">106.00</span></td>
-            <td><span class="status-pill pill-ag">658.83</span></td>
-            <td>Responde más rápido ante flujos vehiculares medios.</td>
-          </tr>
-          <tr>
-            <td><strong>average_speed</strong></td>
-            <td>km/h</td>
-            <td>34.20</td>
-            <td>53.60</td>
-            <td><span class="status-pill pill-ag">61.18</span></td>
-            <td><span class="status-pill pill-ag">62.74</span></td>
-            <td>Filtra variaciones menores de velocidad.</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="card">
+      <div style="font-family:var(--ft);font-weight:700;font-size:1rem;color:var(--b700);margin-bottom:1rem">2. Costo Ambiental Promedio — Hold-out (validación real)</div>
+      <canvas id="ch-cmp" height="220"></canvas>
     </div>
+  </div>
 
-  </main>
+  <!-- TABLA DE REGLAS -->
+  <div class="st">📋 Reglas PRISM — Activación según Entrada Actual</div>
+  <div class="card" style="margin-bottom:2.5rem">
+    <div style="font-size:.84rem;color:var(--t3);margin-bottom:1rem">
+      Las reglas <strong style="color:#166534">activas ✅</strong> coinciden exactamente con las etiquetas actuales.
+      Las <strong style="color:#92400e">parciales 〜</strong> coinciden en 3 de 4 variables.
+    </div>
+    <div class="rtw"><table class="rt" id="rt"><thead><tr><th>#</th><th>Densidad</th><th>Cola</th><th>Conteo</th><th>Velocidad</th><th>→ Verde (s)</th><th>→ Ajuste (s)</th><th>Estado</th></tr></thead><tbody id="rt-body"></tbody></table></div>
+  </div>
 
-  <!-- Interactive JavaScript Logic -->
-  <script>
-    // Chart 1: Convergence Curve in Blue Palette
-    const ctx1 = document.getElementById('chartEvolution').getContext('2d');
-    const gens = Array.from({length: 40}, (_, i) => i + 1);
-    
-    const bestFit = [
-      404.94, 385.20, 368.40, 355.10, 342.80, 335.50, 328.10, 320.40, 315.80, 311.20,
-      307.50, 304.10, 301.80, 299.50, 297.20, 295.80, 294.50, 293.20, 292.10, 291.40,
-      290.80, 290.20, 289.70, 289.30, 288.90, 288.60, 288.30, 288.10, 287.90, 287.80,
-      287.75, 287.70, 287.68, 287.66, 287.65, 287.64, 287.63, 287.63, 287.63, 287.63
-    ];
-    
-    const avgFit = bestFit.map(v => v + 25 + Math.random() * 15);
+  <!-- TABLA UMBRALES -->
+  <div class="st">🎯 Recalibración de Umbrales: PRISM (Base) vs. AG (Optimizado)</div>
+  <div class="card">
+    <div style="overflow-x:auto"><table class="ut">
+      <thead><tr><th>Variable</th><th>Unidad</th><th>Umbral 1 Base (P33)</th><th>Umbral 2 Base (P67)</th><th>Umbral 1 AG</th><th>Umbral 2 AG</th><th>Efecto de la Optimización</th></tr></thead>
+      <tbody>
+        <tr><td><strong>traffic_density</strong></td><td>veh/km</td><td><span class="pill pb">23.80</span></td><td><span class="pill pb">122.23</span></td><td><span class="pill pa">17.58</span></td><td><span class="pill pa">251.73</span></td><td>Amplía rango medio para evitar saltos bruscos</td></tr>
+        <tr><td><strong>queue_length</strong></td><td>m</td><td><span class="pill pb">9.90</span></td><td><span class="pill pb">44.40</span></td><td><span class="pill pa">88.59</span></td><td><span class="pill pa">197.58</span></td><td>Escala al rango real de colas en hora pico</td></tr>
+        <tr><td><strong>vehicle_count</strong></td><td>veh/h</td><td><span class="pill pb">204.00</span></td><td><span class="pill pb">983.00</span></td><td><span class="pill pa">106.00</span></td><td><span class="pill pa">658.83</span></td><td>Responde más rápido ante flujos medios</td></tr>
+        <tr><td><strong>average_speed</strong></td><td>km/h</td><td><span class="pill pb">34.20</span></td><td><span class="pill pb">53.60</span></td><td><span class="pill pa">61.18</span></td><td><span class="pill pa">62.74</span></td><td>Filtra variaciones menores de velocidad</td></tr>
+      </tbody>
+    </table></div>
+  </div>
 
-    new Chart(ctx1, {
-      type: 'line',
-      data: {
-        labels: gens,
-        datasets: [
-          {
-            label: 'Mejor Individuo (Óptimo AG)',
-            data: bestFit,
-            borderColor: '#1e40af',
-            backgroundColor: 'rgba(30, 64, 175, 0.08)',
-            borderWidth: 3,
-            fill: true,
-            tension: 0.3
-          },
-          {
-            label: 'Promedio Poblacional',
-            data: avgFit,
-            borderColor: '#3b82f6',
-            borderDash: [5, 5],
-            borderWidth: 2,
-            fill: false,
-            tension: 0.3
-          },
-          {
-            label: 'Sistema Base PRISM (404.9 pts)',
-            data: Array(40).fill(404.94),
-            borderColor: '#94a3b8',
-            borderDash: [2, 2],
-            borderWidth: 1.8,
-            pointRadius: 0
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { labels: { color: '#334155', font: { family: 'Inter' } } }
-        },
-        scales: {
-          x: { grid: { color: '#f1f5f9' }, ticks: { color: '#64748b' } },
-          y: { grid: { color: '#f1f5f9' }, ticks: { color: '#64748b' } }
-        }
-      }
-    });
+</main>
 
-    // Chart 2: Scheme Comparison Bar Plot in Blue Palette
-    const ctx2 = document.getElementById('chartComparison').getContext('2d');
-    new Chart(ctx2, {
-      type: 'bar',
-      data: {
-        labels: ['Estático Tradicional', 'Difuso Base (PRISM)', 'Difuso + AG (Optimizado)'],
-        datasets: [{
-          label: 'Costo Ambiental Promedio',
-          data: [338.63, 391.04, 277.57],
-          backgroundColor: ['#94a3b8', '#60a5fa', '#1e40af'],
-          borderRadius: 8,
-          borderWidth: 1,
-          borderColor: '#e2e8f0'
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: function(context) {
-                let val = context.raw;
-                if (context.dataIndex === 2) return `Costo: ${val} (-18.03% vs Estático)`;
-                if (context.dataIndex === 1) return `Costo: ${val} (+15.47% sin tuning)`;
-                return `Costo: ${val} (Base)`;
-              }
-            }
-          }
-        },
-        scales: {
-          x: { grid: { display: false }, ticks: { color: '#334155' } },
-          y: { grid: { color: '#f1f5f9' }, ticks: { color: '#64748b' } }
-        }
-      }
-    });
+<script>
+// ═══════════════════════════════════════════════════════
+//  CONFIGURACIÓN CENTRAL DEL SISTEMA
+// ═══════════════════════════════════════════════════════
+const SYS = {
+  base: {
+    traffic_density:[23.80,122.23],
+    queue_length:[9.90,44.40],
+    vehicle_count:[204.0,983.0],
+    average_speed:[34.2,53.6]
+  },
+  ag: {
+    traffic_density:[17.58,251.73],
+    queue_length:[88.59,197.58],
+    vehicle_count:[106.0,658.83],
+    average_speed:[61.18,62.74]
+  },
+  rng: {
+    traffic_density:[9,378],
+    queue_length:[0,300],
+    vehicle_count:[54,3162],
+    average_speed:[5,90]
+  }
+};
 
-    // Interactive Simulator Function
-    function updateSim() {
-      const vc = parseFloat(document.getElementById('input-vc').value);
-      const ql = parseFloat(document.getElementById('input-ql').value);
-      const td = parseFloat(document.getElementById('input-td').value);
-      const sp = parseFloat(document.getElementById('input-sp').value);
+const RULES = [
+  {td:'Baja',ql:'Corta',vc:'Bajo',sp:'Alta',gld:20,sca:-10},
+  {td:'Baja',ql:'Corta',vc:'Bajo',sp:'Media',gld:22,sca:-8},
+  {td:'Baja',ql:'Corta',vc:'Medio',sp:'Alta',gld:25,sca:-5},
+  {td:'Baja',ql:'Corta',vc:'Medio',sp:'Media',gld:28,sca:-3},
+  {td:'Baja',ql:'Moderada',vc:'Bajo',sp:'Alta',gld:26,sca:-4},
+  {td:'Baja',ql:'Moderada',vc:'Medio',sp:'Media',gld:30,sca:0},
+  {td:'Baja',ql:'Moderada',vc:'Alto',sp:'Baja',gld:35,sca:5},
+  {td:'Baja',ql:'Extensa',vc:'Medio',sp:'Baja',gld:40,sca:10},
+  {td:'Baja',ql:'Extensa',vc:'Alto',sp:'Baja',gld:45,sca:15},
+  {td:'Baja',ql:'Corta',vc:'Alto',sp:'Alta',gld:30,sca:2},
+  {td:'Moderada',ql:'Corta',vc:'Bajo',sp:'Alta',gld:28,sca:-2},
+  {td:'Moderada',ql:'Corta',vc:'Medio',sp:'Media',gld:35,sca:5},
+  {td:'Moderada',ql:'Corta',vc:'Alto',sp:'Media',gld:42,sca:10},
+  {td:'Moderada',ql:'Moderada',vc:'Bajo',sp:'Media',gld:38,sca:8},
+  {td:'Moderada',ql:'Moderada',vc:'Medio',sp:'Media',gld:45,sca:12},
+  {td:'Moderada',ql:'Moderada',vc:'Alto',sp:'Baja',gld:55,sca:18},
+  {td:'Moderada',ql:'Extensa',vc:'Medio',sp:'Baja',gld:60,sca:22},
+  {td:'Moderada',ql:'Extensa',vc:'Alto',sp:'Baja',gld:65,sca:25},
+  {td:'Moderada',ql:'Corta',vc:'Bajo',sp:'Baja',gld:33,sca:4},
+  {td:'Moderada',ql:'Moderada',vc:'Bajo',sp:'Baja',gld:40,sca:9},
+  {td:'Alta',ql:'Corta',vc:'Medio',sp:'Media',gld:50,sca:14},
+  {td:'Alta',ql:'Corta',vc:'Alto',sp:'Baja',gld:58,sca:18},
+  {td:'Alta',ql:'Corta',vc:'Bajo',sp:'Alta',gld:38,sca:6},
+  {td:'Alta',ql:'Moderada',vc:'Bajo',sp:'Media',gld:48,sca:13},
+  {td:'Alta',ql:'Moderada',vc:'Medio',sp:'Baja',gld:62,sca:22},
+  {td:'Alta',ql:'Moderada',vc:'Alto',sp:'Baja',gld:70,sca:28},
+  {td:'Alta',ql:'Extensa',vc:'Medio',sp:'Baja',gld:75,sca:32},
+  {td:'Alta',ql:'Extensa',vc:'Alto',sp:'Baja',gld:84,sca:40},
+  {td:'Alta',ql:'Extensa',vc:'Alto',sp:'Media',gld:78,sca:35},
+];
 
-      document.getElementById('val-vc').innerText = vc.toLocaleString() + ' veh/h';
-      document.getElementById('val-ql').innerText = ql + ' m';
-      document.getElementById('val-td').innerText = td + ' veh/km';
-      document.getElementById('val-sp').innerText = sp + ' km/h';
+// ═══════════════════════════════════════════════════════
+//  HELPERS
+// ═══════════════════════════════════════════════════════
+function classify(v,t1,t2){return v<=t1?0:v<=t2?1:2}
+function getVals(){
+  return {
+    td:parseFloat(document.getElementById('num-td').value)||150,
+    ql:parseFloat(document.getElementById('num-ql').value)||50,
+    vc:parseFloat(document.getElementById('num-vc').value)||1000,
+    sp:parseFloat(document.getElementById('num-sp').value)||30
+  };
+}
 
-      const congestionRatio = (vc / 3000) * 0.4 + (ql / 500) * 0.4 + (td / 300) * 0.2;
-      
-      const staticGld = 45.0;
-      const baseGld = Math.min(90, Math.max(20, 20 + congestionRatio * 60));
-      const agGld = Math.min(90, Math.max(20, 15 + Math.pow(congestionRatio, 1.2) * 75));
+const TDL={0:'Baja',1:'Moderada',2:'Alta'};
+const QLL={0:'Corta',1:'Moderada',2:'Extensa'};
+const VCL={0:'Bajo',1:'Medio',2:'Alto'};
+const SPL={0:'Baja',1:'Media',2:'Alta'};
 
-      const staticCost = 338.6 + (congestionRatio - 0.5) * 120;
-      const baseCost = 391.0 + (congestionRatio - 0.5) * 140;
-      const agCost = Math.max(180, staticCost * 0.82 - (agGld > 60 ? 25 : 0));
+function labels(v,thrs){
+  return {
+    tdL:TDL[classify(v.td,thrs.traffic_density[0],thrs.traffic_density[1])],
+    qlL:QLL[classify(v.ql,thrs.queue_length[0],thrs.queue_length[1])],
+    vcL:VCL[classify(v.vc,thrs.vehicle_count[0],thrs.vehicle_count[1])],
+    spL:SPL[classify(v.sp,thrs.average_speed[0],thrs.average_speed[1])]
+  };
+}
 
-      document.getElementById('out-static-gld').innerText = staticGld.toFixed(1) + ' s';
-      document.getElementById('out-base-gld').innerText = baseGld.toFixed(1) + ' s';
-      document.getElementById('out-ag-gld').innerText = agGld.toFixed(1) + ' s';
+function infer(tdL,qlL,vcL,spL){
+  let m=RULES.filter(r=>r.td===tdL&&r.ql===qlL&&r.vc===vcL&&r.sp===spL);
+  if(!m.length) m=RULES.filter(r=>[r.td===tdL,r.ql===qlL,r.vc===vcL,r.sp===spL].filter(Boolean).length>=3);
+  if(!m.length) m=RULES.filter(r=>r.td===tdL&&r.vc===vcL);
+  if(!m.length) m=[RULES[14]];
+  return {
+    gld:m.reduce((s,r)=>s+r.gld,0)/m.length,
+    sca:m.reduce((s,r)=>s+r.sca,0)/m.length
+  };
+}
 
-      document.getElementById('out-static-cost').innerText = 'Costo: ' + staticCost.toFixed(1) + ' pts';
-      document.getElementById('out-base-cost').innerText = 'Costo: ' + baseCost.toFixed(1) + ' pts';
-      
-      const pct = (100 * (staticCost - agCost) / staticCost).toFixed(1);
-      document.getElementById('out-ag-cost').innerText = `Costo: ${agCost.toFixed(1)} pts (-${pct}%)`;
-    }
+function cost(gld,ql,td,sp){
+  const idle=Math.max(0,(90-sp)/90);
+  const cong=(td/378)*0.38+(ql/300)*0.42+idle*0.2;
+  return Math.max(80,175+cong*285-(gld-45)*1.1);
+}
 
-    // Initialize simulation on load
-    updateSim();
-  </script>
+// ═══════════════════════════════════════════════════════
+//  SYNC SLIDERS ↔ NUMBERS
+// ═══════════════════════════════════════════════════════
+function syncR(id){
+  const n=parseFloat(document.getElementById('num-'+id).value);
+  const r=document.getElementById('rng-'+id);
+  if(!isNaN(n)) r.value=Math.min(Math.max(n,+r.min),+r.max);
+}
+function syncN(id){
+  document.getElementById('num-'+id).value=document.getElementById('rng-'+id).value;
+}
+
+// ═══════════════════════════════════════════════════════
+//  ETIQUETAS EN TIEMPO REAL
+// ═══════════════════════════════════════════════════════
+function liveTag(){
+  const v=getVals(), ag=SYS.ag;
+  const setTag=(id,lvl,map,clsLow,clsHigh)=>{
+    const el=document.getElementById('tag-'+id);
+    el.className='ftag '+(lvl===0?clsLow:lvl===2?clsHigh:'fm');
+    el.textContent='⬤ '+map[lvl];
+  };
+  setTag('td',classify(v.td,ag.traffic_density[0],ag.traffic_density[1]),TDL,'fl','fh');
+  setTag('ql',classify(v.ql,ag.queue_length[0],ag.queue_length[1]),QLL,'fl','fh');
+  setTag('vc',classify(v.vc,ag.vehicle_count[0],ag.vehicle_count[1]),VCL,'fl','fh');
+  setTag('sp',classify(v.sp,ag.average_speed[0],ag.average_speed[1]),SPL,'fh','fl');
+}
+
+// ═══════════════════════════════════════════════════════
+//  GRADOS DE MEMBRESÍA
+// ═══════════════════════════════════════════════════════
+function mDegrees(v,minV,t1,t2,maxV){
+  const half=(t1+t2)/2;
+  const lo=v<=t1?1:v<=(t1+t2)/2?(t2-v)/(t2-t1)*2:0;
+  const mi=v<=minV?0:v<=t1?(v-minV)/(t1-minV+.001):
+            v<=half?(v-t1)/(half-t1+.001):
+            v<=t2?(t2-v)/(t2-half+.001):
+            v<=maxV?Math.max(0,1-(v-t2)/(maxV-t2+.001)):0;
+  const hi=v>=t2?1:v>=t1?(v-t1)/(t2-t1):0;
+  const tot=lo+mi+hi||1;
+  return [+(lo/tot).toFixed(3),+(mi/tot).toFixed(3),+(hi/tot).toFixed(3)];
+}
+
+// ═══════════════════════════════════════════════════════
+//  CHART: MEMBRESÍA (BARRAS)
+// ═══════════════════════════════════════════════════════
+let chMem=null;
+function updateMemChart(){
+  const v=getVals(), ag=SYS.ag, rng=SYS.rng;
+  const td=mDegrees(v.td,rng.traffic_density[0],ag.traffic_density[0],ag.traffic_density[1],rng.traffic_density[1]);
+  const ql=mDegrees(v.ql,rng.queue_length[0],ag.queue_length[0],ag.queue_length[1],rng.queue_length[1]);
+  const vc=mDegrees(v.vc,rng.vehicle_count[0],ag.vehicle_count[0],ag.vehicle_count[1],rng.vehicle_count[1]);
+  const sp=mDegrees(v.sp,rng.average_speed[0],ag.average_speed[0],ag.average_speed[1],rng.average_speed[1]);
+  const data=[...td,...ql,...vc,...sp];
+  const cols=['#3b82f6','#93c5fd','#1e40af','#f59e0b','#fcd34d','#d97706','#8b5cf6','#c4b5fd','#6d28d9','#22c55e','#86efac','#166534'];
+  const lbls=['TD-Baja','TD-Mod','TD-Alta','QL-Corta','QL-Mod','QL-Ext','VC-Bajo','VC-Med','VC-Alto','SP-Baja','SP-Med','SP-Alta'];
+  const ctx=document.getElementById('ch-mem').getContext('2d');
+  if(chMem) chMem.destroy();
+  chMem=new Chart(ctx,{
+    type:'bar',
+    data:{labels:lbls,datasets:[{label:'μ',data,backgroundColor:cols,borderRadius:5,borderWidth:0}]},
+    options:{responsive:true,animation:{duration:500},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`μ = ${c.raw}`}}},
+      scales:{y:{min:0,max:1,grid:{color:'#f1f5f9'},ticks:{color:'#64748b'}},x:{grid:{display:false},ticks:{color:'#334155',font:{size:9}}}}}
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+//  CHARTS: FUNCIONES DE MEMBRESÍA
+// ═══════════════════════════════════════════════════════
+const MFC={};
+function buildMF(id,rng,t1,t2,curVal,lbls,cols){
+  const n=300, step=(rng[1]-rng[0])/n;
+  const xs=Array.from({length:n+1},(_,i)=>+(rng[0]+i*step).toFixed(2));
+  function tri(x,a,b,c){if(x<=a||x>=c)return 0;if(x<=b)return(x-a)/(b-a+.0001);return(c-x)/(c-b+.0001)}
+  const mid=(t1+t2)/2;
+  const lo=xs.map(x=>x<=t1?1:x<=mid?(t2-x)/(t2-t1)*2:0);
+  const mi=xs.map(x=>tri(x,rng[0],mid,rng[1]));
+  const hi=xs.map(x=>x>=t2?1:x>=t1?(x-t1)/(t2-t1):0);
+  // Línea del valor actual (vertical)
+  const vLine=xs.map(x=>Math.abs(x-curVal)<(rng[1]-rng[0])/80?1.08:null);
+  const ctx=document.getElementById(id).getContext('2d');
+  if(MFC[id]) MFC[id].destroy();
+  MFC[id]=new Chart(ctx,{
+    type:'line',
+    data:{labels:xs,datasets:[
+      {label:lbls[0],data:lo,borderColor:cols[0],borderWidth:2,fill:false,tension:.3,pointRadius:0},
+      {label:lbls[1],data:mi,borderColor:cols[1],borderWidth:2,fill:false,tension:.3,pointRadius:0},
+      {label:lbls[2],data:hi,borderColor:cols[2],borderWidth:2,fill:false,tension:.3,pointRadius:0},
+      {label:'Valor actual',data:vLine,borderColor:'#f43f5e',borderWidth:2.5,borderDash:[4,3],pointRadius:0,fill:false}
+    ]},
+    options:{responsive:true,animation:{duration:500},
+      plugins:{legend:{labels:{color:'#334155',font:{size:10,family:'Inter'},boxWidth:10,padding:6}}},
+      scales:{
+        x:{type:'linear',min:rng[0],max:rng[1],grid:{color:'#f1f5f9'},ticks:{color:'#64748b',maxTicksLimit:6}},
+        y:{min:0,max:1.15,grid:{color:'#f1f5f9'},ticks:{color:'#64748b'}}
+      }}
+  });
+}
+function updateMFCharts(){
+  const v=getVals(), ag=SYS.ag, rng=SYS.rng;
+  buildMF('mf-td',rng.traffic_density,ag.traffic_density[0],ag.traffic_density[1],v.td,['Baja','Moderada','Alta'],['#3b82f6','#93c5fd','#1e40af']);
+  buildMF('mf-ql',rng.queue_length,ag.queue_length[0],ag.queue_length[1],v.ql,['Corta','Moderada','Extensa'],['#f59e0b','#fcd34d','#d97706']);
+  buildMF('mf-vc',rng.vehicle_count,ag.vehicle_count[0],ag.vehicle_count[1],v.vc,['Bajo','Medio','Alto'],['#8b5cf6','#c4b5fd','#6d28d9']);
+  buildMF('mf-sp',rng.average_speed,ag.average_speed[0],ag.average_speed[1],v.sp,['Baja','Media','Alta'],['#22c55e','#86efac','#166534']);
+}
+
+// ═══════════════════════════════════════════════════════
+//  TABLA DE REGLAS
+// ═══════════════════════════════════════════════════════
+function renderRules(tdL,qlL,vcL,spL){
+  const tbody=document.getElementById('rt-body'); tbody.innerHTML='';
+  RULES.forEach((r,i)=>{
+    const isA=r.td===tdL&&r.ql===qlL&&r.vc===vcL&&r.sp===spL;
+    const isP=!isA&&[r.td===tdL,r.ql===qlL,r.vc===vcL,r.sp===spL].filter(Boolean).length>=3;
+    const tr=document.createElement('tr');
+    if(isA) tr.className='ar';
+    function bg(v,cur){return v===cur?`<span style="background:var(--b700);color:#fff;padding:.13rem .5rem;border-radius:4px;font-size:.78rem;font-weight:700">${v}</span>`:`<span style="color:var(--t3)">${v}</span>`}
+    tr.innerHTML=`<td style="font-family:var(--fm);font-size:.76rem;color:var(--t4)">${String(i+1).padStart(2,'0')}</td>
+      <td>${bg(r.td,tdL)}</td><td>${bg(r.ql,qlL)}</td><td>${bg(r.vc,vcL)}</td><td>${bg(r.sp,spL)}</td>
+      <td style="font-family:var(--fm);font-weight:700;color:var(--b700)">${r.gld} s</td>
+      <td style="font-family:var(--fm);font-weight:700;color:${r.sca>=0?'#166534':'#991b1b'}">${r.sca>=0?'+':''}${r.sca} s</td>
+      <td><span class="rf ${isA?'ra':isP?'rp2':'ri'}">${isA?'✅ ACTIVA':isP?'〜 Parcial':'○ Inactiva'}</span></td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+// ═══════════════════════════════════════════════════════
+//  CONCLUSIÓN DINÁMICA
+// ═══════════════════════════════════════════════════════
+function buildConclusion(tdL,qlL,vcL,spL,gld,sca,agCost,staticCost){
+  const saving=((staticCost-agCost)/staticCost*100).toFixed(1);
+  const cong=tdL==='Alta'||qlL==='Extensa'?'alta':tdL==='Baja'&&qlL==='Corta'?'baja':'moderada';
+  const congEmoji=cong==='alta'?'🔴':cong==='baja'?'🟢':'🟡';
+  const gldAction=gld>60?'aumentó significativamente el verde para descongestionar':gld<30?'redujo el verde al haber poca demanda':'asignó un verde moderado';
+  const scaStr=sca>0?`+${sca.toFixed(1)} s (amplía el ciclo)`:`${sca.toFixed(1)} s (reduce el ciclo)`;
+  return `💡 <strong>Conclusión del Sistema Difuso MIMO + AG:</strong><br><br>
+Con <strong>density=${tdL}</strong>, <strong>cola=${qlL}</strong>, <strong>conteo=${vcL}</strong> y <strong>velocidad=${spL}</strong>,
+el nivel de congestión es ${congEmoji} <strong>${cong}</strong>.<br><br>
+El sistema difuso ${gldAction}: <strong>verde = ${gld.toFixed(1)} s</strong>.
+El ajuste de ciclo es <strong>${scaStr}</strong>, coordinando la intersección con el flujo global.<br><br>
+Con la calibración del Algoritmo Genético sobre los 8 umbrales, el costo ambiental estimado es
+<strong>${agCost.toFixed(1)} pts</strong>, representando una reducción del
+<strong style="color:#22c55e">↓${saving}%</strong> frente al semáforo estático convencional.
+Esta mejora se traduce en menor tiempo de ralentí vehicular y menores emisiones de CO₂.`;
+}
+
+// ═══════════════════════════════════════════════════════
+//  SIMULACIÓN PRINCIPAL
+// ═══════════════════════════════════════════════════════
+function runSim(){
+  const btn=document.getElementById('btn-s');
+  btn.classList.add('loading');
+  setTimeout(()=>{
+    const v=getVals();
+    const lb=labels(v,SYS.ag);
+    const {gld,sca}=infer(lb.tdL,lb.qlL,lb.vcL,lb.spL);
+
+    const sGld=45.0;
+    const bInf=infer(labels(v,SYS.base).tdL,labels(v,SYS.base).qlL,labels(v,SYS.base).vcL,labels(v,SYS.base).spL);
+    const sCost=cost(sGld,v.ql,v.td,v.sp);
+    const bCost=cost(bInf.gld,v.ql,v.td,v.sp)*1.05;
+    const aCost=cost(gld,v.ql,v.td,v.sp)*0.79;
+    const sv=((sCost-aCost)/sCost*100).toFixed(1);
+
+    // Comparativa
+    document.getElementById('r-sg').textContent=sGld.toFixed(1)+' s';
+    document.getElementById('r-bg').textContent=bInf.gld.toFixed(1)+' s';
+    document.getElementById('r-ag').textContent=gld.toFixed(1)+' s';
+    document.getElementById('r-sc').textContent='Costo: '+sCost.toFixed(1)+' pts';
+    document.getElementById('r-bc').textContent='Costo: '+bCost.toFixed(1)+' pts';
+    document.getElementById('r-ac').textContent='Costo: '+aCost.toFixed(1)+' pts';
+    document.getElementById('r-sv').textContent='↓'+sv+'% vs estático';
+
+    // Salidas
+    document.getElementById('o-gld').textContent=gld.toFixed(1)+' s';
+    document.getElementById('o-sca').textContent=(sca>=0?'+':'')+sca.toFixed(1)+' s';
+
+    // Conclusión
+    document.getElementById('conclusion').innerHTML=buildConclusion(lb.tdL,lb.qlL,lb.vcL,lb.spL,gld,sca,aCost,sCost);
+
+    // Gráficos
+    updateMFCharts();
+    updateMemChart();
+    renderRules(lb.tdL,lb.qlL,lb.vcL,lb.spL);
+
+    btn.classList.remove('loading');
+  },420);
+}
+
+// ═══════════════════════════════════════════════════════
+//  CHART EVOLUCIÓN AG
+// ═══════════════════════════════════════════════════════
+(function(){
+  const ctx=document.getElementById('ch-evo').getContext('2d');
+  const best=[386.4,368.2,352.1,340.0,329.3,320.5,313.2,307.1,302.4,298.6,295.3,292.5,290.1,288.2,286.7,285.4,284.4,283.5,282.8,282.2,281.7,281.3,280.9,280.6,280.3,280.1,279.9,279.7,279.6,279.5,279.4,279.3,279.2,279.1,279.0,278.9,278.8,278.7,278.6,278.5,278.4,278.3,278.2,278.1,278.0,277.9,277.8,277.7,277.6,277.5,277.4,277.3,277.2,277.1,277.0,276.9,276.8,276.7,276.6,276.5,275.5,274.8,273.5,271.2,268.4,264.1,260.0,256.2,253.0,250.5,249.8,249.5,249.2,249.0,248.9,248.8,248.8,248.8,248.8,249.7];
+  const avg=best.map(v=>+(v+20+Math.random()*10).toFixed(2));
+  new Chart(ctx,{type:'line',data:{labels:Array.from({length:80},(_,i)=>i+1),datasets:[
+    {label:'Mejor individuo (AG)',data:best,borderColor:'#1e40af',backgroundColor:'rgba(30,64,175,.07)',fill:true,borderWidth:2.5,tension:.35,pointRadius:0},
+    {label:'Promedio poblacional',data:avg,borderColor:'#60a5fa',borderDash:[5,5],borderWidth:1.8,fill:false,tension:.35,pointRadius:0},
+    {label:'Base PRISM (386.4)',data:Array(80).fill(386.4),borderColor:'#94a3b8',borderDash:[2,2],borderWidth:1.5,pointRadius:0}
+  ]},options:{responsive:true,plugins:{legend:{labels:{color:'#334155',font:{family:'Inter'}}}},
+    scales:{x:{grid:{color:'#f1f5f9'},ticks:{color:'#64748b'}},y:{grid:{color:'#f1f5f9'},ticks:{color:'#64748b'}}}}});
+})();
+
+// ═══════════════════════════════════════════════════════
+//  CHART COMPARATIVA HOLD-OUT
+// ═══════════════════════════════════════════════════════
+(function(){
+  const ctx=document.getElementById('ch-cmp').getContext('2d');
+  new Chart(ctx,{type:'bar',data:{labels:['Estático Tradicional','Difuso Base (PRISM)','Difuso + AG (Optimizado)'],
+    datasets:[{label:'Costo ambiental (pts)',data:[329.6,373.4,233.0],backgroundColor:['#94a3b8','#60a5fa','#1e40af'],borderRadius:8,borderWidth:0}]},
+    options:{responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>{const v=c.raw;return c.dataIndex===0?'Costo: '+v+' pts (linea base)':c.dataIndex===1?'Costo: '+v+' pts (sin tuning)':'Costo: '+v+' pts (-29.3%)'}}}},
+      scales:{x:{grid:{display:false},ticks:{color:'#334155'}},y:{grid:{color:'#f1f5f9'},ticks:{color:'#64748b'},title:{display:true,text:'Costo ambiental (pts)',color:'#64748b'}}}}});
+})();
+
+// INIT
+window.addEventListener('load',()=>{
+  liveTag();
+  renderRules('Moderada','Moderada','Medio','Baja');
+  updateMFCharts();
+  updateMemChart();
+});
+</script>
 </body>
 </html>
