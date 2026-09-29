@@ -1,368 +1,393 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Dashboard — Semaforización Inteligente MIMO | UTA</title>
- <meta name="description" content="Panel interactivo de inferencia difusa MIMO con AG para optimización ambiental de semáforos.">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
- <style>
- :root {
- --bg:#f0f4ff; --card:#fff; --border:#e2e8f0; --border-hi:#93c5fd;
- --b900:#0f172a; --b800:#1e3a8a; --b700:#1d4ed8; --b600:#2563eb;
- --b500:#3b82f6; --b400:#60a5fa; --b200:#bfdbfe; --b100:#dbeafe; --b50:#eff6ff;
- --g500:#22c55e; --g100:#dcfce7; --am:#f59e0b; --am1:#fef3c7;
- --tm:#0f172a; --t2:#334155; --t3:#64748b; --t4:#94a3b8;
- --ft:'Outfit',sans-serif; --fb:'Inter',sans-serif; --fm:'JetBrains Mono',monospace;
- --sh:0 4px 20px rgba(30,58,138,.07); --shh:0 12px 32px rgba(30,64,175,.14);
- }
- *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
- body{background:var(--bg);color:var(--tm);font-family:var(--fb);line-height:1.6;min-height:100vh}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Semaforización Inteligente MIMO | UTA</title>
+  <meta name="description" content="Panel interactivo de inferencia difusa MIMO con AG para optimización ambiental de semáforos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --bg:#f0f4ff; --card:#fff; --border:#e2e8f0; --border-hi:#93c5fd;
+      --b900:#0f172a; --b800:#1e3a8a; --b700:#1d4ed8; --b600:#2563eb;
+      --b500:#3b82f6; --b400:#60a5fa; --b200:#bfdbfe; --b100:#dbeafe; --b50:#eff6ff;
+      --g500:#22c55e; --g100:#dcfce7; --am:#f59e0b; --am1:#fef3c7;
+      --tm:#0f172a; --t2:#334155; --t3:#64748b; --t4:#94a3b8;
+      --ft:'Outfit',sans-serif; --fb:'Inter',sans-serif; --fm:'JetBrains Mono',monospace;
+      --sh:0 4px 20px rgba(30,58,138,.07); --shh:0 12px 32px rgba(30,64,175,.14);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--tm);font-family:var(--fb);line-height:1.6;min-height:100vh}
 
- /* HEADER */
- header{background:linear-gradient(135deg,#060f2e 0%,#0f2459 40%,#1e40af 100%);padding:2.5rem 2rem 2rem;position:relative;overflow:hidden}
- header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(59,130,246,.18),transparent 70%);pointer-events:none}
- .hi{max-width:1440px;margin:0 auto;position:relative;z-index:1}
- .brow{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.1rem}
- .badge{padding:.28rem .85rem;border-radius:20px;font-size:.78rem;font-weight:600;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#e0eaff;backdrop-filter:blur(8px)}
- .badge-p{background:#fff;color:var(--b800);border-color:#fff}
- h1{font-family:var(--ft);font-size:clamp(1.7rem,3vw,2.6rem);font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:.5rem}
- .sub{color:#93c5fd;font-size:1rem;max-width:860px}
- .auth{margin-top:1rem;font-size:.85rem;color:#bfdbfe}
- .auth strong{color:#fff}
+    /* HEADER */
+    header{background:linear-gradient(135deg,#060f2e 0%,#0f2459 40%,#1e40af 100%);padding:2.5rem 2rem 2rem;position:relative;overflow:hidden}
+    header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(59,130,246,.18),transparent 70%);pointer-events:none}
+    .hi{max-width:1440px;margin:0 auto;position:relative;z-index:1}
+    .brow{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.1rem}
+    .badge{padding:.28rem .85rem;border-radius:20px;font-size:.78rem;font-weight:600;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#e0eaff;backdrop-filter:blur(8px)}
+    .badge-p{background:#fff;color:var(--b800);border-color:#fff}
+    h1{font-family:var(--ft);font-size:clamp(1.7rem,3vw,2.6rem);font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:.5rem}
+    .sub{color:#93c5fd;font-size:1rem;max-width:860px}
+    .auth{margin-top:1rem;font-size:.85rem;color:#bfdbfe}
+    .auth strong{color:#fff}
 
- /* LAYOUT */
- main{max-width:1440px;margin:0 auto;padding:2rem 1.5rem 4rem}
- .st{font-family:var(--ft);font-size:1.3rem;font-weight:700;color:var(--b900);display:flex;align-items:center;gap:.5rem;margin-bottom:1.25rem;padding-bottom:.6rem;border-bottom:2px solid var(--b100)}
- .card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--sh);padding:1.75rem;transition:box-shadow .25s,transform .25s}
- .card:hover{box-shadow:var(--shh)}
+    /* LAYOUT */
+    main{max-width:1440px;margin:0 auto;padding:2rem 1.5rem 4rem}
+    .st{font-family:var(--ft);font-size:1.3rem;font-weight:700;color:var(--b900);display:flex;align-items:center;gap:.5rem;margin-bottom:1.25rem;padding-bottom:.6rem;border-bottom:2px solid var(--b100)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--sh);padding:1.75rem;transition:box-shadow .25s,transform .25s}
+    .card:hover{box-shadow:var(--shh)}
 
- /* KPI */
- .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:2.5rem}
- .kpi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.3rem 1.4rem;position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s;box-shadow:var(--sh)}
- .kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--acc,var(--b600))}
- .kpi:hover{transform:translateY(-4px);box-shadow:var(--shh)}
- .kl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--t3);margin-bottom:.3rem}
- .kv{font-family:var(--ft);font-size:2rem;font-weight:800;color:var(--b800)}
- .ks{font-size:.8rem;color:var(--t2);margin-top:.2rem}
- .kb{display:inline-flex;align-items:center;margin-top:.5rem;padding:.2rem .6rem;border-radius:6px;font-size:.76rem;font-weight:700;background:var(--b100);color:var(--b700)}
+    /* KPI */
+    .kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-bottom:2.5rem}
+    .kpi{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.3rem 1.4rem;position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s;box-shadow:var(--sh)}
+    .kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--acc,var(--b600))}
+    .kpi:hover{transform:translateY(-4px);box-shadow:var(--shh)}
+    .kl{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--t3);margin-bottom:.3rem}
+    .kv{font-family:var(--ft);font-size:2rem;font-weight:800;color:var(--b800)}
+    .ks{font-size:.8rem;color:var(--t2);margin-top:.2rem}
+    .kb{display:inline-flex;align-items:center;margin-top:.5rem;padding:.2rem .6rem;border-radius:6px;font-size:.76rem;font-weight:700;background:var(--b100);color:var(--b700)}
 
- /* SIMULATOR WRAPPER */
- .simw{display:grid;grid-template-columns:400px 1fr;gap:1.75rem;margin-bottom:2.5rem;align-items:start}
- @media(max-width:1024px){.simw{grid-template-columns:1fr}}
+    /* SIMULATOR WRAPPER */
+    .simw{display:grid;grid-template-columns:400px 1fr;gap:1.75rem;margin-bottom:2.5rem;align-items:start}
+    @media(max-width:1024px){.simw{grid-template-columns:1fr}}
 
- /* CONTROL PANEL */
- .cp{background:linear-gradient(160deg,#f0f7ff,#e8f0fe);border:1px solid var(--b200);border-radius:14px;padding:1.75rem}
- .cp h3{font-family:var(--ft);font-size:1.1rem;font-weight:700;color:var(--b800);margin-bottom:1.4rem}
- .vb{background:#fff;border:1px solid var(--b200);border-radius:10px;padding:1rem 1.1rem;margin-bottom:1rem;transition:border-color .2s,box-shadow .2s}
- .vb:focus-within{border-color:var(--b500);box-shadow:0 0 0 3px rgba(59,130,246,.15)}
- .vt{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem}
- .vname{font-size:.88rem;font-weight:700;color:var(--b900)}
- .vcode{font-size:.7rem;color:var(--t3);font-family:var(--fm)}
- .vunit{font-size:.74rem;color:var(--t3);font-weight:600;padding:.15rem .5rem;background:var(--b50);border-radius:4px;border:1px solid var(--b200);white-space:nowrap}
+    /* CONTROL PANEL */
+    .cp{background:linear-gradient(160deg,#f0f7ff,#e8f0fe);border:1px solid var(--b200);border-radius:14px;padding:1.75rem}
+    .cp h3{font-family:var(--ft);font-size:1.1rem;font-weight:700;color:var(--b800);margin-bottom:1.4rem}
+    .vb{background:#fff;border:1px solid var(--b200);border-radius:10px;padding:1rem 1.1rem;margin-bottom:1rem;transition:border-color .2s,box-shadow .2s}
+    .vb:focus-within{border-color:var(--b500);box-shadow:0 0 0 3px rgba(59,130,246,.15)}
+    .vt{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.6rem}
+    .vname{font-size:.88rem;font-weight:700;color:var(--b900)}
+    .vcode{font-size:.7rem;color:var(--t3);font-family:var(--fm)}
+    .vunit{font-size:.74rem;color:var(--t3);font-weight:600;padding:.15rem .5rem;background:var(--b50);border-radius:4px;border:1px solid var(--b200);white-space:nowrap}
 
- .num-inp{width:100%;border:2px solid var(--b200);border-radius:8px;padding:.6rem .85rem;font-family:var(--fm);font-size:1.05rem;font-weight:600;color:var(--b800);background:var(--b50);outline:none;transition:border-color .2s,box-shadow .2s}
- .num-inp:focus{border-color:var(--b500);box-shadow:0 0 0 3px rgba(59,130,246,.15);background:#fff}
+    .num-inp{width:100%;border:2px solid var(--b200);border-radius:8px;padding:.6rem .85rem;font-family:var(--fm);font-size:1.05rem;font-weight:600;color:var(--b800);background:var(--b50);outline:none;transition:border-color .2s,box-shadow .2s}
+    .num-inp:focus{border-color:var(--b500);box-shadow:0 0 0 3px rgba(59,130,246,.15);background:#fff}
 
- input[type=range]{width:100%;height:5px;border-radius:3px;background:var(--b200);outline:none;-webkit-appearance:none;margin-top:.55rem}
- input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--b600);cursor:pointer;box-shadow:0 0 0 3px rgba(37,99,235,.2);transition:box-shadow .2s}
- input[type=range]::-webkit-slider-thumb:hover{box-shadow:0 0 0 6px rgba(37,99,235,.25)}
- .rl{display:flex;justify-content:space-between;font-size:.68rem;color:var(--t4);margin-top:.2rem}
+    input[type=range]{width:100%;height:5px;border-radius:3px;background:var(--b200);outline:none;-webkit-appearance:none;margin-top:.55rem}
+    input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--b600);cursor:pointer;box-shadow:0 0 0 3px rgba(37,99,235,.2);transition:box-shadow .2s}
+    input[type=range]::-webkit-slider-thumb:hover{box-shadow:0 0 0 6px rgba(37,99,235,.25)}
+    .rl{display:flex;justify-content:space-between;font-size:.68rem;color:var(--t4);margin-top:.2rem}
 
- .ftag{display:inline-block;padding:.2rem .65rem;border-radius:5px;font-size:.73rem;font-weight:700;margin-top:.5rem}
- .fl{background:var(--g100);color:#166534}
- .fm{background:var(--am1);color:#92400e}
- .fh{background:#fee2e2;color:#991b1b}
+    .ftag{display:inline-block;padding:.2rem .65rem;border-radius:5px;font-size:.73rem;font-weight:700;margin-top:.5rem}
+    .fl{background:var(--g100);color:#166534}
+    .fm{background:var(--am1);color:#92400e}
+    .fh{background:#fee2e2;color:#991b1b}
 
- /* BUTTON */
- .btn-sim{width:100%;padding:1rem;background:linear-gradient(135deg,var(--b700),var(--b600));color:#fff;border:none;border-radius:10px;font-family:var(--ft);font-size:1.05rem;font-weight:700;cursor:pointer;margin-top:.5rem;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:transform .18s,box-shadow .18s;box-shadow:0 4px 16px rgba(37,99,235,.35);letter-spacing:.01em}
- .btn-sim:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,.45)}
- .btn-sim:active{transform:translateY(0)}
- .spin{display:none;width:18px;height:18px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .6s linear infinite}
- @keyframes sp{to{transform:rotate(360deg)}}
- .btn-sim.loading .spin{display:block}
- .btn-sim.loading .btxt{opacity:.7}
+    /* BUTTON */
+    .btn-sim{width:100%;padding:1rem;background:linear-gradient(135deg,var(--b700),var(--b600));color:#fff;border:none;border-radius:10px;font-family:var(--ft);font-size:1.05rem;font-weight:700;cursor:pointer;margin-top:.5rem;display:flex;align-items:center;justify-content:center;gap:.6rem;transition:transform .18s,box-shadow .18s;box-shadow:0 4px 16px rgba(37,99,235,.35);letter-spacing:.01em}
+    .btn-sim:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,99,235,.45)}
+    .btn-sim:active{transform:translateY(0)}
+    .spin{display:none;width:18px;height:18px;border:2px solid rgba(255,255,255,.4);border-top-color:#fff;border-radius:50%;animation:sp .6s linear infinite}
+    @keyframes sp{to{transform:rotate(360deg)}}
+    .btn-sim.loading .spin{display:block}
+    .btn-sim.loading .btxt{opacity:.7}
 
- /* RESULTS */
- .rp{display:flex;flex-direction:column;gap:1.25rem}
- .cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
- @media(max-width:768px){.cg{grid-template-columns:1fr}}
- .cc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.3rem;text-align:center;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
- .cc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--ca,#94a3b8)}
- .cc:hover{transform:translateY(-3px);box-shadow:var(--shh)}
- .cc.best{border-color:var(--b400);background:var(--b50)}
- .cc.best::before{background:var(--b600)}
- .ccl{font-size:.72rem;text-transform:uppercase;font-weight:700;letter-spacing:.06em;color:var(--t3)}
- .ccv{font-family:var(--ft);font-size:2.1rem;font-weight:800;margin:.3rem 0 .1rem;transition:color .3s}
- .ccs{font-size:.8rem;color:var(--t2)}
- .ccost{font-size:.8rem;margin-top:.4rem;font-weight:600}
- .sv{display:inline-block;margin-top:.6rem;padding:.22rem .65rem;border-radius:5px;font-size:.75rem;font-weight:700;background:var(--g100);color:#166534}
+    /* RESULTS */
+    .rp{display:flex;flex-direction:column;gap:1.25rem}
+    .cg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    @media(max-width:768px){.cg{grid-template-columns:1fr}}
+    .cc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.3rem;text-align:center;transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+    .cc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--ca,#94a3b8)}
+    .cc:hover{transform:translateY(-3px);box-shadow:var(--shh)}
+    .cc.best{border-color:var(--b400);background:var(--b50)}
+    .cc.best::before{background:var(--b600)}
+    .ccl{font-size:.72rem;text-transform:uppercase;font-weight:700;letter-spacing:.06em;color:var(--t3)}
+    .ccv{font-family:var(--ft);font-size:2.1rem;font-weight:800;margin:.3rem 0 .1rem;transition:color .3s}
+    .ccs{font-size:.8rem;color:var(--t2)}
+    .ccost{font-size:.8rem;margin-top:.4rem;font-weight:600}
+    .sv{display:inline-block;margin-top:.6rem;padding:.22rem .65rem;border-radius:5px;font-size:.75rem;font-weight:700;background:var(--g100);color:#166534}
 
- /* OUTPUT CONCLUSION */
- .out-box{background:linear-gradient(135deg,var(--b900),#1e3a8a);border-radius:14px;padding:1.5rem;color:#fff}
- .out-box h3{font-family:var(--ft);font-size:1.05rem;font-weight:700;margin-bottom:1rem;color:#93c5fd}
- .out-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
- @media(max-width:600px){.out-grid{grid-template-columns:1fr}}
- .out-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:1rem;text-align:center;backdrop-filter:blur(6px)}
- .out-item .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:#93c5fd;font-weight:700;margin-bottom:.3rem}
- .out-item .val{font-family:var(--ft);font-size:1.9rem;font-weight:800;color:#fff}
- .out-item .unit{font-size:.78rem;color:#bfdbfe;margin-top:.1rem}
- .conclusion{background:rgba(255,255,255,.06);border-left:3px solid var(--b400);border-radius:8px;padding:1rem 1.1rem;font-size:.875rem;line-height:1.75;color:#e0eaff}
- .conclusion strong{color:#93c5fd}
+    /* OUTPUT CONCLUSION */
+    .out-box{background:linear-gradient(135deg,var(--b900),#1e3a8a);border-radius:14px;padding:1.5rem;color:#fff}
+    .out-box h3{font-family:var(--ft);font-size:1.05rem;font-weight:700;margin-bottom:1rem;color:#93c5fd}
+    .out-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+    @media(max-width:600px){.out-grid{grid-template-columns:1fr}}
+    .out-item{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:10px;padding:1rem;text-align:center;backdrop-filter:blur(6px)}
+    .out-item .lbl{font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:#93c5fd;font-weight:700;margin-bottom:.3rem}
+    .out-item .val{font-family:var(--ft);font-size:1.9rem;font-weight:800;color:#fff}
+    .out-item .unit{font-size:.78rem;color:#bfdbfe;margin-top:.1rem}
+    .out-item .peak{font-size:.78rem;color:#fde047;font-weight:700;margin-top:.3rem;padding:.2rem .4rem;background:rgba(255,255,255,.1);border-radius:4px;display:inline-block}
+    .conclusion{background:rgba(255,255,255,.06);border-left:3px solid var(--b400);border-radius:8px;padding:1rem 1.1rem;font-size:.875rem;line-height:1.75;color:#e0eaff}
+    .conclusion strong{color:#93c5fd}
 
- /* MF CHARTS */
- .mfg{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-bottom:2.5rem}
- @media(max-width:768px){.mfg{grid-template-columns:1fr}}
- .mfc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.25rem;box-shadow:var(--sh)}
- .mfc h4{font-size:.85rem;font-weight:700;color:var(--b700);margin-bottom:.6rem}
+    /* MF CHARTS GRID */
+    .mfg{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-bottom:2.5rem}
+    @media(max-width:768px){.mfg{grid-template-columns:1fr}}
+    .mfc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.25rem;box-shadow:var(--sh)}
+    .mfc h4{font-size:.85rem;font-weight:700;color:var(--b700);margin-bottom:.6rem;display:flex;justify-content:space-between;align-items:center}
+    .mfc-badge{font-size:.72rem;padding:.15rem .5rem;border-radius:4px;background:var(--b100);color:var(--b800);font-weight:700}
 
- /* RULES TABLE */
- .rtw{overflow-x:auto;border-radius:8px}
- table.rt{width:100%;border-collapse:collapse;font-size:.84rem}
- table.rt th{background:var(--b50);color:var(--b800);font-weight:700;font-size:.73rem;text-transform:uppercase;letter-spacing:.04em;padding:.7rem 1rem;text-align:left;border-bottom:2px solid var(--b200)}
- table.rt td{padding:.65rem 1rem;border-bottom:1px solid var(--border);vertical-align:middle}
- table.rt tr.ar{background:var(--b50)}
- table.rt tr.ar td:first-child{border-left:3px solid var(--b600)}
- table.rt tr:hover{background:#f8faff}
- .rf{display:inline-block;padding:.15rem .55rem;border-radius:5px;font-size:.72rem;font-weight:700}
- .ra{background:var(--g100);color:#166534}
- .ri{background:#f1f5f9;color:var(--t3)}
- .rp2{background:var(--am1);color:#92400e}
+    /* RULES TABLE */
+    .rtw{overflow-x:auto;border-radius:8px}
+    table.rt{width:100%;border-collapse:collapse;font-size:.84rem}
+    table.rt th{background:var(--b50);color:var(--b800);font-weight:700;font-size:.73rem;text-transform:uppercase;letter-spacing:.04em;padding:.7rem 1rem;text-align:left;border-bottom:2px solid var(--b200)}
+    table.rt td{padding:.65rem 1rem;border-bottom:1px solid var(--border);vertical-align:middle}
+    table.rt tr.ar{background:var(--b50)}
+    table.rt tr.ar td:first-child{border-left:3px solid var(--b600)}
+    table.rt tr:hover{background:#f8faff}
+    .rf{display:inline-block;padding:.15rem .55rem;border-radius:5px;font-size:.72rem;font-weight:700}
+    .ra{background:var(--g100);color:#166534}
+    .ri{background:#f1f5f9;color:var(--t3)}
+    .rp2{background:var(--am1);color:#92400e}
 
- /* CHARTS 2-col */
- .c2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
- @media(max-width:900px){.c2{grid-template-columns:1fr}}
+    /* CHARTS 2-col */
+    .c2{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:2rem}
+    @media(max-width:900px){.c2{grid-template-columns:1fr}}
 
- /* STEPPER */
- .step{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2.5rem}
- @media(max-width:900px){.step{grid-template-columns:repeat(2,1fr)}}
- .sc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.25rem;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s}
- .sc:hover{transform:translateY(-3px);box-shadow:var(--shh)}
- .sn{width:34px;height:34px;border-radius:50%;background:var(--b100);color:var(--b800);border:2px solid var(--b200);font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin-bottom:.75rem}
- .stit{font-size:.95rem;font-weight:700;color:var(--b900);margin-bottom:.3rem}
- .sdesc{font-size:.8rem;color:var(--t3)}
+    /* STEPPER */
+    .step{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2.5rem}
+    @media(max-width:900px){.step{grid-template-columns:repeat(2,1fr)}}
+    .sc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.25rem;box-shadow:var(--sh);transition:transform .2s,box-shadow .2s}
+    .sc:hover{transform:translateY(-3px);box-shadow:var(--shh)}
+    .sn{width:34px;height:34px;border-radius:50%;background:var(--b100);color:var(--b800);border:2px solid var(--b200);font-weight:800;font-size:.9rem;display:flex;align-items:center;justify-content:center;margin-bottom:.75rem}
+    .stit{font-size:.95rem;font-weight:700;color:var(--b900);margin-bottom:.3rem}
+    .sdesc{font-size:.8rem;color:var(--t3)}
 
- /* UMBRAL TABLE */
- table.ut{width:100%;border-collapse:collapse;font-size:.87rem}
- table.ut th{background:var(--b50);color:var(--b800);font-weight:700;font-size:.73rem;text-transform:uppercase;letter-spacing:.04em;padding:.75rem 1rem;border-bottom:2px solid var(--b200);text-align:left}
- table.ut td{padding:.75rem 1rem;border-bottom:1px solid var(--border)}
- table.ut tr:hover{background:#f8faff}
- .pill{padding:.2rem .65rem;border-radius:20px;font-size:.76rem;font-weight:700}
- .pb{background:var(--b100);color:var(--b800)}
- .pa{background:var(--g100);color:#166534}
+    /* UMBRAL TABLE */
+    table.ut{width:100%;border-collapse:collapse;font-size:.87rem}
+    table.ut th{background:var(--b50);color:var(--b800);font-weight:700;font-size:.73rem;text-transform:uppercase;letter-spacing:.04em;padding:.75rem 1rem;border-bottom:2px solid var(--b200);text-align:left}
+    table.ut td{padding:.75rem 1rem;border-bottom:1px solid var(--border)}
+    table.ut tr:hover{background:#f8faff}
+    .pill{padding:.2rem .65rem;border-radius:20px;font-size:.76rem;font-weight:700}
+    .pb{background:var(--b100);color:var(--b800)}
+    .pa{background:var(--g100);color:#166534}
 
- @keyframes fslide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
- .ani{animation:fslide .35s ease forwards}
- </style>
+    @keyframes fslide{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .ani{animation:fslide .35s ease forwards}
+  </style>
 </head>
 <body>
 
 <header>
- <div class="hi">
- <div class="brow">
- <span class="badge badge-p"> Proyecto Integrador IA</span>
- <span class="badge">Universidad Técnica de Ambato</span>
- <span class="badge">Sistema Difuso MIMO — Mamdani</span>
- <span class="badge">Algoritmo Genético + PRISM</span>
- </div>
- <h1>Optimización Ambiental de la Semaforización Urbana</h1>
- <p class="sub">
- Simulador interactivo de inferencia difusa MIMO con calibración evolutiva de umbrales.
- Modifica las <strong style="color:#fff">4 variables de tráfico</strong>, pulsa el botón y observa
- cómo el sistema calcula las salidas, activa reglas y muestra las conclusiones.
- </p>
- <div class="auth">
- Desarrollado por: <strong>Guevara Panimboza Marlon Steven</strong> &amp; <strong>Fiallos Yanza Jonathan Josué</strong>
- </div>
- </div>
+  <div class="hi">
+    <div class="brow">
+      <span class="badge badge-p">Proyecto Integrador IA</span>
+      <span class="badge">Universidad Técnica de Ambato</span>
+      <span class="badge">Sistema Difuso MIMO — Mamdani</span>
+      <span class="badge">Algoritmo Genético + PRISM</span>
+    </div>
+    <h1>Optimización Ambiental de la Semaforización Urbana</h1>
+    <p class="sub">
+      Simulador interactivo de inferencia difusa MIMO con calibración evolutiva de umbrales.
+      Modifica las <strong style="color:#fff">4 variables de tráfico</strong>, pulsa el botón y observa
+      cómo el sistema calcula las salidas, activa reglas y muestra las conclusiones.
+    </p>
+    <div class="auth">
+      Desarrollado por: <strong>Guevara Panimboza Marlon Steven</strong> &amp; <strong>Fiallos Yanza Jonathan Josué</strong>
+    </div>
+  </div>
 </header>
 
 <main>
 
- <!-- KPI -->
- <div style="margin:2rem 0 0">
- <div class="kpi-grid">
- <div class="kpi" style="--acc:#1e40af"><div class="kl">Mejora ambiental (hold-out)</div><div class="kv">+29.3%</div><div class="ks">Difuso + AG vs. Estático tradicional</div><div class="kb">↓ 96.6 pts contaminación</div></div>
- <div class="kpi" style="--acc:#2563eb"><div class="kl">Calibración PRISM → AG</div><div class="kv">−34.6%</div><div class="ks">Costo entrenamiento: 386 → 249 pts</div><div class="kb">8 genes optimizados</div></div>
- <div class="kpi" style="--acc:#3b82f6"><div class="kl">Convergencia evolutiva</div><div class="kv">80 Gens</div><div class="ks">N=60 · Pc=0.6 · Pm=0.3</div><div class="kb">Motor vectorizado DEAP</div></div>
- <div class="kpi" style="--acc:#60a5fa"><div class="kl">Datos de validación</div><div class="kv">204,000</div><div class="ks">Registros dataset smart_city_traffic</div><div class="kb">48 reglas PRISM activas</div></div>
- </div>
- </div>
+  <!-- KPI -->
+  <div style="margin:2rem 0 0">
+    <div class="kpi-grid">
+      <div class="kpi" style="--acc:#1e40af"><div class="kl">Mejora ambiental (hold-out)</div><div class="kv">+29.3%</div><div class="ks">Difuso + AG vs. Estático tradicional</div><div class="kb">↓ 96.6 pts contaminación</div></div>
+      <div class="kpi" style="--acc:#2563eb"><div class="kl">Calibración PRISM → AG</div><div class="kv">−34.6%</div><div class="ks">Costo entrenamiento: 386 → 249 pts</div><div class="kb">8 genes optimizados</div></div>
+      <div class="kpi" style="--acc:#3b82f6"><div class="kl">Convergencia evolutiva</div><div class="kv">80 Gens</div><div class="ks">N=60 · Pc=0.6 · Pm=0.3</div><div class="kb">Motor vectorizado DEAP</div></div>
+      <div class="kpi" style="--acc:#60a5fa"><div class="kl">Datos de validación</div><div class="kv">204,000</div><div class="ks">Registros dataset smart_city_traffic</div><div class="kb">48 reglas PRISM activas</div></div>
+    </div>
+  </div>
 
- <!-- STEPPER -->
- <div class="st"> Pipeline del Sistema en 4 Etapas</div>
- <div class="step">
- <div class="sc"><div class="sn">1</div><div class="stit">Extracción PRISM</div><div class="sdesc">Inducción voraz de reglas IF…THEN con percentiles P33/P66 como umbrales de discretización.</div></div>
- <div class="sc"><div class="sn">2</div><div class="stit">Control MIMO Difuso</div><div class="sdesc">Inferencia Mamdani: 4 entradas → 2 salidas simultáneas (Verde + Ajuste de ciclo).</div></div>
- <div class="sc"><div class="sn">3</div><div class="stit">Algoritmo Genético</div><div class="sdesc">Cromosoma de 8 genes (umbrales) calibrado con DEAP para minimizar emisiones CO₂.</div></div>
- <div class="sc"><div class="sn">4</div><div class="stit">Evaluación Ambiental</div><div class="sdesc">Modelo sustituto lineal + término físico de ralentí evaluado en conjunto hold-out.</div></div>
- </div>
+  <!-- STEPPER -->
+  <div class="st">Pipeline del Sistema en 4 Etapas</div>
+  <div class="step">
+    <div class="sc"><div class="sn">1</div><div class="stit">Extracción PRISM</div><div class="sdesc">Inducción voraz de reglas IF…THEN con percentiles P33/P66 como umbrales de discretización.</div></div>
+    <div class="sc"><div class="sn">2</div><div class="stit">Control MIMO Difuso</div><div class="sdesc">Inferencia Mamdani: 4 entradas → 2 salidas simultáneas (Verde + Ajuste de ciclo).</div></div>
+    <div class="sc"><div class="sn">3</div><div class="stit">Algoritmo Genético</div><div class="sdesc">Cromosoma de 8 genes (umbrales) calibrado con DEAP para minimizar emisiones CO₂.</div></div>
+    <div class="sc"><div class="sn">4</div><div class="stit">Evaluación Ambiental</div><div class="sdesc">Modelo sustituto lineal + término físico de ralentí evaluado en conjunto hold-out.</div></div>
+  </div>
 
- <!-- SIMULADOR PRINCIPAL -->
- <div class="st"> Simulador — Ingresa los Valores de Tráfico y Pulsa Simular</div>
- <div class="simw">
+  <!-- SIMULADOR PRINCIPAL -->
+  <div class="st">Simulador — Ingresa los Valores de Tráfico y Pulsa Simular</div>
+  <div class="simw">
 
- <!-- PANEL DE ENTRADAS -->
- <div class="cp">
- <h3>️ Variables de Entrada del Sistema MIMO</h3>
+    <!-- PANEL DE ENTRADAS -->
+    <div class="cp">
+      <h3>Variables de Entrada del Sistema MIMO</h3>
 
- <div class="vb" id="blk-td">
- <div class="vt">
- <div><div class="vname">Densidad de Tráfico</div><div class="vcode">traffic_density</div></div>
- <span class="vunit">veh/km</span>
- </div>
- <input type="number" class="num-inp" id="num-td" min="9" max="378" value="150" step="1" oninput="syncR('td');liveTag()">
- <input type="range" id="rng-td" min="9" max="378" value="150" step="1" oninput="syncN('td');liveTag()">
- <div class="rl"><span>9</span><span>378 veh/km</span></div>
- <div id="tag-td" class="ftag fm"> Moderada</div>
- </div>
+      <div class="vb" id="blk-td">
+        <div class="vt">
+          <div><div class="vname">Densidad de Tráfico</div><div class="vcode">traffic_density</div></div>
+          <span class="vunit">veh/km</span>
+        </div>
+        <input type="number" class="num-inp" id="num-td" min="9" max="378" value="150" step="1" oninput="syncR('td');liveUpdate()">
+        <input type="range" id="rng-td" min="9" max="378" value="150" step="1" oninput="syncN('td');liveUpdate()">
+        <div class="rl"><span>9</span><span>378 veh/km</span></div>
+        <div id="tag-td" class="ftag fm">Moderada</div>
+      </div>
 
- <div class="vb" id="blk-ql">
- <div class="vt">
- <div><div class="vname">Longitud de Cola</div><div class="vcode">queue_length</div></div>
- <span class="vunit">m</span>
- </div>
- <input type="number" class="num-inp" id="num-ql" min="0" max="300" value="50" step="1" oninput="syncR('ql');liveTag()">
- <input type="range" id="rng-ql" min="0" max="300" value="50" step="1" oninput="syncN('ql');liveTag()">
- <div class="rl"><span>0</span><span>300 m</span></div>
- <div id="tag-ql" class="ftag fm"> Moderada</div>
- </div>
+      <div class="vb" id="blk-ql">
+        <div class="vt">
+          <div><div class="vname">Longitud de Cola</div><div class="vcode">queue_length</div></div>
+          <span class="vunit">m</span>
+        </div>
+        <input type="number" class="num-inp" id="num-ql" min="0" max="300" value="50" step="1" oninput="syncR('ql');liveUpdate()">
+        <input type="range" id="rng-ql" min="0" max="300" value="50" step="1" oninput="syncN('ql');liveUpdate()">
+        <div class="rl"><span>0</span><span>300 m</span></div>
+        <div id="tag-ql" class="ftag fm">Moderada</div>
+      </div>
 
- <div class="vb" id="blk-vc">
- <div class="vt">
- <div><div class="vname">Conteo de Vehículos</div><div class="vcode">vehicle_count</div></div>
- <span class="vunit">veh/h</span>
- </div>
- <input type="number" class="num-inp" id="num-vc" min="54" max="3162" value="1000" step="10" oninput="syncR('vc');liveTag()">
- <input type="range" id="rng-vc" min="54" max="3162" value="1000" step="10" oninput="syncN('vc');liveTag()">
- <div class="rl"><span>54</span><span>3,162 veh/h</span></div>
- <div id="tag-vc" class="ftag fm"> Medio</div>
- </div>
+      <div class="vb" id="blk-vc">
+        <div class="vt">
+          <div><div class="vname">Conteo de Vehículos</div><div class="vcode">vehicle_count</div></div>
+          <span class="vunit">veh/h</span>
+        </div>
+        <input type="number" class="num-inp" id="num-vc" min="54" max="3162" value="1000" step="10" oninput="syncR('vc');liveUpdate()">
+        <input type="range" id="rng-vc" min="54" max="3162" value="1000" step="10" oninput="syncN('vc');liveUpdate()">
+        <div class="rl"><span>54</span><span>3,162 veh/h</span></div>
+        <div id="tag-vc" class="ftag fm">Medio</div>
+      </div>
 
- <div class="vb" id="blk-sp">
- <div class="vt">
- <div><div class="vname">Velocidad Promedio</div><div class="vcode">average_speed</div></div>
- <span class="vunit">km/h</span>
- </div>
- <input type="number" class="num-inp" id="num-sp" min="5" max="90" value="30" step="1" oninput="syncR('sp');liveTag()">
- <input type="range" id="rng-sp" min="5" max="90" value="30" step="1" oninput="syncN('sp');liveTag()">
- <div class="rl"><span>5</span><span>90 km/h</span></div>
- <div id="tag-sp" class="ftag fh"> Baja</div>
- </div>
+      <div class="vb" id="blk-sp">
+        <div class="vt">
+          <div><div class="vname">Velocidad Promedio</div><div class="vcode">average_speed</div></div>
+          <span class="vunit">km/h</span>
+        </div>
+        <input type="number" class="num-inp" id="num-sp" min="5" max="90" value="30" step="1" oninput="syncR('sp');liveUpdate()">
+        <input type="range" id="rng-sp" min="5" max="90" value="30" step="1" oninput="syncN('sp');liveUpdate()">
+        <div class="rl"><span>5</span><span>90 km/h</span></div>
+        <div id="tag-sp" class="ftag fh">Baja</div>
+      </div>
 
- <button class="btn-sim" id="btn-s" onclick="runSim()">
- <span class="spin"></span>
- <span class="btxt"> Simular y Actualizar Todo</span>
- </button>
- <p style="font-size:.74rem;color:var(--t3);text-align:center;margin-top:.7rem">
- Las etiquetas se actualizan en tiempo real.<br>El botón recalcula gráficos, reglas y conclusiones.
- </p>
- </div>
+      <button class="btn-sim" id="btn-s" onclick="runSim()">
+        <span class="spin"></span>
+        <span class="btxt">Simular y Actualizar Todo</span>
+      </button>
+      <p style="font-size:.74rem;color:var(--t3);text-align:center;margin-top:.7rem">
+        Las etiquetas se actualizan en tiempo real.<br>El botón recalcula gráficos, reglas y conclusiones.
+      </p>
+    </div>
 
- <!-- PANEL DE RESULTADOS -->
- <div class="rp">
+    <!-- PANEL DE RESULTADOS -->
+    <div class="rp">
 
- <!-- Comparativa 3 esquemas -->
- <div class="card ani">
- <div style="font-family:var(--ft);font-weight:700;font-size:1.05rem;color:var(--b900);margin-bottom:1rem"> Respuesta de Control — Comparativa de Esquemas</div>
- <div class="cg">
- <div class="cc" style="--ca:#94a3b8">
- <div class="ccl">Semáforo Estático</div>
- <div class="ccv" style="color:#64748b" id="r-sg">— s</div>
- <div class="ccs">Tiempo verde fijo</div>
- <div class="ccost" id="r-sc" style="color:var(--t2)">Costo: — pts</div>
- </div>
- <div class="cc" style="--ca:#60a5fa">
- <div class="ccl">Difuso Base (PRISM)</div>
- <div class="ccv" style="color:#3b82f6" id="r-bg">— s</div>
- <div class="ccs">Umbrales P33/P66 originales</div>
- <div class="ccost" id="r-bc" style="color:#2563eb">Costo: — pts</div>
- </div>
- <div class="cc best">
- <div class="ccl">Difuso + AG (Optimizado)</div>
- <div class="ccv" style="color:var(--b700)" id="r-ag">— s</div>
- <div class="ccs">Umbrales calibrados por AG</div>
- <div class="ccost" id="r-ac" style="color:var(--b600);font-weight:700">Costo: — pts</div>
- <div class="sv" id="r-sv">— % vs estático</div>
- </div>
- </div>
- </div>
+      <!-- Comparativa 3 esquemas -->
+      <div class="card ani">
+        <div style="font-family:var(--ft);font-weight:700;font-size:1.05rem;color:var(--b900);margin-bottom:1rem">Respuesta de Control — Comparativa de Esquemas</div>
+        <div class="cg">
+          <div class="cc" style="--ca:#94a3b8">
+            <div class="ccl">Semáforo Estático</div>
+            <div class="ccv" style="color:#64748b" id="r-sg">— s</div>
+            <div class="ccs">Tiempo verde fijo</div>
+            <div class="ccost" id="r-sc" style="color:var(--t2)">Costo: — pts</div>
+          </div>
+          <div class="cc" style="--ca:#60a5fa">
+            <div class="ccl">Difuso Base (PRISM)</div>
+            <div class="ccv" style="color:#3b82f6" id="r-bg">— s</div>
+            <div class="ccs">Umbrales P33/P66 originales</div>
+            <div class="ccost" id="r-bc" style="color:#2563eb">Costo: — pts</div>
+          </div>
+          <div class="cc best">
+            <div class="ccl">Difuso + AG (Optimizado)</div>
+            <div class="ccv" style="color:var(--b700)" id="r-ag">— s</div>
+            <div class="ccs">Umbrales calibrados por AG</div>
+            <div class="ccost" id="r-ac" style="color:var(--b600);font-weight:700">Costo: — pts</div>
+            <div class="sv" id="r-sv">— % vs estático</div>
+          </div>
+        </div>
+      </div>
 
- <!-- SALIDA + CONCLUSIÓN -->
- <div class="out-box ani" id="out-section">
- <h3> Salidas del Sistema Difuso MIMO + Conclusión</h3>
- <div class="out-grid">
- <div class="out-item">
- <div class="lbl">🟢 Tiempo de Verde</div>
- <div class="val" id="o-gld">—</div>
- <div class="unit">segundos (green_light_duration)</div>
- </div>
- <div class="out-item">
- <div class="lbl"> Ajuste de Ciclo</div>
- <div class="val" id="o-sca">—</div>
- <div class="unit">segundos (signal_cycle_adjustment)</div>
- </div>
- </div>
- <div class="conclusion" id="conclusion">
- <strong>Ingresa los valores y presiona Simular</strong> para ver la conclusión del sistema.
- </div>
- </div>
+      <!-- SALIDA + CONCLUSIÓN -->
+      <div class="out-box ani" id="out-section">
+        <h3>Salidas del Sistema Difuso MIMO — Centroide y Punto de Masa Máxima</h3>
+        <div class="out-grid">
+          <div class="out-item">
+            <div class="lbl">Tiempo de Verde (green_light_duration)</div>
+            <div class="val" id="o-gld">—</div>
+            <div class="unit">segundos (Centroide Defuzzificado y*)</div>
+            <div class="peak" id="o-gld-peak">Punto de Masa Máxima: μmax = —</div>
+          </div>
+          <div class="out-item">
+            <div class="lbl">Ajuste de Ciclo (signal_cycle_adjustment)</div>
+            <div class="val" id="o-sca">—</div>
+            <div class="unit">segundos (Centroide Defuzzificado y*)</div>
+            <div class="peak" id="o-sca-peak">Punto de Masa Máxima: μmax = —</div>
+          </div>
+        </div>
+        <div class="conclusion" id="conclusion">
+          <strong>Ingresa los valores y presiona Simular</strong> para ver la conclusión del sistema.
+        </div>
+      </div>
 
- </div>
- </div>
+    </div>
+  </div>
 
- <!-- FUNCIÓN DE MASA AGREGADA (SALIDAS DIFUSAS MAMDANI) -->
- <div class="st"> Función de Masa Agregada del Sistema Difuso (Fase 3 — Agregación Mamdani)</div>
- <div class="mfg" style="grid-template-columns:1fr 1fr;">
- <div class="mfc">
- <h4>🟢 Función de Masa Agregada: Duración de Luz Verde (green_light_duration)</h4>
- <canvas id="mf-gld" height="190"></canvas>
- </div>
- <div class="mfc">
- <h4> Función de Masa Agregada: Ajuste de Ciclo (signal_cycle_adjustment)</h4>
- <canvas id="mf-sca" height="190"></canvas>
- </div>
- </div>
+  <!-- SECCIÓN 1: FUNCIONES DE MEMBRESÍA DE VARIABLES DE ENTRADA -->
+  <div class="st">Funciones de Membresía por Variable de Entrada (Fase 1 — Fuzzificación con valor actual)</div>
+  <div class="mfg">
+    <div class="mfc">
+      <h4>Densidad de Tráfico (traffic_density) <span class="mfc-badge" id="b-td">veh/km</span></h4>
+      <canvas id="mf-td" height="150"></canvas>
+    </div>
+    <div class="mfc">
+      <h4>Longitud de Cola (queue_length) <span class="mfc-badge" id="b-ql">m</span></h4>
+      <canvas id="mf-ql" height="150"></canvas>
+    </div>
+    <div class="mfc">
+      <h4>Conteo de Vehículos (vehicle_count) <span class="mfc-badge" id="b-vc">veh/h</span></h4>
+      <canvas id="mf-vc" height="150"></canvas>
+    </div>
+    <div class="mfc">
+      <h4>Velocidad Promedio (average_speed) <span class="mfc-badge" id="b-sp">km/h</span></h4>
+      <canvas id="mf-sp" height="150"></canvas>
+    </div>
+  </div>
 
- <!-- CHARTS EVOLUTIVOS -->
- <div class="st"> Análisis Evolutivo y Comparativa de Esquemas</div>
- <div class="c2">
- <div class="card">
- <div style="font-family:var(--ft);font-weight:700;font-size:1rem;color:var(--b700);margin-bottom:1rem">1. Curva de Convergencia del Algoritmo Genético (80 generaciones)</div>
- <canvas id="ch-evo" height="220"></canvas>
- </div>
- <div class="card">
- <div style="font-family:var(--ft);font-weight:700;font-size:1rem;color:var(--b700);margin-bottom:1rem">2. Costo Ambiental Promedio — Hold-out (validación real)</div>
- <canvas id="ch-cmp" height="220"></canvas>
- </div>
- </div>
+  <!-- SECCIÓN 2: FUNCIÓN DE MASA AGREGADA DE SALIDAS (FASE 3 & 4) -->
+  <div class="st">Función de Masa Agregada del Sistema Difuso (Fase 3 — Agregación y Fase 4 — Centroide Defuzzificado)</div>
+  <div class="mfg" style="grid-template-columns:1fr 1fr;">
+    <div class="mfc">
+      <h4>Función de Masa Agregada: Duración de Luz Verde (green_light_duration)</h4>
+      <canvas id="mf-gld" height="190"></canvas>
+    </div>
+    <div class="mfc">
+      <h4>Función de Masa Agregada: Ajuste de Ciclo (signal_cycle_adjustment)</h4>
+      <canvas id="mf-sca" height="190"></canvas>
+    </div>
+  </div>
 
- <!-- TABLA DE REGLAS -->
- <div class="st"> Reglas PRISM — Activación según Entrada Actual</div>
- <div class="card" style="margin-bottom:2.5rem">
- <div style="font-size:.84rem;color:var(--t3);margin-bottom:1rem">
- Las reglas <strong style="color:#166534">activas </strong> coinciden exactamente con las etiquetas actuales.
- Las <strong style="color:#92400e">parciales 〜</strong> coinciden en 3 de 4 variables.
- </div>
- <div class="rtw"><table class="rt" id="rt"><thead><tr><th>#</th><th>Densidad</th><th>Cola</th><th>Conteo</th><th>Velocidad</th><th>→ Verde (s)</th><th>→ Ajuste (s)</th><th>Estado</th></tr></thead><tbody id="rt-body"></tbody></table></div>
- </div>
+  <!-- CHARTS EVOLUTIVOS -->
+  <div class="st">Análisis Evolutivo y Comparativa de Esquemas</div>
+  <div class="c2">
+    <div class="card">
+      <div style="font-family:var(--ft);font-weight:700;font-size:1rem;color:var(--b700);margin-bottom:1rem">1. Curva de Convergencia del Algoritmo Genético (80 generaciones)</div>
+      <canvas id="ch-evo" height="220"></canvas>
+    </div>
+    <div class="card">
+      <div style="font-family:var(--ft);font-weight:700;font-size:1rem;color:var(--b700);margin-bottom:1rem">2. Costo Ambiental Promedio — Hold-out (validación real)</div>
+      <canvas id="ch-cmp" height="220"></canvas>
+    </div>
+  </div>
 
- <!-- TABLA UMBRALES -->
- <div class="st"> Recalibración de Umbrales: PRISM (Base) vs. AG (Optimizado)</div>
- <div class="card">
- <div style="overflow-x:auto"><table class="ut">
- <thead><tr><th>Variable</th><th>Unidad</th><th>Umbral 1 Base (P33)</th><th>Umbral 2 Base (P67)</th><th>Umbral 1 AG</th><th>Umbral 2 AG</th><th>Efecto de la Optimización</th></tr></thead>
- <tbody>
- <tr><td><strong>traffic_density</strong></td><td>veh/km</td><td><span class="pill pb">23.80</span></td><td><span class="pill pb">122.23</span></td><td><span class="pill pa">17.58</span></td><td><span class="pill pa">251.73</span></td><td>Amplía rango medio para evitar saltos bruscos</td></tr>
- <tr><td><strong>queue_length</strong></td><td>m</td><td><span class="pill pb">9.90</span></td><td><span class="pill pb">44.40</span></td><td><span class="pill pa">88.59</span></td><td><span class="pill pa">197.58</span></td><td>Escala al rango real de colas en hora pico</td></tr>
- <tr><td><strong>vehicle_count</strong></td><td>veh/h</td><td><span class="pill pb">204.00</span></td><td><span class="pill pb">983.00</span></td><td><span class="pill pa">106.00</span></td><td><span class="pill pa">658.83</span></td><td>Responde más rápido ante flujos medios</td></tr>
- <tr><td><strong>average_speed</strong></td><td>km/h</td><td><span class="pill pb">34.20</span></td><td><span class="pill pb">53.60</span></td><td><span class="pill pa">61.18</span></td><td><span class="pill pa">62.74</span></td><td>Filtra variaciones menores de velocidad</td></tr>
- </tbody>
- </table></div>
- </div>
+  <!-- TABLA DE REGLAS -->
+  <div class="st">Reglas PRISM — Activación según Entrada Actual</div>
+  <div class="card" style="margin-bottom:2.5rem">
+    <div style="font-size:.84rem;color:var(--t3);margin-bottom:1rem">
+      Las reglas <strong style="color:#166534">activas ✅</strong> coinciden exactamente con las etiquetas actuales.
+      Las <strong style="color:#92400e">parciales 〜</strong> coinciden en 3 de 4 variables.
+    </div>
+    <div class="rtw"><table class="rt" id="rt"><thead><tr><th>#</th><th>Densidad</th><th>Cola</th><th>Conteo</th><th>Velocidad</th><th>→ Verde (s)</th><th>→ Ajuste (s)</th><th>Estado</th></tr></thead><tbody id="rt-body"></tbody></table></div>
+  </div>
+
+  <!-- TABLA UMBRALES -->
+  <div class="st">Recalibración de Umbrales: PRISM (Base) vs. AG (Optimizado)</div>
+  <div class="card">
+    <div style="overflow-x:auto"><table class="ut">
+      <thead><tr><th>Variable</th><th>Unidad</th><th>Umbral 1 Base (P33)</th><th>Umbral 2 Base (P67)</th><th>Umbral 1 AG</th><th>Umbral 2 AG</th><th>Efecto de la Optimización</th></tr></thead>
+      <tbody>
+        <tr><td><strong>traffic_density</strong></td><td>veh/km</td><td><span class="pill pb">23.80</span></td><td><span class="pill pb">122.23</span></td><td><span class="pill pa">17.58</span></td><td><span class="pill pa">251.73</span></td><td>Amplía rango medio para evitar saltos bruscos</td></tr>
+        <tr><td><strong>queue_length</strong></td><td>m</td><td><span class="pill pb">9.90</span></td><td><span class="pill pb">44.40</span></td><td><span class="pill pa">88.59</span></td><td><span class="pill pa">197.58</span></td><td>Escala al rango real de colas en hora pico</td></tr>
+        <tr><td><strong>vehicle_count</strong></td><td>veh/h</td><td><span class="pill pb">204.00</span></td><td><span class="pill pb">983.00</span></td><td><span class="pill pa">106.00</span></td><td><span class="pill pa">658.83</span></td><td>Responde más rápido ante flujos medios</td></tr>
+        <tr><td><strong>average_speed</strong></td><td>km/h</td><td><span class="pill pb">34.20</span></td><td><span class="pill pb">53.60</span></td><td><span class="pill pa">61.18</span></td><td><span class="pill pa">62.74</span></td><td>Filtra variaciones menores de velocidad</td></tr>
+      </tbody>
+    </table></div>
+  </div>
 
 </main>
 
@@ -371,69 +396,67 @@
 // CONFIGURACIÓN CENTRAL DEL SISTEMA
 // ═══════════════════════════════════════════════════════
 const SYS = {
- base: {
- traffic_density:[23.80,122.23],
- queue_length:[9.90,44.40],
- vehicle_count:[204.0,983.0],
- average_speed:[34.2,53.6]
- },
- ag: {
- traffic_density:[17.58,251.73],
- queue_length:[88.59,197.58],
- vehicle_count:[106.0,658.83],
- average_speed:[61.18,62.74]
- },
- rng: {
- traffic_density:[9,378],
- queue_length:[0,300],
- vehicle_count:[54,3162],
- average_speed:[5,90]
- }
+  base: {
+    traffic_density:[23.80,122.23],
+    queue_length:[9.90,44.40],
+    vehicle_count:[204.0,983.0],
+    average_speed:[34.2,53.6]
+  },
+  ag: {
+    traffic_density:[17.58,251.73],
+    queue_length:[88.59,197.58],
+    vehicle_count:[106.0,658.83],
+    average_speed:[61.18,62.74]
+  },
+  rng: {
+    traffic_density:[9,378],
+    queue_length:[0,300],
+    vehicle_count:[54,3162],
+    average_speed:[5,90]
+  }
 };
 
 const RULES = [
- {td:'Baja',ql:'Corta',vc:'Bajo',sp:'Alta',gld:20,sca:-10},
- {td:'Baja',ql:'Corta',vc:'Bajo',sp:'Media',gld:22,sca:-8},
- {td:'Baja',ql:'Corta',vc:'Medio',sp:'Alta',gld:25,sca:-5},
- {td:'Baja',ql:'Corta',vc:'Medio',sp:'Media',gld:28,sca:-3},
- {td:'Baja',ql:'Moderada',vc:'Bajo',sp:'Alta',gld:26,sca:-4},
- {td:'Baja',ql:'Moderada',vc:'Medio',sp:'Media',gld:30,sca:0},
- {td:'Baja',ql:'Moderada',vc:'Alto',sp:'Baja',gld:35,sca:5},
- {td:'Baja',ql:'Extensa',vc:'Medio',sp:'Baja',gld:40,sca:10},
- {td:'Baja',ql:'Extensa',vc:'Alto',sp:'Baja',gld:45,sca:15},
- {td:'Baja',ql:'Corta',vc:'Alto',sp:'Alta',gld:30,sca:2},
- {td:'Moderada',ql:'Corta',vc:'Bajo',sp:'Alta',gld:28,sca:-2},
- {td:'Moderada',ql:'Corta',vc:'Medio',sp:'Media',gld:35,sca:5},
- {td:'Moderada',ql:'Corta',vc:'Alto',sp:'Media',gld:42,sca:10},
- {td:'Moderada',ql:'Moderada',vc:'Bajo',sp:'Media',gld:38,sca:8},
- {td:'Moderada',ql:'Moderada',vc:'Medio',sp:'Media',gld:45,sca:12},
- {td:'Moderada',ql:'Moderada',vc:'Alto',sp:'Baja',gld:55,sca:18},
- {td:'Moderada',ql:'Extensa',vc:'Medio',sp:'Baja',gld:60,sca:22},
- {td:'Moderada',ql:'Extensa',vc:'Alto',sp:'Baja',gld:65,sca:25},
- {td:'Moderada',ql:'Corta',vc:'Bajo',sp:'Baja',gld:33,sca:4},
- {td:'Moderada',ql:'Moderada',vc:'Bajo',sp:'Baja',gld:40,sca:9},
- {td:'Alta',ql:'Corta',vc:'Medio',sp:'Media',gld:50,sca:14},
- {td:'Alta',ql:'Corta',vc:'Alto',sp:'Baja',gld:58,sca:18},
- {td:'Alta',ql:'Corta',vc:'Bajo',sp:'Alta',gld:38,sca:6},
- {td:'Alta',ql:'Moderada',vc:'Bajo',sp:'Media',gld:48,sca:13},
- {td:'Alta',ql:'Moderada',vc:'Medio',sp:'Baja',gld:62,sca:22},
- {td:'Alta',ql:'Moderada',vc:'Alto',sp:'Baja',gld:70,sca:28},
- {td:'Alta',ql:'Extensa',vc:'Medio',sp:'Baja',gld:75,sca:32},
- {td:'Alta',ql:'Extensa',vc:'Alto',sp:'Baja',gld:84,sca:40},
- {td:'Alta',ql:'Extensa',vc:'Alto',sp:'Media',gld:78,sca:35},
+  {td:'Baja',ql:'Corta',vc:'Bajo',sp:'Alta',gld:20,sca:-10},
+  {td:'Baja',ql:'Corta',vc:'Bajo',sp:'Media',gld:22,sca:-8},
+  {td:'Baja',ql:'Corta',vc:'Medio',sp:'Alta',gld:25,sca:-5},
+  {td:'Baja',ql:'Corta',vc:'Medio',sp:'Media',gld:28,sca:-3},
+  {td:'Baja',ql:'Moderada',vc:'Bajo',sp:'Alta',gld:26,sca:-4},
+  {td:'Baja',ql:'Moderada',vc:'Medio',sp:'Media',gld:30,sca:0},
+  {td:'Baja',ql:'Moderada',vc:'Alto',sp:'Baja',gld:35,sca:5},
+  {td:'Baja',ql:'Extensa',vc:'Medio',sp:'Baja',gld:40,sca:10},
+  {td:'Baja',ql:'Extensa',vc:'Alto',sp:'Baja',gld:45,sca:15},
+  {td:'Baja',ql:'Corta',vc:'Alto',sp:'Alta',gld:30,sca:2},
+  {td:'Moderada',ql:'Corta',vc:'Bajo',sp:'Alta',gld:28,sca:-2},
+  {td:'Moderada',ql:'Corta',vc:'Medio',sp:'Media',gld:35,sca:5},
+  {td:'Moderada',ql:'Corta',vc:'Alto',sp:'Media',gld:42,sca:10},
+  {td:'Moderada',ql:'Moderada',vc:'Bajo',sp:'Media',gld:38,sca:8},
+  {td:'Moderada',ql:'Moderada',vc:'Medio',sp:'Media',gld:45,sca:12},
+  {td:'Moderada',ql:'Moderada',vc:'Alto',sp:'Baja',gld:55,sca:18},
+  {td:'Moderada',ql:'Extensa',vc:'Medio',sp:'Baja',gld:60,sca:22},
+  {td:'Moderada',ql:'Extensa',vc:'Alto',sp:'Baja',gld:65,sca:25},
+  {td:'Moderada',ql:'Corta',vc:'Bajo',sp:'Baja',gld:33,sca:4},
+  {td:'Moderada',ql:'Moderada',vc:'Bajo',sp:'Baja',gld:40,sca:9},
+  {td:'Alta',ql:'Corta',vc:'Medio',sp:'Media',gld:50,sca:14},
+  {td:'Alta',ql:'Corta',vc:'Alto',sp:'Baja',gld:58,sca:18},
+  {td:'Alta',ql:'Corta',vc:'Bajo',sp:'Alta',gld:38,sca:6},
+  {td:'Alta',ql:'Moderada',vc:'Bajo',sp:'Media',gld:48,sca:13},
+  {td:'Alta',ql:'Moderada',vc:'Medio',sp:'Baja',gld:62,sca:22},
+  {td:'Alta',ql:'Moderada',vc:'Alto',sp:'Baja',gld:70,sca:28},
+  {td:'Alta',ql:'Extensa',vc:'Medio',sp:'Baja',gld:75,sca:32},
+  {td:'Alta',ql:'Extensa',vc:'Alto',sp:'Baja',gld:84,sca:40},
+  {td:'Alta',ql:'Extensa',vc:'Alto',sp:'Media',gld:78,sca:35}
 ];
 
-// ═══════════════════════════════════════════════════════
 // HELPERS
-// ═══════════════════════════════════════════════════════
 function classify(v,t1,t2){return v<=t1?0:v<=t2?1:2}
 function getVals(){
- return {
- td:parseFloat(document.getElementById('num-td').value)||150,
- ql:parseFloat(document.getElementById('num-ql').value)||50,
- vc:parseFloat(document.getElementById('num-vc').value)||1000,
- sp:parseFloat(document.getElementById('num-sp').value)||30
- };
+  return {
+    td:parseFloat(document.getElementById('num-td').value)||150,
+    ql:parseFloat(document.getElementById('num-ql').value)||50,
+    vc:parseFloat(document.getElementById('num-vc').value)||1000,
+    sp:parseFloat(document.getElementById('num-sp').value)||30
+  };
 }
 
 const TDL={0:'Baja',1:'Moderada',2:'Alta'};
@@ -442,224 +465,300 @@ const VCL={0:'Bajo',1:'Medio',2:'Alto'};
 const SPL={0:'Baja',1:'Media',2:'Alta'};
 
 function labels(v,thrs){
- return {
- tdL:TDL[classify(v.td,thrs.traffic_density[0],thrs.traffic_density[1])],
- qlL:QLL[classify(v.ql,thrs.queue_length[0],thrs.queue_length[1])],
- vcL:VCL[classify(v.vc,thrs.vehicle_count[0],thrs.vehicle_count[1])],
- spL:SPL[classify(v.sp,thrs.average_speed[0],thrs.average_speed[1])]
- };
+  return {
+    tdL:TDL[classify(v.td,thrs.traffic_density[0],thrs.traffic_density[1])],
+    qlL:QLL[classify(v.ql,thrs.queue_length[0],thrs.queue_length[1])],
+    vcL:VCL[classify(v.vc,thrs.vehicle_count[0],thrs.vehicle_count[1])],
+    spL:SPL[classify(v.sp,thrs.average_speed[0],thrs.average_speed[1])]
+  };
 }
 
 function infer(tdL,qlL,vcL,spL){
- let m=RULES.filter(r=>r.td===tdL&&r.ql===qlL&&r.vc===vcL&&r.sp===spL);
- if(!m.length) m=RULES.filter(r=>[r.td===tdL,r.ql===qlL,r.vc===vcL,r.sp===spL].filter(Boolean).length>=3);
- if(!m.length) m=RULES.filter(r=>r.td===tdL&&r.vc===vcL);
- if(!m.length) m=[RULES[14]];
- return {
- gld:m.reduce((s,r)=>s+r.gld,0)/m.length,
- sca:m.reduce((s,r)=>s+r.sca,0)/m.length
- };
+  let m=RULES.filter(r=>r.td===tdL&&r.ql===qlL&&r.vc===vcL&&r.sp===spL);
+  if(!m.length) m=RULES.filter(r=>[r.td===tdL,r.ql===qlL,r.vc===vcL,r.sp===spL].filter(Boolean).length>=3);
+  if(!m.length) m=RULES.filter(r=>r.td===tdL&&r.vc===vcL);
+  if(!m.length) m=[RULES[14]];
+  return {
+    gld:m.reduce((s,r)=>s+r.gld,0)/m.length,
+    sca:m.reduce((s,r)=>s+r.sca,0)/m.length
+  };
 }
 
 function cost(gld,ql,td,sp){
- const idle=Math.max(0,(90-sp)/90);
- const cong=(td/378)*0.38+(ql/300)*0.42+idle*0.2;
- return Math.max(80,175+cong*285-(gld-45)*1.1);
+  const idle=Math.max(0,(90-sp)/90);
+  const cong=(td/378)*0.38+(ql/300)*0.42+idle*0.2;
+  return Math.max(80,175+cong*285-(gld-45)*1.1);
 }
 
-// ═══════════════════════════════════════════════════════
-// SYNC SLIDERS NUMBERS
-// ═══════════════════════════════════════════════════════
+// SYNC SLIDERS
 function syncR(id){
- const n=parseFloat(document.getElementById('num-'+id).value);
- const r=document.getElementById('rng-'+id);
- if(!isNaN(n)) r.value=Math.min(Math.max(n,+r.min),+r.max);
+  const n=parseFloat(document.getElementById('num-'+id).value);
+  const r=document.getElementById('rng-'+id);
+  if(!isNaN(n)) r.value=Math.min(Math.max(n,+r.min),+r.max);
 }
 function syncN(id){
- document.getElementById('num-'+id).value=document.getElementById('rng-'+id).value;
+  document.getElementById('num-'+id).value=document.getElementById('rng-'+id).value;
 }
 
-// ═══════════════════════════════════════════════════════
-// ETIQUETAS EN TIEMPO REAL
-// ═══════════════════════════════════════════════════════
 function liveTag(){
- const v=getVals(), ag=SYS.ag;
- const setTag=(id,lvl,map,clsLow,clsHigh)=>{
- const el=document.getElementById('tag-'+id);
- el.className='ftag '+(lvl===0?clsLow:lvl===2?clsHigh:'fm');
- el.textContent=' '+map[lvl];
- };
- setTag('td',classify(v.td,ag.traffic_density[0],ag.traffic_density[1]),TDL,'fl','fh');
- setTag('ql',classify(v.ql,ag.queue_length[0],ag.queue_length[1]),QLL,'fl','fh');
- setTag('vc',classify(v.vc,ag.vehicle_count[0],ag.vehicle_count[1]),VCL,'fl','fh');
- setTag('sp',classify(v.sp,ag.average_speed[0],ag.average_speed[1]),SPL,'fh','fl');
+  const v=getVals(), ag=SYS.ag;
+  const setTag=(id,lvl,map,clsLow,clsHigh)=>{
+    const el=document.getElementById('tag-'+id);
+    el.className='ftag '+(lvl===0?clsLow:lvl===2?clsHigh:'fm');
+    el.textContent='⬤ '+map[lvl];
+  };
+  setTag('td',classify(v.td,ag.traffic_density[0],ag.traffic_density[1]),TDL,'fl','fh');
+  setTag('ql',classify(v.ql,ag.queue_length[0],ag.queue_length[1]),QLL,'fl','fh');
+  setTag('vc',classify(v.vc,ag.vehicle_count[0],ag.vehicle_count[1]),VCL,'fl','fh');
+  setTag('sp',classify(v.sp,ag.average_speed[0],ag.average_speed[1]),SPL,'fh','fl');
 }
 
 // ═══════════════════════════════════════════════════════
-// FUNCIÓN DE MASA AGREGADA (FASE 3 — MAMDANI)
+// SECCIÓN 1: CHARTS DE MEMBRESÍA DE ENTRADA (FASE 1)
 // ═══════════════════════════════════════════════════════
-const MFC={};
+const IN_MFC = {};
 
-function trimf(x,a,b,c){
- if(x<=a||x>=c) return 0;
- if(x<=b) return (x-a)/(b-a+0.0001);
- return (c-x)/(c-b+0.0001);
+function buildInputMF(canvasId, rng, t1, t2, curVal, lbls, cols) {
+  const n = 200, step = (rng[1] - rng[0]) / n;
+  const xs = Array.from({ length: n + 1 }, (_, i) => +(rng[0] + i * step).toFixed(2));
+  const mid = (t1 + t2) / 2;
+
+  function trapmf(x, a, b, c, d) {
+    if (x <= a || x >= d) return 0;
+    if (x >= b && x <= c) return 1;
+    if (x > a && x < b) return (x - a) / (b - a + 0.0001);
+    return (d - x) / (d - c + 0.0001);
+  }
+
+  function trimf(x, a, b, c) {
+    if (x <= a || x >= c) return 0;
+    if (x <= b) return (x - a) / (b - a + 0.0001);
+    return (c - x) / (c - b + 0.0001);
+  }
+
+  const lo = xs.map(x => ({ x, y: trapmf(x, rng[0], rng[0], t1, mid) }));
+  const mi = xs.map(x => ({ x, y: trimf(x, t1, mid, t2) }));
+  const hi = xs.map(x => ({ x, y: trapmf(x, mid, t2, rng[1], rng[1]) }));
+
+  const ctx = document.getElementById(canvasId).getContext('2d');
+  if (IN_MFC[canvasId]) IN_MFC[canvasId].destroy();
+
+  IN_MFC[canvasId] = new Chart(ctx, {
+    type: 'line',
+    data: {
+      datasets: [
+        { label: lbls[0], data: lo, borderColor: cols[0], borderWidth: 2, fill: false, tension: 0.2, pointRadius: 0 },
+        { label: lbls[1], data: mi, borderColor: cols[1], borderWidth: 2, fill: false, tension: 0.2, pointRadius: 0 },
+        { label: lbls[2], data: hi, borderColor: cols[2], borderWidth: 2, fill: false, tension: 0.2, pointRadius: 0 },
+        { label: `Entrada Actual (${curVal})`, data: [{x: curVal, y: 0}, {x: curVal, y: 1.15}], borderColor: '#ef4444', borderWidth: 2.5, borderDash: [4, 3], pointRadius: 0, fill: false, showLine: true }
+      ]
+    },
+    options: {
+      responsive: true,
+      animation: { duration: 0 },
+      plugins: {
+        legend: { labels: { color: '#334155', font: { size: 10, family: 'Inter' }, boxWidth: 10, padding: 5 } }
+      },
+      scales: {
+        x: { type: 'linear', min: rng[0], max: rng[1], grid: { color: '#f1f5f9' }, ticks: { color: '#64748b', maxTicksLimit: 6 } },
+        y: { min: 0, max: 1.15, grid: { color: '#f1f5f9' }, ticks: { color: '#64748b' } }
+      }
+    }
+  });
 }
 
-function updateMassFunctionCharts(){
- const v=getVals();
- const lb=labels(v,SYS.ag);
-
- // Evaluar activación de reglas (Fase 2)
- const firedRules=RULES.map(r=>{
- const matches=[r.td===lb.tdL,r.ql===lb.qlL,r.vc===lb.vcL,r.sp===lb.spL].filter(Boolean).length;
- let alpha=0;
- if(matches===4) alpha=1.0;
- else if(matches===3) alpha=0.55;
- else if(matches===2) alpha=0.25;
- else alpha=0.05;
- return {rule:r,alpha};
- }).filter(fr=>fr.alpha>0.05);
-
- // --- CHART 1: green_light_duration (GLD) ---
- const gldMin=15, gldMax=90, gldN=150;
- const gldXs=Array.from({length:gldN+1},(_,i)=>+(gldMin+i*(gldMax-gldMin)/gldN).toFixed(2));
- 
- const gldCorta=gldXs.map(x=>trimf(x,15,20,38));
- const gldMedia=gldXs.map(x=>trimf(x,28,48,68));
- const gldLarga=gldXs.map(x=>trimf(x,55,75,90));
-
- const massGld=gldXs.map(x=>{
- let maxClip=0;
- firedRules.forEach(fr=>{
- const mu=trimf(x,fr.rule.gld-14,fr.rule.gld,fr.rule.gld+14);
- const clip=Math.min(fr.alpha,mu);
- if(clip>maxClip) maxClip=clip;
- });
- return +maxClip.toFixed(3);
- });
-
- let numGld=0, denGld=0;
- gldXs.forEach((x,i)=>{ numGld+=x*massGld[i]; denGld+=massGld[i]; });
- const defuzzGld=denGld>0?numGld/denGld:45;
- const gldCentroidLine=gldXs.map(x=>Math.abs(x-defuzzGld)<0.6?1.1:null);
-
- renderMassChart('mf-gld',gldXs,massGld,gldCentroidLine,defuzzGld,'s',[
- {label:'Corta (20s)',data:gldCorta,color:'rgba(96,165,250,0.45)'},
- {label:'Media (48s)',data:gldMedia,color:'rgba(59,130,246,0.45)'},
- {label:'Larga (75s)',data:gldLarga,color:'rgba(30,64,175,0.45)'}
- ],'#2563eb','rgba(37,99,235,0.25)');
-
- // --- CHART 2: signal_cycle_adjustment (SCA) ---
- const scaMin=-25, scaMax=50, scaN=150;
- const scaXs=Array.from({length:scaN+1},(_,i)=>+(scaMin+i*(scaMax-scaMin)/scaN).toFixed(2));
-
- const scaReducir=scaXs.map(x=>trimf(x,-25,-10,5));
- const scaMantener=scaXs.map(x=>trimf(x,-8,0,12));
- const scaAmpliar=scaXs.map(x=>trimf(x,8,25,50));
-
- const massSca=scaXs.map(x=>{
- let maxClip=0;
- firedRules.forEach(fr=>{
- const mu=trimf(x,fr.rule.sca-10,fr.rule.sca,fr.rule.sca+10);
- const clip=Math.min(fr.alpha,mu);
- if(clip>maxClip) maxClip=clip;
- });
- return +maxClip.toFixed(3);
- });
-
- let numSca=0, denSca=0;
- scaXs.forEach((x,i)=>{ numSca+=x*massSca[i]; denSca+=massSca[i]; });
- const defuzzSca=denSca>0?numSca/denSca:0;
- const scaCentroidLine=scaXs.map(x=>Math.abs(x-defuzzSca)<0.6?1.1:null);
-
- renderMassChart('mf-sca',scaXs,massSca,scaCentroidLine,defuzzSca,'s',[
- {label:'Reducir (-10s)',data:scaReducir,color:'rgba(245,158,11,0.45)'},
- {label:'Mantener (0s)',data:scaMantener,color:'rgba(168,85,247,0.45)'},
- {label:'Ampliar (+25s)',data:scaAmpliar,color:'rgba(16,185,129,0.45)'}
- ],'#8b5cf6','rgba(139,92,246,0.25)');
+function updateInputMFCharts() {
+  const v = getVals(), ag = SYS.ag, rng = SYS.rng;
+  buildInputMF('mf-td', rng.traffic_density, ag.traffic_density[0], ag.traffic_density[1], v.td, ['Baja', 'Moderada', 'Alta'], ['#3b82f6', '#93c5fd', '#1e40af']);
+  buildInputMF('mf-ql', rng.queue_length, ag.queue_length[0], ag.queue_length[1], v.ql, ['Corta', 'Moderada', 'Extensa'], ['#f59e0b', '#fcd34d', '#d97706']);
+  buildInputMF('mf-vc', rng.vehicle_count, ag.vehicle_count[0], ag.vehicle_count[1], v.vc, ['Bajo', 'Medio', 'Alto'], ['#8b5cf6', '#c4b5fd', '#6d28d9']);
+  buildInputMF('mf-sp', rng.average_speed, ag.average_speed[0], ag.average_speed[1], v.sp, ['Baja', 'Media', 'Alta'], ['#22c55e', '#86efac', '#166534']);
 }
 
-function renderMassChart(canvasId,xs,massData,centroidLine,defuzzVal,unit,refSets,mainColor,fillColor){
- const ctx=document.getElementById(canvasId).getContext('2d');
- if(MFC[canvasId]) MFC[canvasId].destroy();
+// ═══════════════════════════════════════════════════════
+// SECCIÓN 2: CHARTS DE MASA AGREGADA DE SALIDAS (FASE 3 & 4)
+// ═══════════════════════════════════════════════════════
+const OUT_MFC = {};
 
- const datasets=refSets.map(s=>({
- label:s.label,data:s.data,borderColor:s.color,borderWidth:1.5,borderDash:[3,3],fill:false,pointRadius:0,tension:0.3
- }));
+function trimf(x, a, b, c) {
+  if (x <= a || x >= c) return 0;
+  if (x <= b) return (x - a) / (b - a + 0.0001);
+  return (c - x) / (c - b + 0.0001);
+}
 
- datasets.push({
- label:'Función de Masa Agregada μ(y)',
- data:massData,
- borderColor:mainColor,
- backgroundColor:fillColor,
- borderWidth:2.5,
- fill:true,
- pointRadius:0,
- tension:0.35
- });
+function updateMassFunctionCharts() {
+  const v = getVals();
+  const lb = labels(v, SYS.ag);
 
- datasets.push({
- label:`Centroide (${defuzzVal>=0?'+':''}${defuzzVal.toFixed(1)} ${unit})`,
- data:centroidLine,
- borderColor:'#ef4444',
- borderWidth:2.5,
- borderDash:[5,4],
- pointRadius:0,
- fill:false
- });
+  const firedRules = RULES.map(r => {
+    const matches = [r.td === lb.tdL, r.ql === lb.qlL, r.vc === lb.vcL, r.sp === lb.spL].filter(Boolean).length;
+    let alpha = 0;
+    if (matches === 4) alpha = 1.0;
+    else if (matches === 3) alpha = 0.55;
+    else if (matches === 2) alpha = 0.25;
+    else alpha = 0.05;
+    return { rule: r, alpha };
+  }).filter(fr => fr.alpha > 0.05);
 
- MFC[canvasId]=new Chart(ctx,{
- type:'line',
- data:{labels:xs,datasets},
- options:{
- responsive:true,
- animation:{duration:400},
- plugins:{
- legend:{labels:{color:'#334155',font:{size:10,family:'Inter'},boxWidth:12,padding:6}},
- tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.raw!==null?(+c.raw).toFixed(3):''}`}}
- },
- scales:{
- x:{type:'linear',min:xs[0],max:xs[xs.length-1],grid:{color:'#f1f5f9'},ticks:{color:'#64748b',maxTicksLimit:8}},
- y:{min:0,max:1.15,grid:{color:'#f1f5f9'},ticks:{color:'#64748b'},title:{display:true,text:'Grado de Membresía μ',color:'#64748b',font:{size:10}}}
- }
- }
- });
+  // --- CHART 1: green_light_duration (GLD) ---
+  const gldMin = 15, gldMax = 90, gldN = 150;
+  const gldXs = Array.from({ length: gldN + 1 }, (_, i) => +(gldMin + i * (gldMax - gldMin) / gldN).toFixed(2));
+
+  const gldCorta = gldXs.map(x => ({ x, y: trimf(x, 15, 20, 38) }));
+  const gldMedia = gldXs.map(x => ({ x, y: trimf(x, 28, 48, 68) }));
+  const gldLarga = gldXs.map(x => ({ x, y: trimf(x, 55, 75, 90) }));
+
+  let numGld = 0, denGld = 0, peakGld = 0, peakGldX = 45;
+  const massGld = gldXs.map(x => {
+    let maxClip = 0;
+    firedRules.forEach(fr => {
+      const mu = trimf(x, fr.rule.gld - 14, fr.rule.gld, fr.rule.gld + 14);
+      const clip = Math.min(fr.alpha, mu);
+      if (clip > maxClip) maxClip = clip;
+    });
+    const val = +maxClip.toFixed(3);
+    numGld += x * val;
+    denGld += val;
+    if (val > peakGld) { peakGld = val; peakGldX = x; }
+    return { x, y: val };
+  });
+
+  const defuzzGld = denGld > 0 ? numGld / denGld : 45;
+
+  renderOutputMassChart('mf-gld', gldMin, gldMax, massGld, defuzzGld, peakGld, peakGldX, 's', [
+    { label: 'Corta (20s)', data: gldCorta, color: 'rgba(96,165,250,0.45)' },
+    { label: 'Media (48s)', data: gldMedia, color: 'rgba(59,130,246,0.45)' },
+    { label: 'Larga (75s)', data: gldLarga, color: 'rgba(30,64,175,0.45)' }
+  ], '#2563eb', 'rgba(37,99,235,0.25)');
+
+  document.getElementById('o-gld-peak').textContent = `Punto de Masa Máxima: μmax = ${peakGld.toFixed(3)} en ${peakGldX.toFixed(1)}s`;
+
+  // --- CHART 2: signal_cycle_adjustment (SCA) ---
+  const scaMin = -25, scaMax = 50, scaN = 150;
+  const scaXs = Array.from({ length: scaN + 1 }, (_, i) => +(scaMin + i * (scaMax - scaMin) / scaN).toFixed(2));
+
+  const scaReducir = scaXs.map(x => ({ x, y: trimf(x, -25, -10, 5) }));
+  const scaMantener = scaXs.map(x => ({ x, y: trimf(x, -8, 0, 12) }));
+  const scaAmpliar = scaXs.map(x => ({ x, y: trimf(x, 8, 25, 50) }));
+
+  let numSca = 0, denSca = 0, peakSca = 0, peakScaX = 0;
+  const massSca = scaXs.map(x => {
+    let maxClip = 0;
+    firedRules.forEach(fr => {
+      const mu = trimf(x, fr.rule.sca - 10, fr.rule.sca, fr.rule.sca + 10);
+      const clip = Math.min(fr.alpha, mu);
+      if (clip > maxClip) maxClip = clip;
+    });
+    const val = +maxClip.toFixed(3);
+    numSca += x * val;
+    denSca += val;
+    if (val > peakSca) { peakSca = val; peakScaX = x; }
+    return { x, y: val };
+  });
+
+  const defuzzSca = denSca > 0 ? numSca / denSca : 0;
+
+  renderOutputMassChart('mf-sca', scaMin, scaMax, massSca, defuzzSca, peakSca, peakScaX, 's', [
+    { label: 'Reducir (-10s)', data: scaReducir, color: 'rgba(245,158,11,0.45)' },
+    { label: 'Mantener (0s)', data: scaMantener, color: 'rgba(168,85,247,0.45)' },
+    { label: 'Ampliar (+25s)', data: scaAmpliar, color: 'rgba(16,185,129,0.45)' }
+  ], '#8b5cf6', 'rgba(139,92,246,0.25)');
+
+  document.getElementById('o-sca-peak').textContent = `Punto de Masa Máxima: μmax = ${peakSca.toFixed(3)} en ${(peakScaX >= 0 ? '+' : '') + peakScaX.toFixed(1)}s`;
+}
+
+function renderOutputMassChart(canvasId, xMin, xMax, massData, defuzzVal, peakVal, peakX, unit, refSets, mainColor, fillColor) {
+  const ctx = document.getElementById(canvasId).getContext('2d');
+  if (OUT_MFC[canvasId]) OUT_MFC[canvasId].destroy();
+
+  const datasets = refSets.map(s => ({
+    label: s.label, data: s.data, borderColor: s.color, borderWidth: 1.5, borderDash: [3, 3], fill: false, pointRadius: 0, tension: 0.3
+  }));
+
+  datasets.push({
+    label: 'Función de Masa Agregada μ(y)',
+    data: massData,
+    borderColor: mainColor,
+    backgroundColor: fillColor,
+    borderWidth: 2.5,
+    fill: true,
+    pointRadius: 0,
+    tension: 0.35
+  });
+
+  // Vertical Centroid Line (Red dashed line)
+  datasets.push({
+    label: `Centroide Defuzzificado y* (${defuzzVal >= 0 ? '+' : ''}${defuzzVal.toFixed(1)} ${unit})`,
+    data: [{ x: defuzzVal, y: 0 }, { x: defuzzVal, y: 1.15 }],
+    borderColor: '#ef4444',
+    borderWidth: 3,
+    borderDash: [6, 4],
+    pointRadius: 0,
+    fill: false,
+    showLine: true
+  });
+
+  // Peak Mass Level (Yellow dashed horizontal line)
+  datasets.push({
+    label: `Punto de Masa Máxima μmax (${peakVal.toFixed(3)})`,
+    data: [{ x: xMin, y: peakVal }, { x: xMax, y: peakVal }],
+    borderColor: '#eab308',
+    borderWidth: 1.8,
+    borderDash: [3, 3],
+    pointRadius: 0,
+    fill: false,
+    showLine: true
+  });
+
+  OUT_MFC[canvasId] = new Chart(ctx, {
+    type: 'line',
+    data: { datasets },
+    options: {
+      responsive: true,
+      animation: { duration: 0 },
+      plugins: {
+        legend: { labels: { color: '#334155', font: { size: 10, family: 'Inter' }, boxWidth: 12, padding: 6 } },
+        tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.raw && c.raw.y !== undefined ? c.raw.y.toFixed(3) : ''}` } }
+      },
+      scales: {
+        x: { type: 'linear', min: xMin, max: xMax, grid: { color: '#f1f5f9' }, ticks: { color: '#64748b', maxTicksLimit: 8 } },
+        y: { min: 0, max: 1.15, grid: { color: '#f1f5f9' }, ticks: { color: '#64748b' }, title: { display: true, text: 'Grado de Membresía μ', color: '#64748b', font: { size: 10 } } }
+      }
+    }
+  });
 }
 
 // ═══════════════════════════════════════════════════════
 // TABLA DE REGLAS
 // ═══════════════════════════════════════════════════════
-function renderRules(tdL,qlL,vcL,spL){
- const tbody=document.getElementById('rt-body'); tbody.innerHTML='';
- RULES.forEach((r,i)=>{
- const isA=r.td===tdL&&r.ql===qlL&&r.vc===vcL&&r.sp===spL;
- const isP=!isA&&[r.td===tdL,r.ql===qlL,r.vc===vcL,r.sp===spL].filter(Boolean).length>=3;
- const tr=document.createElement('tr');
- if(isA) tr.className='ar';
- function bg(v,cur){return v===cur?`<span style="background:var(--b700);color:#fff;padding:.13rem .5rem;border-radius:4px;font-size:.78rem;font-weight:700">${v}</span>`:`<span style="color:var(--t3)">${v}</span>`}
- tr.innerHTML=`<td style="font-family:var(--fm);font-size:.76rem;color:var(--t4)">${String(i+1).padStart(2,'0')}</td>
- <td>${bg(r.td,tdL)}</td><td>${bg(r.ql,qlL)}</td><td>${bg(r.vc,vcL)}</td><td>${bg(r.sp,spL)}</td>
- <td style="font-family:var(--fm);font-weight:700;color:var(--b700)">${r.gld} s</td>
- <td style="font-family:var(--fm);font-weight:700;color:${r.sca>=0?'#166534':'#991b1b'}">${r.sca>=0?'+':''}${r.sca} s</td>
- <td><span class="rf ${isA?'ra':isP?'rp2':'ri'}">${isA?' ACTIVA':isP?'〜 Parcial':'○ Inactiva'}</span></td>`;
- tbody.appendChild(tr);
- });
+function renderRules(tdL, qlL, vcL, spL) {
+  const tbody = document.getElementById('rt-body'); tbody.innerHTML = '';
+  RULES.forEach((r, i) => {
+    const isA = r.td === tdL && r.ql === qlL && r.vc === vcL && r.sp === spL;
+    const isP = !isA && [r.td === tdL, r.ql === qlL, r.vc === vcL, r.sp === spL].filter(Boolean).length >= 3;
+    const tr = document.createElement('tr');
+    if (isA) tr.className = 'ar';
+    function bg(v, cur) { return v === cur ? `<span style="background:var(--b700);color:#fff;padding:.13rem .5rem;border-radius:4px;font-size:.78rem;font-weight:700">${v}</span>` : `<span style="color:var(--t3)">${v}</span>` }
+    tr.innerHTML = `<td style="font-family:var(--fm);font-size:.76rem;color:var(--t4)">${String(i + 1).padStart(2, '0')}</td>
+      <td>${bg(r.td, tdL)}</td><td>${bg(r.ql, qlL)}</td><td>${bg(r.vc, vcL)}</td><td>${bg(r.sp, spL)}</td>
+      <td style="font-family:var(--fm);font-weight:700;color:var(--b700)">${r.gld} s</td>
+      <td style="font-family:var(--fm);font-weight:700;color:${r.sca >= 0 ? '#166534' : '#991b1b'}">${r.sca >= 0 ? '+' : ''}${r.sca} s</td>
+      <td><span class="rf ${isA ? 'ra' : isP ? 'rp2' : 'ri'}">${isA ? 'ACTIVA' : isP ? '〜 Parcial' : '○ Inactiva'}</span></td>`;
+    tbody.appendChild(tr);
+  });
 }
 
 // ═══════════════════════════════════════════════════════
 // CONCLUSIÓN DINÁMICA
 // ═══════════════════════════════════════════════════════
-function buildConclusion(tdL,qlL,vcL,spL,gld,sca,agCost,staticCost){
- const saving=((staticCost-agCost)/staticCost*100).toFixed(1);
- const cong=tdL==='Alta'||qlL==='Extensa'?'alta':tdL==='Baja'&&qlL==='Corta'?'baja':'moderada';
- const congEmoji=cong==='alta'?'':cong==='baja'?'🟢':'🟡';
- const gldAction=gld>60?'aumentó significativamente el verde para descongestionar':gld<30?'redujo el verde al haber poca demanda':'asignó un verde moderado';
- const scaStr=sca>0?`+${sca.toFixed(1)} s (amplía el ciclo)`:`${sca.toFixed(1)} s (reduce el ciclo)`;
- return ` <strong>Conclusión del Sistema Difuso MIMO + AG:</strong><br><br>
-Con <strong>density=${tdL}</strong>, <strong>cola=${qlL}</strong>, <strong>conteo=${vcL}</strong> y <strong>velocidad=${spL}</strong>,
-el nivel de congestión es ${congEmoji} <strong>${cong}</strong>.<br><br>
-El sistema difuso ${gldAction}: <strong>verde = ${gld.toFixed(1)} s</strong>.
+function buildConclusion(tdL, qlL, vcL, spL, gld, sca, agCost, staticCost) {
+  const saving = ((staticCost - agCost) / staticCost * 100).toFixed(1);
+  const cong = tdL === 'Alta' || qlL === 'Extensa' ? 'alta' : tdL === 'Baja' && qlL === 'Corta' ? 'baja' : 'moderada';
+  const gldAction = gld > 60 ? 'aumentó significativamente el verde para descongestionar' : gld < 30 ? 'redujo el verde al haber poca demanda' : 'asignó un verde moderado';
+  const scaStr = sca > 0 ? `+${sca.toFixed(1)} s (amplía el ciclo)` : `${sca.toFixed(1)} s (reduce el ciclo)`;
+  return `Con <strong>density=${tdL}</strong>, <strong>cola=${qlL}</strong>, <strong>conteo=${vcL}</strong> y <strong>velocidad=${spL}</strong>,
+el nivel de congestión es <strong>${cong}</strong>.<br><br>
+El sistema difuso ${gldAction}: <strong>Centroide Verde (y*) = ${gld.toFixed(1)} s</strong>.
 El ajuste de ciclo es <strong>${scaStr}</strong>, coordinando la intersección con el flujo global.<br><br>
 Con la calibración del Algoritmo Genético sobre los 8 umbrales, el costo ambiental estimado es
 <strong>${agCost.toFixed(1)} pts</strong>, representando una reducción del
@@ -670,75 +769,88 @@ Esta mejora se traduce en menor tiempo de ralentí vehicular y menores emisiones
 // ═══════════════════════════════════════════════════════
 // SIMULACIÓN PRINCIPAL
 // ═══════════════════════════════════════════════════════
-function runSim(){
- const btn=document.getElementById('btn-s');
- btn.classList.add('loading');
- setTimeout(()=>{
- const v=getVals();
- const lb=labels(v,SYS.ag);
- const {gld,sca}=infer(lb.tdL,lb.qlL,lb.vcL,lb.spL);
+function liveUpdate() {
+  const v = getVals();
+  const lb = labels(v, SYS.ag);
 
- const sGld=45.0;
- const bInf=infer(labels(v,SYS.base).tdL,labels(v,SYS.base).qlL,labels(v,SYS.base).vcL,labels(v,SYS.base).spL);
- const sCost=cost(sGld,v.ql,v.td,v.sp);
- const bCost=cost(bInf.gld,v.ql,v.td,v.sp)*1.05;
- const aCost=cost(gld,v.ql,v.td,v.sp)*0.79;
- const sv=((sCost-aCost)/sCost*100).toFixed(1);
+  // 1. Tag UI labels update
+  liveTag();
 
- // Comparativa
- document.getElementById('r-sg').textContent=sGld.toFixed(1)+' s';
- document.getElementById('r-bg').textContent=bInf.gld.toFixed(1)+' s';
- document.getElementById('r-ag').textContent=gld.toFixed(1)+' s';
- document.getElementById('r-sc').textContent='Costo: '+sCost.toFixed(1)+' pts';
- document.getElementById('r-bc').textContent='Costo: '+bCost.toFixed(1)+' pts';
- document.getElementById('r-ac').textContent='Costo: '+aCost.toFixed(1)+' pts';
- document.getElementById('r-sv').textContent='↓'+sv+'% vs estático';
+  // 2. Compute inference & defuzzification
+  const { gld, sca } = infer(lb.tdL, lb.qlL, lb.vcL, lb.spL);
+  const sGld = 45.0;
+  const bInf = infer(labels(v, SYS.base).tdL, labels(v, SYS.base).qlL, labels(v, SYS.base).vcL, labels(v, SYS.base).spL);
+  const sCost = cost(sGld, v.ql, v.td, v.sp);
+  const bCost = cost(bInf.gld, v.ql, v.td, v.sp) * 1.05;
+  const aCost = cost(gld, v.ql, v.td, v.sp) * 0.79;
+  const sv = ((sCost - aCost) / sCost * 100).toFixed(1);
 
- // Salidas
- document.getElementById('o-gld').textContent=gld.toFixed(1)+' s';
- document.getElementById('o-sca').textContent=(sca>=0?'+':'')+sca.toFixed(1)+' s';
+  // 3. Update KPI values live
+  document.getElementById('r-sg').textContent = sGld.toFixed(1) + ' s';
+  document.getElementById('r-bg').textContent = bInf.gld.toFixed(1) + ' s';
+  document.getElementById('r-ag').textContent = gld.toFixed(1) + ' s';
+  document.getElementById('r-sc').textContent = 'Costo: ' + sCost.toFixed(1) + ' pts';
+  document.getElementById('r-bc').textContent = 'Costo: ' + bCost.toFixed(1) + ' pts';
+  document.getElementById('r-ac').textContent = 'Costo: ' + aCost.toFixed(1) + ' pts';
+  document.getElementById('r-sv').textContent = '↓' + sv + '% vs estático';
 
- // Conclusión
- document.getElementById('conclusion').innerHTML=buildConclusion(lb.tdL,lb.qlL,lb.vcL,lb.spL,gld,sca,aCost,sCost);
+  document.getElementById('o-gld').textContent = gld.toFixed(1) + ' s';
+  document.getElementById('o-sca').textContent = (sca >= 0 ? '+' : '') + sca.toFixed(1) + ' s';
 
- // Gráficos
- updateMassFunctionCharts();
- renderRules(lb.tdL,lb.qlL,lb.vcL,lb.spL);
+  document.getElementById('conclusion').innerHTML = buildConclusion(lb.tdL, lb.qlL, lb.vcL, lb.spL, gld, sca, aCost, sCost);
 
- btn.classList.remove('loading');
- },420);
+  // 4. Update Input MF charts & Output Mass Function charts live (moving vertical lines & centroid)
+  updateInputMFCharts();
+  updateMassFunctionCharts();
+  renderRules(lb.tdL, lb.qlL, lb.vcL, lb.spL);
 }
 
-// ═══════════════════════════════════════════════════════
+function runSim() {
+  const btn = document.getElementById('btn-s');
+  btn.classList.add('loading');
+  setTimeout(() => {
+    liveUpdate();
+    btn.classList.remove('loading');
+  }, 200);
+}
+
 // CHART EVOLUCIÓN AG
-// ═══════════════════════════════════════════════════════
-(function(){
- const ctx=document.getElementById('ch-evo').getContext('2d');
- const best=[386.4,368.2,352.1,340.0,329.3,320.5,313.2,307.1,302.4,298.6,295.3,292.5,290.1,288.2,286.7,285.4,284.4,283.5,282.8,282.2,281.7,281.3,280.9,280.6,280.3,280.1,279.9,279.7,279.6,279.5,279.4,279.3,279.2,279.1,279.0,278.9,278.8,278.7,278.6,278.5,278.4,278.3,278.2,278.1,278.0,277.9,277.8,277.7,277.6,277.5,277.4,277.3,277.2,277.1,277.0,276.9,276.8,276.7,276.6,276.5,275.5,274.8,273.5,271.2,268.4,264.1,260.0,256.2,253.0,250.5,249.8,249.5,249.2,249.0,248.9,248.8,248.8,248.8,248.8,249.7];
- const avg=best.map(v=>+(v+20+Math.random()*10).toFixed(2));
- new Chart(ctx,{type:'line',data:{labels:Array.from({length:80},(_,i)=>i+1),datasets:[
- {label:'Mejor individuo (AG)',data:best,borderColor:'#1e40af',backgroundColor:'rgba(30,64,175,.07)',fill:true,borderWidth:2.5,tension:.35,pointRadius:0},
- {label:'Promedio poblacional',data:avg,borderColor:'#60a5fa',borderDash:[5,5],borderWidth:1.8,fill:false,tension:.35,pointRadius:0},
- {label:'Base PRISM (386.4)',data:Array(80).fill(386.4),borderColor:'#94a3b8',borderDash:[2,2],borderWidth:1.5,pointRadius:0}
- ]},options:{responsive:true,plugins:{legend:{labels:{color:'#334155',font:{family:'Inter'}}}},
- scales:{x:{grid:{color:'#f1f5f9'},ticks:{color:'#64748b'}},y:{grid:{color:'#f1f5f9'},ticks:{color:'#64748b'}}}}});
+(function () {
+  const ctx = document.getElementById('ch-evo').getContext('2d');
+  const best = [386.4, 368.2, 352.1, 340.0, 329.3, 320.5, 313.2, 307.1, 302.4, 298.6, 295.3, 292.5, 290.1, 288.2, 286.7, 285.4, 284.4, 283.5, 282.8, 282.2, 281.7, 281.3, 280.9, 280.6, 280.3, 280.1, 279.9, 279.7, 279.6, 279.5, 279.4, 279.3, 279.2, 279.1, 279.0, 278.9, 278.8, 278.7, 278.6, 278.5, 278.4, 278.3, 278.2, 278.1, 278.0, 277.9, 277.8, 277.7, 277.6, 277.5, 277.4, 277.3, 277.2, 277.1, 277.0, 276.9, 276.8, 276.7, 276.6, 276.5, 275.5, 274.8, 273.5, 271.2, 268.4, 264.1, 260.0, 256.2, 253.0, 250.5, 249.8, 249.5, 249.2, 249.0, 248.9, 248.8, 248.8, 248.8, 248.8, 249.7];
+  const avg = best.map(v => +(v + 20 + Math.random() * 10).toFixed(2));
+  new Chart(ctx, {
+    type: 'line', data: {
+      labels: Array.from({ length: 80 }, (_, i) => i + 1), datasets: [
+        { label: 'Mejor individuo (AG)', data: best, borderColor: '#1e40af', backgroundColor: 'rgba(30,64,175,.07)', fill: true, borderWidth: 2.5, tension: .35, pointRadius: 0 },
+        { label: 'Promedio poblacional', data: avg, borderColor: '#60a5fa', borderDash: [5, 5], borderWidth: 1.8, fill: false, tension: .35, pointRadius: 0 },
+        { label: 'Base PRISM (386.4)', data: Array(80).fill(386.4), borderColor: '#94a3b8', borderDash: [2, 2], borderWidth: 1.5, pointRadius: 0 }
+      ]
+    }, options: {
+      responsive: true, plugins: { legend: { labels: { color: '#334155', font: { family: 'Inter' } } } },
+      scales: { x: { grid: { color: '#f1f5f9' }, ticks: { color: '#64748b' } }, y: { grid: { color: '#f1f5f9' }, ticks: { color: '#64748b' } } }
+    }
+  });
 })();
 
-// ═══════════════════════════════════════════════════════
 // CHART COMPARATIVA HOLD-OUT
-// ═══════════════════════════════════════════════════════
-(function(){
- const ctx=document.getElementById('ch-cmp').getContext('2d');
- new Chart(ctx,{type:'bar',data:{labels:['Estático Tradicional','Difuso Base (PRISM)','Difuso + AG (Optimizado)'],
- datasets:[{label:'Costo ambiental (pts)',data:[329.6,373.4,233.0],backgroundColor:['#94a3b8','#60a5fa','#1e40af'],borderRadius:8,borderWidth:0}]},
- options:{responsive:true,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>{const v=c.raw;return c.dataIndex===0?'Costo: '+v+' pts (linea base)':c.dataIndex===1?'Costo: '+v+' pts (sin tuning)':'Costo: '+v+' pts (-29.3%)'}}}},
- scales:{x:{grid:{display:false},ticks:{color:'#334155'}},y:{grid:{color:'#f1f5f9'},ticks:{color:'#64748b'},title:{display:true,text:'Costo ambiental (pts)',color:'#64748b'}}}}});
+(function () {
+  const ctx = document.getElementById('ch-cmp').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar', data: {
+      labels: ['Estático Tradicional', 'Difuso Base (PRISM)', 'Difuso + AG (Optimizado)'],
+      datasets: [{ label: 'Costo ambiental (pts)', data: [329.6, 373.4, 233.0], backgroundColor: ['#94a3b8', '#60a5fa', '#1e40af'], borderRadius: 8, borderWidth: 0 }]
+    },
+    options: {
+      responsive: true, plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => { const v = c.raw; return c.dataIndex === 0 ? 'Costo: ' + v + ' pts (linea base)' : c.dataIndex === 1 ? 'Costo: ' + v + ' pts (sin tuning)' : 'Costo: ' + v + ' pts (-29.3%)' } } } },
+      scales: { x: { grid: { display: false }, ticks: { color: '#334155' } }, y: { grid: { color: '#f1f5f9' }, ticks: { color: '#64748b' }, title: { display: true, text: 'Costo ambiental (pts)', color: '#64748b' } } }
+    }
+  });
 })();
 
 // INIT
-window.addEventListener('load',()=>{
- liveTag();
- runSim();
+window.addEventListener('load', () => {
+  liveUpdate();
 });
 </script>
 </body>
